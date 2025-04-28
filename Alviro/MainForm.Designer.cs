@@ -100,6 +100,7 @@
             buttonMenuItem2.TabIndex = 2;
             buttonMenuItem2.Text = "Hozzávalók";
             buttonMenuItem2.UseVisualStyleBackColor = false;
+            buttonMenuItem2.Click += buttonMenuItem2_Click;
             // 
             // buttonMenuItem1
             // 

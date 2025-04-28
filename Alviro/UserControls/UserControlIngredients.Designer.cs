@@ -28,17 +28,201 @@
         /// </summary>
         private void InitializeComponent()
         {
+            panel1 = new Panel();
+            panel3 = new Panel();
+            listBoxAllIngredients = new ListBox();
+            panel2 = new Panel();
+            textBoxSearchIngredient = new TextBox();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            textBoxSearchSelectedProduct = new TextBox();
+            textBoxSearchProduct = new TextBox();
+            buttonRemoveProduct = new Button();
+            buttonAddProduct = new Button();
+            label2 = new Label();
+            label1 = new Label();
+            listBoxAllProducts = new ListBox();
+            listBoxSelectedProducts = new ListBox();
+            panel1.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(257, 606);
+            panel1.TabIndex = 5;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(listBoxAllIngredients);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 40);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(257, 566);
+            panel3.TabIndex = 3;
+            // 
+            // listBoxAllIngredients
+            // 
+            listBoxAllIngredients.Anchor = AnchorStyles.None;
+            listBoxAllIngredients.FormattingEnabled = true;
+            listBoxAllIngredients.Location = new Point(16, 15);
+            listBoxAllIngredients.Name = "listBoxAllIngredients";
+            listBoxAllIngredients.Size = new Size(221, 529);
+            listBoxAllIngredients.TabIndex = 0;
+            listBoxAllIngredients.SelectedIndexChanged += listBoxAllIngredients_SelectedIndexChanged;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(textBoxSearchIngredient);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(257, 40);
+            panel2.TabIndex = 2;
+            // 
+            // textBoxSearchIngredient
+            // 
+            textBoxSearchIngredient.Location = new Point(32, 4);
+            textBoxSearchIngredient.Name = "textBoxSearchIngredient";
+            textBoxSearchIngredient.Size = new Size(191, 31);
+            textBoxSearchIngredient.TabIndex = 1;
+            textBoxSearchIngredient.TextChanged += textBoxSearchIngredient_TextChanged;
+            // 
+            // panel4
+            // 
+            panel4.Dock = DockStyle.Right;
+            panel4.Location = new Point(741, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(250, 606);
+            panel4.TabIndex = 6;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(textBoxSearchSelectedProduct);
+            panel5.Controls.Add(textBoxSearchProduct);
+            panel5.Controls.Add(buttonRemoveProduct);
+            panel5.Controls.Add(buttonAddProduct);
+            panel5.Controls.Add(label2);
+            panel5.Controls.Add(label1);
+            panel5.Controls.Add(listBoxAllProducts);
+            panel5.Controls.Add(listBoxSelectedProducts);
+            panel5.Dock = DockStyle.Fill;
+            panel5.Location = new Point(257, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(484, 606);
+            panel5.TabIndex = 7;
+            // 
+            // textBoxSearchSelectedProduct
+            // 
+            textBoxSearchSelectedProduct.Location = new Point(54, 28);
+            textBoxSearchSelectedProduct.Name = "textBoxSearchSelectedProduct";
+            textBoxSearchSelectedProduct.Size = new Size(150, 31);
+            textBoxSearchSelectedProduct.TabIndex = 7;
+            textBoxSearchSelectedProduct.TextChanged += textBoxSearchSelectedProduct_TextChanged;
+            // 
+            // textBoxSearchProduct
+            // 
+            textBoxSearchProduct.Location = new Point(284, 28);
+            textBoxSearchProduct.Name = "textBoxSearchProduct";
+            textBoxSearchProduct.Size = new Size(150, 31);
+            textBoxSearchProduct.TabIndex = 6;
+            textBoxSearchProduct.TextChanged += textBoxSearchProduct_TextChanged;
+            // 
+            // buttonRemoveProduct
+            // 
+            buttonRemoveProduct.Location = new Point(112, 391);
+            buttonRemoveProduct.Name = "buttonRemoveProduct";
+            buttonRemoveProduct.Size = new Size(112, 34);
+            buttonRemoveProduct.TabIndex = 5;
+            buttonRemoveProduct.Text = "Eltávolít";
+            buttonRemoveProduct.UseVisualStyleBackColor = true;
+            buttonRemoveProduct.Click += buttonRemoveProduct_Click;
+            // 
+            // buttonAddProduct
+            // 
+            buttonAddProduct.Location = new Point(274, 391);
+            buttonAddProduct.Name = "buttonAddProduct";
+            buttonAddProduct.Size = new Size(112, 34);
+            buttonAddProduct.TabIndex = 4;
+            buttonAddProduct.Text = "Hozzáad";
+            buttonAddProduct.UseVisualStyleBackColor = true;
+            buttonAddProduct.Click += buttonAddProduct_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(299, 65);
+            label2.Name = "label2";
+            label2.Size = new Size(127, 25);
+            label2.TabIndex = 3;
+            label2.Text = "Összes termék";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(38, 65);
+            label1.Name = "label1";
+            label1.Size = new Size(180, 25);
+            label1.TabIndex = 2;
+            label1.Text = "Kiválasztott termékek";
+            // 
+            // listBoxAllProducts
+            // 
+            listBoxAllProducts.FormattingEnabled = true;
+            listBoxAllProducts.Location = new Point(274, 93);
+            listBoxAllProducts.Name = "listBoxAllProducts";
+            listBoxAllProducts.Size = new Size(180, 279);
+            listBoxAllProducts.TabIndex = 1;
+            // 
+            // listBoxSelectedProducts
+            // 
+            listBoxSelectedProducts.FormattingEnabled = true;
+            listBoxSelectedProducts.Location = new Point(37, 93);
+            listBoxSelectedProducts.Name = "listBoxSelectedProducts";
+            listBoxSelectedProducts.Size = new Size(187, 279);
+            listBoxSelectedProducts.TabIndex = 0;
             // 
             // UserControlIngredients
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panel5);
+            Controls.Add(panel4);
+            Controls.Add(panel1);
             Name = "UserControlIngredients";
             Size = new Size(991, 606);
+            panel1.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel panel1;
+        private Panel panel3;
+        private ListBox listBoxAllIngredients;
+        private Panel panel2;
+        private TextBox textBoxSearchIngredient;
+        private Panel panel4;
+        private Panel panel5;
+        private Label label2;
+        private Label label1;
+        private ListBox listBoxAllProducts;
+        private ListBox listBoxSelectedProducts;
+        private Button buttonRemoveProduct;
+        private Button buttonAddProduct;
+        private TextBox textBoxSearchProduct;
+        private TextBox textBoxSearchSelectedProduct;
     }
 }
