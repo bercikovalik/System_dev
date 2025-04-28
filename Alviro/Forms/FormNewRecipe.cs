@@ -41,6 +41,12 @@ namespace Alviro
             }
             dbContext.Recipes.Add(newRecipe);
 
+            if (dbContext.Recipes.Local.Any(r => r.Name == newRecipe.Name))
+            {
+                MessageBox.Show("Ilyen nevű recept már létezik!", "Létező recept", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             try
             {
                 dbContext.SaveChanges();
@@ -53,6 +59,7 @@ namespace Alviro
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
+                return;
             }
 
             foreach (Ingredient ingredient in listBoxSelectedIngredients.Items)
