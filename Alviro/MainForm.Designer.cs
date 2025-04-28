@@ -32,28 +32,34 @@
             panelTopBar = new Panel();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
+            buttonHideMenu = new Button();
             panelMenu = new Panel();
             buttonMenuItem2 = new Button();
             buttonMenuItem1 = new Button();
             panelLeftInfo = new Panel();
             label1 = new Label();
+            panelMenuHideButton = new Panel();
+            panel1 = new Panel();
             panelMain = new Panel();
             panelTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelMenu.SuspendLayout();
             panelLeftInfo.SuspendLayout();
+            panelMenuHideButton.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panelTopBar
             // 
             panelTopBar.BackColor = Color.FromArgb(35, 54, 46);
+            panelTopBar.BorderStyle = BorderStyle.FixedSingle;
             panelTopBar.Controls.Add(pictureBox2);
             panelTopBar.Controls.Add(pictureBox1);
             panelTopBar.Dock = DockStyle.Top;
             panelTopBar.Location = new Point(0, 0);
             panelTopBar.Name = "panelTopBar";
-            panelTopBar.Size = new Size(1196, 50);
+            panelTopBar.Size = new Size(1196, 55);
             panelTopBar.TabIndex = 0;
             // 
             // pictureBox2
@@ -62,7 +68,7 @@
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(86, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(98, 50);
+            pictureBox2.Size = new Size(98, 53);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -73,10 +79,23 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(86, 50);
+            pictureBox1.Size = new Size(86, 53);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // buttonHideMenu
+            // 
+            buttonHideMenu.FlatStyle = FlatStyle.Flat;
+            buttonHideMenu.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            buttonHideMenu.Location = new Point(5, 9);
+            buttonHideMenu.Name = "buttonHideMenu";
+            buttonHideMenu.Size = new Size(47, 47);
+            buttonHideMenu.TabIndex = 3;
+            buttonHideMenu.Text = "<";
+            buttonHideMenu.TextAlign = ContentAlignment.TopCenter;
+            buttonHideMenu.UseVisualStyleBackColor = true;
+            buttonHideMenu.Click += buttonHideMenu_Click;
             // 
             // panelMenu
             // 
@@ -85,18 +104,21 @@
             panelMenu.Controls.Add(buttonMenuItem1);
             panelMenu.Controls.Add(panelLeftInfo);
             panelMenu.Dock = DockStyle.Left;
-            panelMenu.Location = new Point(0, 50);
+            panelMenu.Location = new Point(0, 55);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(205, 606);
+            panelMenu.Size = new Size(205, 601);
             panelMenu.TabIndex = 1;
             // 
             // buttonMenuItem2
             // 
             buttonMenuItem2.Anchor = AnchorStyles.Top;
-            buttonMenuItem2.BackColor = Color.Transparent;
-            buttonMenuItem2.Location = new Point(5, 72);
+            buttonMenuItem2.BackColor = Color.FromArgb(104, 123, 82);
+            buttonMenuItem2.FlatStyle = FlatStyle.Popup;
+            buttonMenuItem2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            buttonMenuItem2.ForeColor = Color.White;
+            buttonMenuItem2.Location = new Point(0, 72);
             buttonMenuItem2.Name = "buttonMenuItem2";
-            buttonMenuItem2.Size = new Size(195, 58);
+            buttonMenuItem2.Size = new Size(205, 58);
             buttonMenuItem2.TabIndex = 2;
             buttonMenuItem2.Text = "Hozzávalók";
             buttonMenuItem2.UseVisualStyleBackColor = false;
@@ -105,10 +127,14 @@
             // buttonMenuItem1
             // 
             buttonMenuItem1.Anchor = AnchorStyles.Top;
-            buttonMenuItem1.BackColor = Color.Transparent;
-            buttonMenuItem1.Location = new Point(5, 8);
+            buttonMenuItem1.BackColor = Color.FromArgb(104, 123, 82);
+            buttonMenuItem1.FlatStyle = FlatStyle.Popup;
+            buttonMenuItem1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            buttonMenuItem1.ForeColor = Color.White;
+            buttonMenuItem1.Location = new Point(0, 8);
+            buttonMenuItem1.Margin = new Padding(0);
             buttonMenuItem1.Name = "buttonMenuItem1";
-            buttonMenuItem1.Size = new Size(195, 58);
+            buttonMenuItem1.Size = new Size(205, 58);
             buttonMenuItem1.TabIndex = 1;
             buttonMenuItem1.Text = "Minden recept";
             buttonMenuItem1.UseVisualStyleBackColor = false;
@@ -119,7 +145,7 @@
             panelLeftInfo.BackColor = Color.FromArgb(35, 54, 46);
             panelLeftInfo.Controls.Add(label1);
             panelLeftInfo.Dock = DockStyle.Bottom;
-            panelLeftInfo.Location = new Point(0, 532);
+            panelLeftInfo.Location = new Point(0, 527);
             panelLeftInfo.Name = "panelLeftInfo";
             panelLeftInfo.Size = new Size(205, 74);
             panelLeftInfo.TabIndex = 0;
@@ -135,30 +161,57 @@
             label1.TabIndex = 0;
             label1.Text = "label1";
             // 
+            // panelMenuHideButton
+            // 
+            panelMenuHideButton.BackColor = Color.Silver;
+            panelMenuHideButton.Controls.Add(panel1);
+            panelMenuHideButton.Dock = DockStyle.Left;
+            panelMenuHideButton.Location = new Point(205, 55);
+            panelMenuHideButton.Name = "panelMenuHideButton";
+            panelMenuHideButton.Size = new Size(58, 601);
+            panelMenuHideButton.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(buttonHideMenu);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(58, 63);
+            panel1.TabIndex = 0;
+            // 
             // panelMain
             // 
+            panelMain.BackColor = Color.Silver;
             panelMain.Dock = DockStyle.Fill;
-            panelMain.Location = new Point(205, 50);
+            panelMain.Location = new Point(263, 55);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(991, 606);
-            panelMain.TabIndex = 2;
+            panelMain.Size = new Size(933, 601);
+            panelMain.TabIndex = 3;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1196, 656);
             Controls.Add(panelMain);
+            Controls.Add(panelMenuHideButton);
             Controls.Add(panelMenu);
             Controls.Add(panelTopBar);
+            ForeColor = SystemColors.ControlText;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Alviro - Receptkezelő";
             panelTopBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelMenu.ResumeLayout(false);
             panelLeftInfo.ResumeLayout(false);
             panelLeftInfo.PerformLayout();
+            panelMenuHideButton.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -172,6 +225,9 @@
         private PictureBox pictureBox1;
         private Button buttonMenuItem2;
         private Label label1;
+        private Panel panelMenuHideButton;
+        private Button buttonHideMenu;
         private Panel panelMain;
+        private Panel panel1;
     }
 }

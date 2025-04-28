@@ -196,7 +196,10 @@
             Controls.Add(textBoxDescription);
             Controls.Add(textBoxName);
             Name = "FormNewRecipe";
-            Text = "FormNewRecipe";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Új recept hozzáadása";
             ResumeLayout(false);
             PerformLayout();
         }

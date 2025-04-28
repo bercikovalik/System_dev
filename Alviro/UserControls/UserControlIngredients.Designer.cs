@@ -34,6 +34,8 @@
             panel2 = new Panel();
             textBoxSearchIngredient = new TextBox();
             panel4 = new Panel();
+            buttonAddNewIngredient = new Button();
+            textBoxNewIngredienName = new TextBox();
             panel5 = new Panel();
             textBoxSearchSelectedProduct = new TextBox();
             textBoxSearchProduct = new TextBox();
@@ -46,6 +48,7 @@
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
+            panel4.SuspendLayout();
             panel5.SuspendLayout();
             SuspendLayout();
             // 
@@ -70,7 +73,7 @@
             // 
             // listBoxAllIngredients
             // 
-            listBoxAllIngredients.Anchor = AnchorStyles.None;
+            listBoxAllIngredients.Anchor = AnchorStyles.Top;
             listBoxAllIngredients.FormattingEnabled = true;
             listBoxAllIngredients.Location = new Point(16, 15);
             listBoxAllIngredients.Name = "listBoxAllIngredients";
@@ -97,11 +100,30 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(buttonAddNewIngredient);
+            panel4.Controls.Add(textBoxNewIngredienName);
             panel4.Dock = DockStyle.Right;
             panel4.Location = new Point(741, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(250, 606);
             panel4.TabIndex = 6;
+            // 
+            // buttonAddNewIngredient
+            // 
+            buttonAddNewIngredient.Location = new Point(88, 130);
+            buttonAddNewIngredient.Name = "buttonAddNewIngredient";
+            buttonAddNewIngredient.Size = new Size(112, 34);
+            buttonAddNewIngredient.TabIndex = 1;
+            buttonAddNewIngredient.Text = "Hozzáadás";
+            buttonAddNewIngredient.UseVisualStyleBackColor = true;
+            buttonAddNewIngredient.Click += buttonAddNewIngredient_Click;
+            // 
+            // textBoxNewIngredienName
+            // 
+            textBoxNewIngredienName.Location = new Point(53, 93);
+            textBoxNewIngredienName.Name = "textBoxNewIngredienName";
+            textBoxNewIngredienName.Size = new Size(178, 31);
+            textBoxNewIngredienName.TabIndex = 0;
             // 
             // panel5
             // 
@@ -121,6 +143,7 @@
             // 
             // textBoxSearchSelectedProduct
             // 
+            textBoxSearchSelectedProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBoxSearchSelectedProduct.Location = new Point(54, 28);
             textBoxSearchSelectedProduct.Name = "textBoxSearchSelectedProduct";
             textBoxSearchSelectedProduct.Size = new Size(150, 31);
@@ -129,6 +152,7 @@
             // 
             // textBoxSearchProduct
             // 
+            textBoxSearchProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBoxSearchProduct.Location = new Point(284, 28);
             textBoxSearchProduct.Name = "textBoxSearchProduct";
             textBoxSearchProduct.Size = new Size(150, 31);
@@ -137,6 +161,7 @@
             // 
             // buttonRemoveProduct
             // 
+            buttonRemoveProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonRemoveProduct.Location = new Point(112, 391);
             buttonRemoveProduct.Name = "buttonRemoveProduct";
             buttonRemoveProduct.Size = new Size(112, 34);
@@ -147,6 +172,7 @@
             // 
             // buttonAddProduct
             // 
+            buttonAddProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonAddProduct.Location = new Point(274, 391);
             buttonAddProduct.Name = "buttonAddProduct";
             buttonAddProduct.Size = new Size(112, 34);
@@ -157,6 +183,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Location = new Point(299, 65);
             label2.Name = "label2";
@@ -166,6 +193,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Location = new Point(38, 65);
             label1.Name = "label1";
@@ -175,6 +203,7 @@
             // 
             // listBoxAllProducts
             // 
+            listBoxAllProducts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listBoxAllProducts.FormattingEnabled = true;
             listBoxAllProducts.Location = new Point(274, 93);
             listBoxAllProducts.Name = "listBoxAllProducts";
@@ -183,6 +212,7 @@
             // 
             // listBoxSelectedProducts
             // 
+            listBoxSelectedProducts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listBoxSelectedProducts.FormattingEnabled = true;
             listBoxSelectedProducts.Location = new Point(37, 93);
             listBoxSelectedProducts.Name = "listBoxSelectedProducts";
@@ -202,6 +232,8 @@
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ResumeLayout(false);
@@ -224,5 +256,7 @@
         private Button buttonAddProduct;
         private TextBox textBoxSearchProduct;
         private TextBox textBoxSearchSelectedProduct;
+        private Button buttonAddNewIngredient;
+        private TextBox textBoxNewIngredienName;
     }
 }
