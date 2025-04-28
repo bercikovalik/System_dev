@@ -46,23 +46,57 @@ namespace Alviro
 
         private void loadProducts()
         {
-            try
+
+            //try
             {
+                //Load categories to catgeoryy filter
+                var allCategories = from k in dbContext.HccCategoryTranslations
+                                    select new
+                                    {
+                                        CategoryName = k.Name,
+                                        CategoryId = k.CategoryId
+                                    };
+                comboBoxCategoryFilter.DataSource = allCategories.ToList();
+                comboBoxCategoryFilter.DisplayMember = "CategoryName";
+
                 var allProducts = from k in dbContext.HccProductTranslations
                                   where k.ProductName.Contains(textBoxSearchProduct.Text)
                                   select new
                                   {
                                       ProductName = k.ProductName,
                                       RewriteUrl = k.Product.RewriteUrl,
-                                      ProductId = (int)k.Product.Id
+                                      ProductId = (int)k.Product.Id,
+                                      CategoryId = (from i in dbContext.HccProductXcategories
+                                                    where i.ProductId == k.Product.Bvin
+                                                    select i.CategoryId).FirstOrDefault()
                                   };
-                listBoxAllProducts.DataSource = allProducts.ToList();
+                // Filter by category if selected
+                if (comboBoxCategoryFilter.SelectedItem != null)
+                {
+                    var selectedCategory = (dynamic)comboBoxCategoryFilter.SelectedItem;
+                    Guid selectedCategoryId = selectedCategory.CategoryId;
+                    allProducts = from j in allProducts
+                                  where j.CategoryId.ToString() == selectedCategoryId.ToString()
+                                  select j;
+                }
+                // Create a new list of ProductDTO objects
+                var productDTOs = new List<ProductDTO>();
+                foreach (var item in allProducts)
+                {
+                    productDTOs.Add(new ProductDTO
+                    {
+                        ProductName = item.ProductName,
+                        RewriteUrl = item.RewriteUrl,
+                        ProductId = item.ProductId
+                    });
+                }
+                listBoxAllProducts.DataSource = productDTOs;
                 listBoxAllProducts.DisplayMember = "ProductName";
             }
-            catch (System.Exception)
-            {
-                MessageBox.Show("Nem sikerült betölteni az adatokat.", "Sikertelen adatbetöltés", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //catch (System.Exception)
+            //{
+            //    MessageBox.Show("Nem sikerült betölteni az adatokat.", "Sikertelen adatbetöltés", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
         }
 
@@ -119,9 +153,21 @@ namespace Alviro
                                        ProductName = (from i in dbContext.HccProductTranslations
                                                       where i.Product.Id == k.Productid
                                                       select i.ProductName).FirstOrDefault(),
-                                       ingredientProductId = k.Ingredientproductid,
+                                       RewriteUrl = k.RewriteUrl,
+                                       ProductId = k.Productid
                                    };
-            listBoxSelectedProducts.DataSource = selectedProducts.ToList();
+            // Create a new list of ProductDTO objects
+            var selectedProductDTOs = new List<ProductDTO>();
+            foreach (var item in selectedProducts)
+            {
+                selectedProductDTOs.Add(new ProductDTO
+                {
+                    ProductName = item.ProductName,
+                    RewriteUrl = item.RewriteUrl,
+                    ProductId = item.ProductId
+                });
+            }
+            listBoxSelectedProducts.DataSource = selectedProductDTOs;
             listBoxSelectedProducts.DisplayMember = "ProductName";
         }
 
@@ -142,18 +188,32 @@ namespace Alviro
 
         private void buttonRemoveProduct_Click(object sender, EventArgs e)
         {
-            var productToDelete = listBoxSelectedProducts.SelectedItem;
+            var productToDelete = (ProductDTO)listBoxSelectedProducts.SelectedItem;
             if (productToDelete == null)
             {
                 MessageBox.Show("Kérlek válassz ki egy terméket!", "Nincs kiválasztott termék", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            //Dialog to the user
+            DialogResult result = MessageBox.Show("Biztosan törölni szeretnéd a terméket?", "Törlés megerősítése", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
             var selectedIngredient = (Ingredient)listBoxAllIngredients.SelectedItem;
+            var ingredientProductToDelete = dbContext.Ingredientproducts.FirstOrDefault(x => x.Productid == productToDelete.ProductId && x.Ingredientid == selectedIngredient.Ingredientid);
+            dbContext.Ingredientproducts.Remove(ingredientProductToDelete);
+            try
+            {
+                dbContext.SaveChanges();
+                loadSelectedProducts();
 
-            //var ingredientProductId = ((dynamic)productToDelete).ingredientProductId;
-            //var ingredientProductToDelete = (from k in dbContext.Ingredientproducts
-            //                                where k.Ingredientproductid == ingredientProductId
-            //                                select k).FirstOrDefault();
+            }
+            catch (System.Exception)
+            {
+                MessageBox.Show("A terméket nem sikerült eltávolítani", "Sikertelen eltávolítás", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void buttonAddNewIngredient_Click(object sender, EventArgs e)
@@ -184,10 +244,21 @@ namespace Alviro
             loadIngredients();
             textBoxNewIngredienName.Text = string.Empty;
             //Select last ingredient
-            listBoxAllIngredients.SelectedIndex = listBoxAllIngredients.Items.Count -1;            
+            listBoxAllIngredients.SelectedIndex = listBoxAllIngredients.Items.Count - 1;
 
+        }
+
+        private void comboBoxCategoryFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadProducts();
         }
     }
 
-   
+    public class ProductDTO
+    {
+        public string ProductName { get; set; }
+        public string RewriteUrl { get; set; }
+        public int ProductId { get; set; }
+    }
+
 }

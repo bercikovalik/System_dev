@@ -37,6 +37,7 @@
             buttonAddNewIngredient = new Button();
             textBoxNewIngredienName = new TextBox();
             panel5 = new Panel();
+            comboBoxCategoryFilter = new ComboBox();
             textBoxSearchSelectedProduct = new TextBox();
             textBoxSearchProduct = new TextBox();
             buttonRemoveProduct = new Button();
@@ -127,6 +128,7 @@
             // 
             // panel5
             // 
+            panel5.Controls.Add(comboBoxCategoryFilter);
             panel5.Controls.Add(textBoxSearchSelectedProduct);
             panel5.Controls.Add(textBoxSearchProduct);
             panel5.Controls.Add(buttonRemoveProduct);
@@ -140,6 +142,15 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(484, 606);
             panel5.TabIndex = 7;
+            // 
+            // comboBoxCategoryFilter
+            // 
+            comboBoxCategoryFilter.FormattingEnabled = true;
+            comboBoxCategoryFilter.Location = new Point(238, 440);
+            comboBoxCategoryFilter.Name = "comboBoxCategoryFilter";
+            comboBoxCategoryFilter.Size = new Size(182, 33);
+            comboBoxCategoryFilter.TabIndex = 8;
+            comboBoxCategoryFilter.SelectedIndexChanged += comboBoxCategoryFilter_SelectedIndexChanged;
             // 
             // textBoxSearchSelectedProduct
             // 
@@ -258,5 +269,6 @@
         private TextBox textBoxSearchSelectedProduct;
         private Button buttonAddNewIngredient;
         private TextBox textBoxNewIngredienName;
+        private ComboBox comboBoxCategoryFilter;
     }
 }
