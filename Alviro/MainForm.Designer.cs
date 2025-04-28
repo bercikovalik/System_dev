@@ -37,6 +37,7 @@
             buttonMenuItem1 = new Button();
             panelLeftInfo = new Panel();
             label1 = new Label();
+            panelMain = new Panel();
             panelTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -52,7 +53,7 @@
             panelTopBar.Dock = DockStyle.Top;
             panelTopBar.Location = new Point(0, 0);
             panelTopBar.Name = "panelTopBar";
-            panelTopBar.Size = new Size(1057, 50);
+            panelTopBar.Size = new Size(1196, 50);
             panelTopBar.TabIndex = 0;
             // 
             // pictureBox2
@@ -86,14 +87,14 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 50);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(205, 507);
+            panelMenu.Size = new Size(205, 606);
             panelMenu.TabIndex = 1;
             // 
             // buttonMenuItem2
             // 
-            buttonMenuItem2.Anchor = AnchorStyles.None;
+            buttonMenuItem2.Anchor = AnchorStyles.Top;
             buttonMenuItem2.BackColor = Color.Transparent;
-            buttonMenuItem2.Location = new Point(5, 70);
+            buttonMenuItem2.Location = new Point(5, 72);
             buttonMenuItem2.Name = "buttonMenuItem2";
             buttonMenuItem2.Size = new Size(195, 58);
             buttonMenuItem2.TabIndex = 2;
@@ -102,21 +103,22 @@
             // 
             // buttonMenuItem1
             // 
-            buttonMenuItem1.Anchor = AnchorStyles.None;
+            buttonMenuItem1.Anchor = AnchorStyles.Top;
             buttonMenuItem1.BackColor = Color.Transparent;
-            buttonMenuItem1.Location = new Point(5, 6);
+            buttonMenuItem1.Location = new Point(5, 8);
             buttonMenuItem1.Name = "buttonMenuItem1";
             buttonMenuItem1.Size = new Size(195, 58);
             buttonMenuItem1.TabIndex = 1;
             buttonMenuItem1.Text = "Minden recept";
             buttonMenuItem1.UseVisualStyleBackColor = false;
+            buttonMenuItem1.Click += buttonMenuItem1_Click;
             // 
             // panelLeftInfo
             // 
             panelLeftInfo.BackColor = Color.FromArgb(35, 54, 46);
             panelLeftInfo.Controls.Add(label1);
             panelLeftInfo.Dock = DockStyle.Bottom;
-            panelLeftInfo.Location = new Point(0, 433);
+            panelLeftInfo.Location = new Point(0, 532);
             panelLeftInfo.Name = "panelLeftInfo";
             panelLeftInfo.Size = new Size(205, 74);
             panelLeftInfo.TabIndex = 0;
@@ -132,11 +134,20 @@
             label1.TabIndex = 0;
             label1.Text = "label1";
             // 
+            // panelMain
+            // 
+            panelMain.Dock = DockStyle.Fill;
+            panelMain.Location = new Point(205, 50);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(991, 606);
+            panelMain.TabIndex = 2;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1057, 557);
+            ClientSize = new Size(1196, 656);
+            Controls.Add(panelMain);
             Controls.Add(panelMenu);
             Controls.Add(panelTopBar);
             Name = "MainForm";
@@ -160,5 +171,6 @@
         private PictureBox pictureBox1;
         private Button buttonMenuItem2;
         private Label label1;
+        private Panel panelMain;
     }
 }
