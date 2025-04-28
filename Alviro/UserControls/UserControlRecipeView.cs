@@ -13,9 +13,13 @@ namespace Alviro
     public partial class UserControlRecipeView : UserControl
     {
         
-        public UserControlRecipeView()
+
+        
+        public UserControlRecipeView(string RecipeName)
         {
             InitializeComponent();
+
+            label1.Text = RecipeName;
         }
     }
 }
