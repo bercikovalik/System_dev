@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace Alviro
 {
     public partial class MainForm : Form
@@ -11,20 +13,31 @@ namespace Alviro
 
         private void buttonMenuItem1_Click(object sender, EventArgs e)
         {
+            panelMain.Controls.Clear();
+            buttonMenuItem2.BackColor = Color.FromArgb(104, 123, 82);
+            buttonMenuItem1.BackColor = Color.FromArgb(37, 173, 82);
+            
+
+
             UserControlAllRecipe userControlAllRecipe = new UserControlAllRecipe();
             userControlAllRecipe.Dock = DockStyle.Fill;
-            panelMain.Controls.Clear();
+
+
             panelMain.Controls.Add(userControlAllRecipe);
-            buttonHideMenu.BringToFront();
+            
         }
 
         private void buttonMenuItem2_Click(object sender, EventArgs e)
         {
+            panelMain.Controls.Clear();
+            buttonMenuItem1.BackColor = Color.FromArgb(104, 123, 82);
+            buttonMenuItem2.BackColor = Color.FromArgb(37, 173, 82);
+            
+
             UserControlIngredients userControlIngredients = new UserControlIngredients();
             userControlIngredients.Dock = DockStyle.Fill;
-            panelMain.Controls.Clear();
             panelMain.Controls.Add(userControlIngredients);
-            buttonHideMenu.BringToFront();
+
         }
 
         private void buttonHideMenu_Click(object sender, EventArgs e)
@@ -43,5 +56,7 @@ namespace Alviro
                 buttonHideMenu.Text = ">";
             }
         }
+
+        
     }
 }

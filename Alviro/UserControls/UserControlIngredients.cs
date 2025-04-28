@@ -23,7 +23,7 @@ namespace Alviro
             loadProducts();
         }
 
-        private void loadIngredients()
+        private async void loadIngredients()
         {
             try
             {

@@ -18,17 +18,38 @@ namespace Alviro
         {
             InitializeComponent();
 
-            loadRecipes();
+            loadRecipesAsync();
 
 
         }
 
-        private void loadRecipes()
+        private async void loadRecipesAsync()
+        {
+            pictureBoxLoading.Visible = true;
+            panel1.Visible = false;
+            panel4.Visible = false;
+            await Task.Delay(50); // UI refresh
+
+            var data = await Task.Run(() => loadRecipes());
+
+            PopulateUI(data);
+
+            pictureBoxLoading.Visible = false;
+            panel1.Visible = true;
+            panel4.Visible = true;
+        }
+        private List<Recipe> loadRecipes()
         {
             var AllRecipe = from k in dbContext.Recipes
                             where k.Name.Contains(textBoxSearch.Text)
                             select k;
-            listBoxAllRecipe.DataSource = AllRecipe.ToList();
+            return AllRecipe.ToList();
+
+        }
+        private void PopulateUI(List<Recipe> data)
+        {
+
+            listBoxAllRecipe.DataSource = data;
             listBoxAllRecipe.DisplayMember = "Name";
         }
 

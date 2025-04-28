@@ -143,7 +143,7 @@
             // 
             // textBoxSearchSelectedProduct
             // 
-            textBoxSearchSelectedProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxSearchSelectedProduct.Anchor = AnchorStyles.None;
             textBoxSearchSelectedProduct.Location = new Point(54, 28);
             textBoxSearchSelectedProduct.Name = "textBoxSearchSelectedProduct";
             textBoxSearchSelectedProduct.Size = new Size(150, 31);
@@ -152,7 +152,7 @@
             // 
             // textBoxSearchProduct
             // 
-            textBoxSearchProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxSearchProduct.Anchor = AnchorStyles.None;
             textBoxSearchProduct.Location = new Point(284, 28);
             textBoxSearchProduct.Name = "textBoxSearchProduct";
             textBoxSearchProduct.Size = new Size(150, 31);
@@ -161,7 +161,7 @@
             // 
             // buttonRemoveProduct
             // 
-            buttonRemoveProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            buttonRemoveProduct.Anchor = AnchorStyles.None;
             buttonRemoveProduct.Location = new Point(112, 391);
             buttonRemoveProduct.Name = "buttonRemoveProduct";
             buttonRemoveProduct.Size = new Size(112, 34);
@@ -172,7 +172,7 @@
             // 
             // buttonAddProduct
             // 
-            buttonAddProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            buttonAddProduct.Anchor = AnchorStyles.None;
             buttonAddProduct.Location = new Point(274, 391);
             buttonAddProduct.Name = "buttonAddProduct";
             buttonAddProduct.Size = new Size(112, 34);
@@ -183,7 +183,7 @@
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Location = new Point(299, 65);
             label2.Name = "label2";
@@ -193,7 +193,7 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Location = new Point(38, 65);
             label1.Name = "label1";
@@ -203,7 +203,7 @@
             // 
             // listBoxAllProducts
             // 
-            listBoxAllProducts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listBoxAllProducts.Anchor = AnchorStyles.None;
             listBoxAllProducts.FormattingEnabled = true;
             listBoxAllProducts.Location = new Point(274, 93);
             listBoxAllProducts.Name = "listBoxAllProducts";
@@ -212,7 +212,7 @@
             // 
             // listBoxSelectedProducts
             // 
-            listBoxSelectedProducts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listBoxSelectedProducts.Anchor = AnchorStyles.None;
             listBoxSelectedProducts.FormattingEnabled = true;
             listBoxSelectedProducts.Location = new Point(37, 93);
             listBoxSelectedProducts.Name = "listBoxSelectedProducts";

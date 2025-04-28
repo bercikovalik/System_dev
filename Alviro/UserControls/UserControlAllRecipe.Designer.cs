@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlAllRecipe));
             listBoxAllRecipe = new ListBox();
             textBoxSearch = new TextBox();
             buttonDeleteRecipe = new Button();
@@ -35,9 +36,13 @@
             panel1 = new Panel();
             panel3 = new Panel();
             panel2 = new Panel();
+            pictureBoxLoading = new PictureBox();
+            panel4 = new Panel();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLoading).BeginInit();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // listBoxAllRecipe
@@ -59,7 +64,7 @@
             // 
             // buttonDeleteRecipe
             // 
-            buttonDeleteRecipe.Location = new Point(276, 551);
+            buttonDeleteRecipe.Location = new Point(16, 4);
             buttonDeleteRecipe.Name = "buttonDeleteRecipe";
             buttonDeleteRecipe.Size = new Size(112, 34);
             buttonDeleteRecipe.TabIndex = 2;
@@ -69,7 +74,7 @@
             // 
             // buttonAddRecipe
             // 
-            buttonAddRecipe.Location = new Point(407, 551);
+            buttonAddRecipe.Location = new Point(158, 4);
             buttonAddRecipe.Name = "buttonAddRecipe";
             buttonAddRecipe.Size = new Size(112, 34);
             buttonAddRecipe.TabIndex = 3;
@@ -105,19 +110,44 @@
             panel2.Size = new Size(257, 40);
             panel2.TabIndex = 2;
             // 
+            // pictureBoxLoading
+            // 
+            pictureBoxLoading.Anchor = AnchorStyles.None;
+            pictureBoxLoading.Image = (Image)resources.GetObject("pictureBoxLoading.Image");
+            pictureBoxLoading.Location = new Point(462, 236);
+            pictureBoxLoading.MinimumSize = new Size(120, 120);
+            pictureBoxLoading.Name = "pictureBoxLoading";
+            pictureBoxLoading.Size = new Size(120, 120);
+            pictureBoxLoading.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxLoading.TabIndex = 5;
+            pictureBoxLoading.TabStop = false;
+            pictureBoxLoading.Visible = false;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(buttonDeleteRecipe);
+            panel4.Controls.Add(buttonAddRecipe);
+            panel4.Dock = DockStyle.Bottom;
+            panel4.Location = new Point(257, 547);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(734, 59);
+            panel4.TabIndex = 6;
+            // 
             // UserControlAllRecipe
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panel4);
+            Controls.Add(pictureBoxLoading);
             Controls.Add(panel1);
-            Controls.Add(buttonAddRecipe);
-            Controls.Add(buttonDeleteRecipe);
             Name = "UserControlAllRecipe";
             Size = new Size(991, 606);
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLoading).EndInit();
+            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -130,5 +160,7 @@
         private Panel panel1;
         private Panel panel3;
         private Panel panel2;
+        private PictureBox pictureBoxLoading;
+        private Panel panel4;
     }
 }
