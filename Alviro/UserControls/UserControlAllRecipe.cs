@@ -57,7 +57,7 @@ namespace Alviro
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            loadRecipes();
+            PopulateUI(loadRecipes());
         }
 
         private void buttonDeleteRecipe_Click(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace Alviro
                 {
                     dbContext.Recipes.Remove(recipeToDelete);
                     dbContext.SaveChanges();
-                    loadRecipes();
+                    PopulateUI(loadRecipes());
                     if (selectedIndex > 0)
                     {
                         listBoxAllRecipe.SelectedIndex = selectedIndex - 1;
@@ -99,18 +99,18 @@ namespace Alviro
         {
             FormNewRecipe formNewRecipe = new FormNewRecipe();
             formNewRecipe.ShowDialog();
-            loadRecipes();
+            PopulateUI(loadRecipes());
             listBoxAllRecipe.SelectedIndex = listBoxAllRecipe.Items.Count - 1;
         }
 
         private void buttonModifyReceipt_Click(object sender, EventArgs e)
         {
             var selectedRecipe = listBoxAllRecipe.SelectedItem as Recipe;
-            FormNewRecipe formNewRecipe = new FormNewRecipe(selectedRecipe);
-            formNewRecipe.Text = "Recept szerkesztése";
-            formNewRecipe.ShowDialog();
+            FormModifyRecipe formModifyRecipe = new FormModifyRecipe(selectedRecipe);
+            formModifyRecipe.Text = "Recept szerkesztése";
+            formModifyRecipe.ShowDialog();
 
-            loadRecipes();
+            PopulateUI(loadRecipes());
         }
     }
 }

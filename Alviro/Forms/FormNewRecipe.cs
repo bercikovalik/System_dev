@@ -58,11 +58,16 @@ namespace Alviro
             }
             dbContext.Recipes.Add(newRecipe);
 
-            if (dbContext.Recipes.Local.Any(r => r.Name == newRecipe.Name))
+            //Check if the recpe is existing
+            var existingRecipe = dbContext.Recipes.FirstOrDefault(r => r.Name == newRecipe.Name);
+            if (existingRecipe != null)
             {
-                MessageBox.Show("Ilyen nevű recept már létezik!", "Létező recept", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ez a recept már létezik!", "Létező recept", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
+
+
 
             try
             {

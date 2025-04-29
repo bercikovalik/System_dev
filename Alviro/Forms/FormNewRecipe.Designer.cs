@@ -44,6 +44,7 @@
             buttonRemoveIngredient = new Button();
             textBoxSearchIngredient = new TextBox();
             panel1 = new Panel();
+            panel5 = new Panel();
             panel3 = new Panel();
             label5 = new Label();
             label6 = new Label();
@@ -51,16 +52,15 @@
             label7 = new Label();
             label8 = new Label();
             panel2 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
             panel6 = new Panel();
+            panel4 = new Panel();
             panelBorderMiddle = new Panel();
             panel1.SuspendLayout();
+            panel5.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
             panel6.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // textBoxName
@@ -215,6 +215,15 @@
             panel1.Size = new Size(495, 510);
             panel1.TabIndex = 15;
             // 
+            // panel5
+            // 
+            panel5.Controls.Add(buttonCancel);
+            panel5.Dock = DockStyle.Bottom;
+            panel5.Location = new Point(0, 452);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(495, 58);
+            panel5.TabIndex = 12;
+            // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(35, 54, 46);
@@ -253,6 +262,7 @@
             textBoxSearchSelectedIngredient.Name = "textBoxSearchSelectedIngredient";
             textBoxSearchSelectedIngredient.Size = new Size(190, 31);
             textBoxSearchSelectedIngredient.TabIndex = 16;
+            textBoxSearchSelectedIngredient.Visible = false;
             textBoxSearchSelectedIngredient.TextChanged += textBoxSearchSelectedIngredient_TextChanged;
             // 
             // label7
@@ -293,6 +303,15 @@
             panel2.Size = new Size(573, 510);
             panel2.TabIndex = 19;
             // 
+            // panel6
+            // 
+            panel6.Controls.Add(buttonAddRecipe);
+            panel6.Dock = DockStyle.Bottom;
+            panel6.Location = new Point(0, 452);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(573, 58);
+            panel6.TabIndex = 20;
+            // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(35, 54, 46);
@@ -302,24 +321,6 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(573, 60);
             panel4.TabIndex = 19;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(buttonCancel);
-            panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(0, 452);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(495, 58);
-            panel5.TabIndex = 12;
-            // 
-            // panel6
-            // 
-            panel6.Controls.Add(buttonAddRecipe);
-            panel6.Dock = DockStyle.Bottom;
-            panel6.Location = new Point(0, 452);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(573, 58);
-            panel6.TabIndex = 20;
             // 
             // panelBorderMiddle
             // 
@@ -346,14 +347,14 @@
             Text = "Új recept hozzáadása";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel5.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel6.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel6.ResumeLayout(false);
             ResumeLayout(false);
         }
 
