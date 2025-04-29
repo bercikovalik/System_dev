@@ -57,6 +57,7 @@ namespace Alviro
                                         CategoryId = k.CategoryId
                                     };
                 comboBoxCategoryFilter.DataSource = allCategories.ToList();
+                comboBoxCategoryFilter.ValueMember = "CategoryId";
                 comboBoxCategoryFilter.DisplayMember = "CategoryName";
 
                 var allProducts = from k in dbContext.HccProductTranslations
@@ -75,6 +76,7 @@ namespace Alviro
                 {
                     var selectedCategory = (dynamic)comboBoxCategoryFilter.SelectedItem;
                     Guid selectedCategoryId = selectedCategory.CategoryId;
+
                     allProducts = from j in allProducts
                                   where j.CategoryId.ToString() == selectedCategoryId.ToString()
                                   select j;

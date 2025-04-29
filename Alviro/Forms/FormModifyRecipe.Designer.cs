@@ -183,6 +183,7 @@
             buttonAddIngredient.TabIndex = 12;
             buttonAddIngredient.Text = "Hozzáad";
             buttonAddIngredient.UseVisualStyleBackColor = true;
+            buttonAddIngredient.Click += buttonAddIngredient_Click;
             // 
             // buttonRemoveIngredient
             // 

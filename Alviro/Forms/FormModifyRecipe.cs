@@ -69,5 +69,15 @@ namespace Alviro
         {
             searchSelectedIngredients(listBoxSelectedIngredients.DataSource as List<Ingredient>);
         }
+
+        private void buttonAddIngredient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAddRecipe_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
