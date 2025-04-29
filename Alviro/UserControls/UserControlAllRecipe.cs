@@ -100,5 +100,14 @@ namespace Alviro
             loadRecipes();
             listBoxAllRecipe.SelectedIndex = listBoxAllRecipe.Items.Count - 1;
         }
+
+        private void buttonModifyReceipt_Click(object sender, EventArgs e)
+        {
+            var selectedRecipe = listBoxAllRecipe.SelectedItem as Recipe;
+            FormNewRecipe formNewRecipe = new FormNewRecipe(selectedRecipe);
+            formNewRecipe.ShowDialog();
+
+            loadRecipes();
+        }
     }
 }

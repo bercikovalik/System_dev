@@ -21,10 +21,27 @@ namespace Alviro
             loadIngredients();
         }
 
+        public FormNewRecipe(Recipe RecipeToModify)
+        {
+            InitializeComponent();
+
+            loadIngredients();
+
+            textBoxName.Text = RecipeToModify.Name;
+            textBoxDescription.Text = RecipeToModify.Description;
+            textBoxInstructions.Text = RecipeToModify.Instructions;
+            textBoxImageUrl.Text = RecipeToModify.Imageurl;
+            loadSelectedIngredients(RecipeToModify);
+
+            
+        }
+
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        
 
         private void buttonAddRecipe_Click(object sender, EventArgs e)
         {
@@ -98,6 +115,15 @@ namespace Alviro
             listBoxAllIngredients.DisplayMember = "Name";
         }
 
+        private void loadSelectedIngredients(Recipe RecipeToModify)
+        {
+            var selectedIngredients = from k in dbContext.Recipeingredients
+                                      where k.Recipeid == RecipeToModify.Recipeid
+                                      select k;
+
+            listBoxSelectedIngredients.DataSource= selectedIngredients.ToList();
+            listBoxSelectedIngredients.DisplayMember= "Name";
+        }
         private void textBoxSearchIngredient_TextChanged(object sender, EventArgs e)
         {
             loadIngredients();

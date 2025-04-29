@@ -38,6 +38,7 @@
             panel2 = new Panel();
             pictureBoxLoading = new PictureBox();
             panel4 = new Panel();
+            buttonModifyReceipt = new Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -74,7 +75,7 @@
             // 
             // buttonAddRecipe
             // 
-            buttonAddRecipe.Location = new Point(158, 4);
+            buttonAddRecipe.Location = new Point(486, 10);
             buttonAddRecipe.Name = "buttonAddRecipe";
             buttonAddRecipe.Size = new Size(112, 34);
             buttonAddRecipe.TabIndex = 3;
@@ -125,6 +126,7 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(buttonModifyReceipt);
             panel4.Controls.Add(buttonDeleteRecipe);
             panel4.Controls.Add(buttonAddRecipe);
             panel4.Dock = DockStyle.Bottom;
@@ -132,6 +134,16 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(734, 59);
             panel4.TabIndex = 6;
+            // 
+            // buttonModifyReceipt
+            // 
+            buttonModifyReceipt.Location = new Point(156, 4);
+            buttonModifyReceipt.Name = "buttonModifyReceipt";
+            buttonModifyReceipt.Size = new Size(112, 34);
+            buttonModifyReceipt.TabIndex = 4;
+            buttonModifyReceipt.Text = "Szerkesztés";
+            buttonModifyReceipt.UseVisualStyleBackColor = true;
+            buttonModifyReceipt.Click += buttonModifyReceipt_Click;
             // 
             // UserControlAllRecipe
             // 
@@ -162,5 +174,6 @@
         private Panel panel2;
         private PictureBox pictureBoxLoading;
         private Panel panel4;
+        private Button buttonModifyReceipt;
     }
 }
