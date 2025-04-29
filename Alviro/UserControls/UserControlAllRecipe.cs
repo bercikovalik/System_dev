@@ -105,6 +105,7 @@ namespace Alviro
         {
             var selectedRecipe = listBoxAllRecipe.SelectedItem as Recipe;
             FormNewRecipe formNewRecipe = new FormNewRecipe(selectedRecipe);
+            formNewRecipe.Text = "Recept szerkesztése";
             formNewRecipe.ShowDialog();
 
             loadRecipes();

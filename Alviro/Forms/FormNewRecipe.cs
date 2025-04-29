@@ -33,7 +33,7 @@ namespace Alviro
             textBoxImageUrl.Text = RecipeToModify.Imageurl;
             loadSelectedIngredients(RecipeToModify);
 
-            
+
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace Alviro
             this.Close();
         }
 
-        
+
 
         private void buttonAddRecipe_Click(object sender, EventArgs e)
         {
@@ -121,8 +121,8 @@ namespace Alviro
                                       where k.Recipeid == RecipeToModify.Recipeid
                                       select k;
 
-            listBoxSelectedIngredients.DataSource= selectedIngredients.ToList();
-            listBoxSelectedIngredients.DisplayMember= "Name";
+            listBoxSelectedIngredients.DataSource = selectedIngredients.ToList();
+            listBoxSelectedIngredients.DisplayMember = "Name";
         }
         private void textBoxSearchIngredient_TextChanged(object sender, EventArgs e)
         {
@@ -166,6 +166,30 @@ namespace Alviro
         private void listBoxAllIngredients_Click(object sender, EventArgs e)
         {
             listBoxSelectedIngredients.ClearSelected();
+        }
+
+        private void textBoxSearchSelectedIngredient_TextChanged(object sender, EventArgs e)
+        {
+            loadSelectedSearch();
+
+        }
+
+        private void loadSelectedSearch()
+        {
+            var selectedIngredients = listBoxSelectedIngredients.Items;
+            var ingredientsList = new List<Ingredient>();
+            foreach (var selected in selectedIngredients)
+            {
+                var ingredient = (Ingredient)selected;
+                ingredientsList.Add(ingredient);
+
+            }
+
+            var selectedIngredientsSearched = from k in ingredientsList
+                                              where k.Name.Contains(textBoxSearchIngredient.Text)
+                                              select k;
+            listBoxSelectedIngredients.DataSource = selectedIngredientsSearched.ToList();
+            listBoxSelectedIngredients.DisplayMember = "Name";
         }
     }
 }
