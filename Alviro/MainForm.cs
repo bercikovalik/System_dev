@@ -8,7 +8,7 @@ namespace Alviro
         {
             InitializeComponent();
 
-            
+            loadTime();
         }
 
         private void buttonMenuItem1_Click(object sender, EventArgs e)
@@ -55,6 +55,10 @@ namespace Alviro
                 buttonHideMenu.Location = new Point(5, 9);
                 buttonHideMenu.Text = ">";
             }
+        }
+        private void loadTime()
+        {
+            labelDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
 
         

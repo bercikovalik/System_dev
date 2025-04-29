@@ -37,7 +37,7 @@
             buttonMenuItem2 = new Button();
             buttonMenuItem1 = new Button();
             panelLeftInfo = new Panel();
-            label1 = new Label();
+            labelDate = new Label();
             panelMenuHideButton = new Panel();
             panel1 = new Panel();
             panelMain = new Panel();
@@ -143,23 +143,24 @@
             // panelLeftInfo
             // 
             panelLeftInfo.BackColor = Color.FromArgb(35, 54, 46);
-            panelLeftInfo.Controls.Add(label1);
+            panelLeftInfo.Controls.Add(labelDate);
             panelLeftInfo.Dock = DockStyle.Bottom;
             panelLeftInfo.Location = new Point(0, 527);
             panelLeftInfo.Name = "panelLeftInfo";
             panelLeftInfo.Size = new Size(205, 74);
             panelLeftInfo.TabIndex = 0;
             // 
-            // label1
+            // labelDate
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.ForeColor = Color.FromArgb(239, 238, 236);
-            label1.Location = new Point(61, 37);
-            label1.Name = "label1";
-            label1.Size = new Size(81, 32);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            labelDate.AutoSize = true;
+            labelDate.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            labelDate.ForeColor = Color.FromArgb(239, 238, 236);
+            labelDate.Location = new Point(27, 37);
+            labelDate.Name = "labelDate";
+            labelDate.Size = new Size(81, 32);
+            labelDate.TabIndex = 0;
+            labelDate.Text = "label1";
+            labelDate.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panelMenuHideButton
             // 
@@ -224,7 +225,7 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Button buttonMenuItem2;
-        private Label label1;
+        private Label labelDate;
         private Panel panelMenuHideButton;
         private Button buttonHideMenu;
         private Panel panelMain;

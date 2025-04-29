@@ -44,10 +44,23 @@
             buttonRemoveIngredient = new Button();
             textBoxSearchIngredient = new TextBox();
             panel1 = new Panel();
+            panel3 = new Panel();
             label5 = new Label();
             label6 = new Label();
             textBoxSearchSelectedIngredient = new TextBox();
+            label7 = new Label();
+            label8 = new Label();
+            panel2 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            panelBorderMiddle = new Panel();
             panel1.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // textBoxName
@@ -118,7 +131,7 @@
             // 
             // buttonAddRecipe
             // 
-            buttonAddRecipe.Location = new Point(518, 436);
+            buttonAddRecipe.Location = new Point(21, 12);
             buttonAddRecipe.Name = "buttonAddRecipe";
             buttonAddRecipe.Size = new Size(112, 34);
             buttonAddRecipe.TabIndex = 8;
@@ -130,7 +143,7 @@
             // 
             buttonCancel.BackColor = Color.FromArgb(255, 192, 192);
             buttonCancel.FlatStyle = FlatStyle.Flat;
-            buttonCancel.Location = new Point(364, 436);
+            buttonCancel.Location = new Point(364, 12);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(112, 34);
             buttonCancel.TabIndex = 9;
@@ -141,7 +154,7 @@
             // listBoxAllIngredients
             // 
             listBoxAllIngredients.FormattingEnabled = true;
-            listBoxAllIngredients.Location = new Point(824, 124);
+            listBoxAllIngredients.Location = new Point(327, 135);
             listBoxAllIngredients.Name = "listBoxAllIngredients";
             listBoxAllIngredients.Size = new Size(190, 254);
             listBoxAllIngredients.TabIndex = 10;
@@ -150,7 +163,7 @@
             // listBoxSelectedIngredients
             // 
             listBoxSelectedIngredients.FormattingEnabled = true;
-            listBoxSelectedIngredients.Location = new Point(597, 124);
+            listBoxSelectedIngredients.Location = new Point(100, 135);
             listBoxSelectedIngredients.Name = "listBoxSelectedIngredients";
             listBoxSelectedIngredients.Size = new Size(190, 254);
             listBoxSelectedIngredients.TabIndex = 11;
@@ -158,7 +171,7 @@
             // 
             // buttonAddIngredient
             // 
-            buttonAddIngredient.Location = new Point(824, 389);
+            buttonAddIngredient.Location = new Point(327, 400);
             buttonAddIngredient.Name = "buttonAddIngredient";
             buttonAddIngredient.Size = new Size(112, 34);
             buttonAddIngredient.TabIndex = 12;
@@ -168,7 +181,7 @@
             // 
             // buttonRemoveIngredient
             // 
-            buttonRemoveIngredient.Location = new Point(675, 389);
+            buttonRemoveIngredient.Location = new Point(178, 400);
             buttonRemoveIngredient.Name = "buttonRemoveIngredient";
             buttonRemoveIngredient.Size = new Size(112, 34);
             buttonRemoveIngredient.TabIndex = 13;
@@ -178,7 +191,7 @@
             // 
             // textBoxSearchIngredient
             // 
-            textBoxSearchIngredient.Location = new Point(824, 86);
+            textBoxSearchIngredient.Location = new Point(327, 97);
             textBoxSearchIngredient.Name = "textBoxSearchIngredient";
             textBoxSearchIngredient.Size = new Size(190, 31);
             textBoxSearchIngredient.TabIndex = 14;
@@ -186,27 +199,38 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label5);
+            panel1.Controls.Add(panel5);
+            panel1.Controls.Add(panel3);
             panel1.Controls.Add(textBoxImageUrl);
             panel1.Controls.Add(textBoxName);
             panel1.Controls.Add(textBoxDescription);
             panel1.Controls.Add(textBoxInstructions);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(buttonCancel);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label4);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(495, 493);
+            panel1.Size = new Size(495, 510);
             panel1.TabIndex = 15;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(35, 54, 46);
+            panel3.Controls.Add(label5);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(495, 60);
+            panel3.TabIndex = 11;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label5.Location = new Point(163, 18);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(156, 16);
             label5.Name = "label5";
             label5.Size = new Size(168, 32);
             label5.TabIndex = 10;
@@ -216,7 +240,8 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label6.Location = new Point(734, 18);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(231, 16);
             label6.Name = "label6";
             label6.Size = new Size(145, 32);
             label6.TabIndex = 11;
@@ -224,26 +249,96 @@
             // 
             // textBoxSearchSelectedIngredient
             // 
-            textBoxSearchSelectedIngredient.Location = new Point(597, 86);
+            textBoxSearchSelectedIngredient.Location = new Point(100, 97);
             textBoxSearchSelectedIngredient.Name = "textBoxSearchSelectedIngredient";
             textBoxSearchSelectedIngredient.Size = new Size(190, 31);
             textBoxSearchSelectedIngredient.TabIndex = 16;
             textBoxSearchSelectedIngredient.TextChanged += textBoxSearchSelectedIngredient_TextChanged;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label7.Location = new Point(137, 64);
+            label7.Name = "label7";
+            label7.Size = new Size(113, 25);
+            label7.TabIndex = 17;
+            label7.Text = "Kiválasztott";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label8.Location = new Point(376, 64);
+            label8.Name = "label8";
+            label8.Size = new Size(69, 25);
+            label8.TabIndex = 18;
+            label8.Text = "Összes";
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(panel6);
+            panel2.Controls.Add(panel4);
+            panel2.Controls.Add(label8);
+            panel2.Controls.Add(listBoxAllIngredients);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(listBoxSelectedIngredients);
+            panel2.Controls.Add(textBoxSearchSelectedIngredient);
+            panel2.Controls.Add(buttonAddIngredient);
+            panel2.Controls.Add(buttonRemoveIngredient);
+            panel2.Controls.Add(textBoxSearchIngredient);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(495, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(573, 510);
+            panel2.TabIndex = 19;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(35, 54, 46);
+            panel4.Controls.Add(label6);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(573, 60);
+            panel4.TabIndex = 19;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(buttonCancel);
+            panel5.Dock = DockStyle.Bottom;
+            panel5.Location = new Point(0, 452);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(495, 58);
+            panel5.TabIndex = 12;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(buttonAddRecipe);
+            panel6.Dock = DockStyle.Bottom;
+            panel6.Location = new Point(0, 452);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(573, 58);
+            panel6.TabIndex = 20;
+            // 
+            // panelBorderMiddle
+            // 
+            panelBorderMiddle.BackColor = Color.Black;
+            panelBorderMiddle.Dock = DockStyle.Left;
+            panelBorderMiddle.ForeColor = SystemColors.ControlLightLight;
+            panelBorderMiddle.Location = new Point(495, 0);
+            panelBorderMiddle.Name = "panelBorderMiddle";
+            panelBorderMiddle.Size = new Size(1, 510);
+            panelBorderMiddle.TabIndex = 20;
+            // 
             // FormNewRecipe
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1057, 493);
-            Controls.Add(textBoxSearchSelectedIngredient);
-            Controls.Add(label6);
+            ClientSize = new Size(1068, 510);
+            Controls.Add(panelBorderMiddle);
+            Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(textBoxSearchIngredient);
-            Controls.Add(buttonRemoveIngredient);
-            Controls.Add(buttonAddIngredient);
-            Controls.Add(listBoxSelectedIngredients);
-            Controls.Add(listBoxAllIngredients);
-            Controls.Add(buttonAddRecipe);
             Name = "FormNewRecipe";
             ShowIcon = false;
             ShowInTaskbar = false;
@@ -251,8 +346,15 @@
             Text = "Új recept hozzáadása";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel6.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -276,5 +378,13 @@
         private Label label5;
         private Label label6;
         private TextBox textBoxSearchSelectedIngredient;
+        private Label label7;
+        private Label label8;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
+        private Panel panel6;
+        private Panel panelBorderMiddle;
     }
 }

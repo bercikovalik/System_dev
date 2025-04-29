@@ -191,5 +191,7 @@ namespace Alviro
             listBoxSelectedIngredients.DataSource = selectedIngredientsSearched.ToList();
             listBoxSelectedIngredients.DisplayMember = "Name";
         }
+
+        
     }
 }

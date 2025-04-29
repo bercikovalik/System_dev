@@ -30,6 +30,7 @@ namespace Alviro
             panel4.Visible = false;
             await Task.Delay(50); // UI refresh
 
+
             var data = await Task.Run(() => loadRecipes());
 
             PopulateUI(data);
@@ -40,6 +41,7 @@ namespace Alviro
         }
         private List<Recipe> loadRecipes()
         {
+            
             var AllRecipe = from k in dbContext.Recipes
                             where k.Name.Contains(textBoxSearch.Text)
                             select k;
