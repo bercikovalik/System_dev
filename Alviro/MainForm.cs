@@ -16,7 +16,7 @@ namespace Alviro
             panelMain.Controls.Clear();
             buttonMenuItem2.BackColor = Color.FromArgb(104, 123, 82);
             buttonMenuItem1.BackColor = Color.FromArgb(37, 173, 82);
-            
+
 
 
             UserControlAllRecipe userControlAllRecipe = new UserControlAllRecipe();
@@ -24,7 +24,7 @@ namespace Alviro
 
 
             panelMain.Controls.Add(userControlAllRecipe);
-            
+
         }
 
         private void buttonMenuItem2_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace Alviro
             panelMain.Controls.Clear();
             buttonMenuItem1.BackColor = Color.FromArgb(104, 123, 82);
             buttonMenuItem2.BackColor = Color.FromArgb(37, 173, 82);
-            
+
 
             UserControlIngredients userControlIngredients = new UserControlIngredients();
             userControlIngredients.Dock = DockStyle.Fill;
@@ -61,6 +61,13 @@ namespace Alviro
             labelDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
 
-        
+        private void buttonRecipeUC_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            UserControlRecipeAllNew userControlRecipeTest = new UserControlRecipeAllNew();
+            userControlRecipeTest.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(userControlRecipeTest);
+
+        }
     }
 }

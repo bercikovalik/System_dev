@@ -41,6 +41,7 @@
             panelMenuHideButton = new Panel();
             panel1 = new Panel();
             panelMain = new Panel();
+            buttonRecipeUC = new Button();
             panelTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -100,6 +101,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(86, 99, 111);
+            panelMenu.Controls.Add(buttonRecipeUC);
             panelMenu.Controls.Add(buttonMenuItem2);
             panelMenu.Controls.Add(buttonMenuItem1);
             panelMenu.Controls.Add(panelLeftInfo);
@@ -190,6 +192,21 @@
             panelMain.Size = new Size(933, 601);
             panelMain.TabIndex = 3;
             // 
+            // buttonRecipeUC
+            // 
+            buttonRecipeUC.Anchor = AnchorStyles.Top;
+            buttonRecipeUC.BackColor = Color.FromArgb(104, 123, 82);
+            buttonRecipeUC.FlatStyle = FlatStyle.Popup;
+            buttonRecipeUC.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            buttonRecipeUC.ForeColor = Color.White;
+            buttonRecipeUC.Location = new Point(0, 137);
+            buttonRecipeUC.Name = "buttonRecipeUC";
+            buttonRecipeUC.Size = new Size(205, 58);
+            buttonRecipeUC.TabIndex = 3;
+            buttonRecipeUC.Text = "ReceptUC";
+            buttonRecipeUC.UseVisualStyleBackColor = false;
+            buttonRecipeUC.Click += buttonRecipeUC_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -230,5 +247,6 @@
         private Button buttonHideMenu;
         private Panel panelMain;
         private Panel panel1;
+        private Button buttonRecipeUC;
     }
 }
