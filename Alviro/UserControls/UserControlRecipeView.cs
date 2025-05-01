@@ -30,7 +30,7 @@ namespace Alviro
 
             RecipeDTO = RecipeUsed;
 
-
+            
 
             label1.Text = RecipeDTO.Name;
             TimeZoneInfo cetZone = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");

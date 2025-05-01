@@ -62,15 +62,14 @@
             // 
             // panelTableHead
             // 
-            panelTableHead.BorderStyle = BorderStyle.FixedSingle;
             panelTableHead.Controls.Add(panel4);
             panelTableHead.Controls.Add(panel3);
             panelTableHead.Controls.Add(panel2);
             panelTableHead.Dock = DockStyle.Bottom;
-            panelTableHead.Location = new Point(0, 42);
-            panelTableHead.MinimumSize = new Size(700, 91);
+            panelTableHead.Location = new Point(0, 46);
+            panelTableHead.MinimumSize = new Size(850, 58);
             panelTableHead.Name = "panelTableHead";
-            panelTableHead.Size = new Size(933, 91);
+            panelTableHead.Size = new Size(933, 87);
             panelTableHead.TabIndex = 2;
             // 
             // panel4
@@ -80,7 +79,7 @@
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(383, 89);
+            panel4.Size = new Size(385, 87);
             panel4.TabIndex = 10;
             // 
             // label2
@@ -89,7 +88,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(12, 27);
+            label2.Location = new Point(12, 26);
             label2.Name = "label2";
             label2.Size = new Size(136, 32);
             label2.TabIndex = 0;
@@ -99,9 +98,9 @@
             // 
             panel3.Controls.Add(labelLastModified);
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(383, 0);
+            panel3.Location = new Point(385, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(283, 89);
+            panel3.Size = new Size(283, 87);
             panel3.TabIndex = 9;
             // 
             // labelLastModified
@@ -110,7 +109,7 @@
             labelLastModified.AutoSize = true;
             labelLastModified.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 238);
             labelLastModified.ForeColor = Color.White;
-            labelLastModified.Location = new Point(0, 29);
+            labelLastModified.Location = new Point(0, 28);
             labelLastModified.MaximumSize = new Size(220, 40);
             labelLastModified.Name = "labelLastModified";
             labelLastModified.Size = new Size(195, 30);
@@ -120,9 +119,9 @@
             // panel2
             // 
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(666, 0);
+            panel2.Location = new Point(668, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(265, 89);
+            panel2.Size = new Size(265, 87);
             panel2.TabIndex = 8;
             // 
             // label1
