@@ -60,8 +60,11 @@ namespace Alviro
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show($"Biztonsa törölni szeretnéd a(z) {RecipeDTO.Name} receptet?", "Törlés megerősítése", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.OK)
+            FormConfrimDialog formConfrimDialog = new FormConfrimDialog();
+            formConfrimDialog.Text = "Recept törlése";
+            formConfrimDialog.labelText.Text = $"Biztosan törölni szeretnéd a(z) {RecipeDTO.Name} receptet?";
+            DialogResult dialogResult = formConfrimDialog.ShowDialog(this);
+            if (dialogResult == DialogResult.Yes)
             {
                 dbContext.Remove(RecipeDTO);
                 try

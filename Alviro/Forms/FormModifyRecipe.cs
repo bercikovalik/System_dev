@@ -75,12 +75,11 @@ namespace Alviro
                 addedText + "\n\n" +
                 "Biztosan kilép a módosítások elvégzése nélkül?";
 
-            DialogResult result = MessageBox.Show(
-                message,
-                "Módosítások visszavonása",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
+            FormConfrimDialog formConfrimDialog = new FormConfrimDialog();
+            formConfrimDialog.Text = "Módosítások visszavonása";
+            formConfrimDialog.labelText.Text = message;
+            var result = formConfrimDialog.ShowDialog(this);
+
 
 
             if (result == DialogResult.No)
