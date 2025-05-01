@@ -159,10 +159,10 @@
             // 
             pictureBoxLoading.Anchor = AnchorStyles.None;
             pictureBoxLoading.Image = (Image)resources.GetObject("pictureBoxLoading.Image");
-            pictureBoxLoading.Location = new Point(399, 141);
-            pictureBoxLoading.MinimumSize = new Size(120, 120);
+            pictureBoxLoading.Location = new Point(405, 177);
+            pictureBoxLoading.MinimumSize = new Size(80, 80);
             pictureBoxLoading.Name = "pictureBoxLoading";
-            pictureBoxLoading.Size = new Size(120, 120);
+            pictureBoxLoading.Size = new Size(80, 80);
             pictureBoxLoading.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLoading.TabIndex = 6;
             pictureBoxLoading.TabStop = false;
