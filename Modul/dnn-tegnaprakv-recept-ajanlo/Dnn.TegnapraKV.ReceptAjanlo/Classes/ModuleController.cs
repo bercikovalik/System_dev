@@ -23,6 +23,22 @@ namespace dnn.tegnaprakv.Dnn.TegnapraKV.ReceptAjanlo.Classes
             return Request.CreateResponse(HttpStatusCode.OK, "Hello World!");
         }
 
+        [AllowAnonymous]
+        [HttpGet]
+        public HttpResponseMessage GetRecipes(string RewriteURLs)
+        {
+            try
+            {
+                var service = new RecipeService();
+                var tasks = service.GetRecipes(RewriteURLs).ToJson();
+
+                return Request.CreateResponse(HttpStatusCode.OK, tasks);
+            }
+            catch (Exception exc)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, exc);
+            }
+        }
 
 
     }
