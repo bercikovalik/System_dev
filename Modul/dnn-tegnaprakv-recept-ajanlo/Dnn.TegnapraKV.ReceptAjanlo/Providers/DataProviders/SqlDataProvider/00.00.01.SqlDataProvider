@@ -1,0 +1,152 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/************************************************************/
+/*****              RECEPTEK TÁBLA A MODULHOZ           *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/************************************************************/
+/*****            INGREDIENTS TÁBLA                     *****/
+/************************************************************/
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{objectQualifier}INGREDIENTS')
+BEGIN
+    CREATE TABLE {databaseOwner}[{objectQualifier}INGREDIENTS] (
+        IngredientID INT PRIMARY KEY IDENTITY(1,1),
+        Name NVARCHAR(255) NOT NULL
+    );
+END
+
+
+/************************************************************/
+/*****            RECIPES TÁBLA                         *****/
+/************************************************************/
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{objectQualifier}RECIPES')
+BEGIN
+    CREATE TABLE {databaseOwner}[{objectQualifier}RECIPES] (
+        RecipeID INT PRIMARY KEY IDENTITY(1,1),
+        Name NVARCHAR(255) NOT NULL,
+        Description NVARCHAR(MAX),
+        Instructions NVARCHAR(MAX),
+        LastModified DATETIME NOT NULL DEFAULT GETUTCDATE(),
+        ImageUrl NVARCHAR(2083)
+    );
+END
+
+
+/************************************************************/
+/*****            RECIPEINGREDIENTS TÁBLA               *****/
+/************************************************************/
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{objectQualifier}RECIPEINGREDIENTS')
+BEGIN
+    CREATE TABLE {databaseOwner}[{objectQualifier}RECIPEINGREDIENTS] (
+        RecipeIngredientID INT PRIMARY KEY IDENTITY(1,1),
+        RecipeID INT NOT NULL,
+        IngredientID INT NOT NULL,
+        Quantity NVARCHAR(255) NOT NULL,
+
+        CONSTRAINT FK_{objectQualifier}RecipeIngredients_Recipe 
+            FOREIGN KEY (RecipeID) 
+            REFERENCES {databaseOwner}[{objectQualifier}RECIPES](RecipeID),
+
+        CONSTRAINT FK_{objectQualifier}RecipeIngredients_Ingredient 
+            FOREIGN KEY (IngredientID) 
+            REFERENCES {databaseOwner}[{objectQualifier}INGREDIENTS](IngredientID)
+    );
+END
+
+
+/************************************************************/
+/*****            INGREDIENTPRODUCTS TÁBLA              *****/
+/************************************************************/
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{objectQualifier}INGREDIENTPRODUCTS')
+BEGIN
+    CREATE TABLE {databaseOwner}[{objectQualifier}INGREDIENTPRODUCTS] (
+        IngredientProductID INT PRIMARY KEY IDENTITY(1,1),
+        IngredientID INT NOT NULL,
+        ProductID INT NOT NULL,
+        RewriteUrl NVARCHAR(255),
+
+        CONSTRAINT FK_{objectQualifier}IngredientProducts_Ingredient 
+            FOREIGN KEY (IngredientID) 
+            REFERENCES {databaseOwner}[{objectQualifier}INGREDIENTS](IngredientID)
+    );
+END
+
+
+
+
+/************************************************************/
+/*****              GETRECIPES STORED PROCEDURE         *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+IF NOT EXISTS (
+    SELECT * 
+    FROM sys.objects 
+    WHERE object_id = OBJECT_ID(N'[dbo].[GetTop5RecipesByProducts]') 
+      AND type IN (N'P', N'PC')
+)
+BEGIN
+    EXEC('
+    CREATE PROCEDURE [dbo].[GetTop5RecipesByProducts]
+        @RewriteUrls NVARCHAR(MAX)
+    AS
+    BEGIN
+        SET NOCOUNT ON;
+
+        -- Kosár termékek ideiglenes táblába
+        DECLARE @CartItems TABLE (RewriteUrl NVARCHAR(255));
+
+        INSERT INTO @CartItems (RewriteUrl)
+        SELECT value
+        FROM STRING_SPLIT(@RewriteUrls, '','');
+
+        -- Hozzávaló egyezések kiszámolása
+        WITH MatchedIngredients AS (
+            SELECT DISTINCT
+                ri.RecipeID,
+                ri.IngredientID
+            FROM RECIPEINGREDIENTS ri
+            INNER JOIN INGREDIENTPRODUCTS ip ON ri.IngredientID = ip.IngredientID
+            INNER JOIN @CartItems ci ON ip.RewriteUrl = ci.RewriteUrl
+        )
+        SELECT TOP 5
+            r.RecipeID,
+            r.Name AS RecipeName,
+            r.ImageUrl,
+            COUNT(DISTINCT mi.IngredientID) AS MatchCount
+        FROM MatchedIngredients mi
+        INNER JOIN RECIPES r ON mi.RecipeID = r.RecipeID
+        GROUP BY r.RecipeID, r.Name, r.ImageUrl
+        ORDER BY MatchCount DESC, r.Name ASC;
+    END
+    ')
+END
+
+
+
+
+
+
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

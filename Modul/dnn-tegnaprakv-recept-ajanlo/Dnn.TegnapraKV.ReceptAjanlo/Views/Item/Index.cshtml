@@ -1,0 +1,53 @@
+﻿<style>
+    #recipe-suggestions {
+        background-color: fuchsia;
+    }
+
+    .recipe-image {
+    }
+</style>
+
+
+
+
+<h1>Recept ajánlások</h1>
+
+<div id="recipe-suggestions" style="display: flex; gap: 20px; margin: 0 auto;justify-content:space-evenly">
+    <div>RECEPT</div>
+    <div>RECEPT</div>
+    <div>RECEPT</div>
+    <div>RECEPT</div>
+    <div>RECEPT</div>
+</div>
+
+<script type="text/javascript">
+
+
+
+    const cartItems = [];
+
+    document.querySelectorAll('.hc-cart table tr').forEach(row => {
+        const linkEl = row.querySelector('a');
+        const nameEl = row.querySelector('h6');
+        const quantityEl = row.querySelector('input[name="lineitemquantity"]');
+        const idEl = row.querySelector('input[name="lineitemid"]');
+
+        if (linkEl && nameEl && quantityEl && idEl) {
+            const url = linkEl.getAttribute('href');
+            let rewriteUrl = '';
+
+            if (url) {
+
+                // Pl.: '/blue-bracelet' -> 'blue-bracelet'
+                const cleanUrl = url.split('?')[0];
+                rewriteUrl = cleanUrl.split('/').filter(Boolean).pop();
+
+            }
+            const item = rewriteUrl.trim();
+            cartItems.push(item);
+        }
+    });
+
+    console.log("Kosár tartalma:", cartItems);
+    
+</script>
