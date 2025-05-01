@@ -41,11 +41,18 @@ namespace Alviro
         }
         private List<Recipe> loadRecipes()
         {
-            
-            var AllRecipe = from k in dbContext.Recipes
-                            where k.Name.Contains(textBoxSearch.Text)
-                            select k;
-            return AllRecipe.ToList();
+
+            try
+            {
+                var AllRecipe = from k in dbContext.Recipes
+                                where k.Name.Contains(textBoxSearch.Text)
+                                select k;
+                return AllRecipe.ToList();
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
 
         }
         private void PopulateUI(List<Recipe> data)

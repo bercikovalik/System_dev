@@ -19,6 +19,8 @@ namespace Alviro
         public Recipe RecipeDTO = new Recipe();
 
         public event EventHandler ButtonDeleteClicked;
+        public event EventHandler ButtonModifyClicked;
+
 
 
 
@@ -31,28 +33,49 @@ namespace Alviro
 
 
             label1.Text = RecipeDTO.Name;
-            labelLastModified.Text = RecipeDTO.Lastmodified.ToString();
+            TimeZoneInfo cetZone = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
+            DateTime utcTime = RecipeDTO.Lastmodified;
+            DateTime cetTime = TimeZoneInfo.ConvertTimeFromUtc(utcTime, cetZone);
+            labelLastModified.Text = cetTime.ToString("yyyy-MM-dd HH:mm:ss");
 
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
             FormModifyRecipe formModifyRecipe = new FormModifyRecipe(RecipeDTO);
+            if (formModifyRecipe.ShowDialog() == DialogResult.OK)
+            {
+                // A módosítás sikeres volt, frissítsd a RecipeDTO-t
+                RecipeDTO = formModifyRecipe.RecipeDTO;
+                label1.Text = RecipeDTO.Name;
+                TimeZoneInfo cetZone = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
+                DateTime utcTime = RecipeDTO.Lastmodified;
+                DateTime cetTime = TimeZoneInfo.ConvertTimeFromUtc(utcTime, cetZone);
+                labelLastModified.Text = cetTime.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+            
+
+
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            //dbContext.Remove(RecipeDTO);
-            try
+            DialogResult dialogResult = MessageBox.Show($"Biztonsa törölni szeretnéd a(z) {RecipeDTO.Name} receptet?", "Törlés megerősítése", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.OK)
             {
-                //dbContext.SaveChanges();
-                ButtonDeleteClicked?.Invoke(this, EventArgs.Empty);
+                dbContext.Remove(RecipeDTO);
+                try
+                {
+                    dbContext.SaveChanges();
+                    ButtonDeleteClicked?.Invoke(this, EventArgs.Empty);
 
+                }
+                catch (System.Exception)
+                {
+                    MessageBox.Show("A termék törlése nem sikerült", "Sikertelen törlés", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (System.Exception)
-            {
-                MessageBox.Show("A termékk törlése nem sikerült", "Sikertelen törlés", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
             
         }
 

@@ -102,12 +102,14 @@
             // 
             // buttonAddRecipe
             // 
+            buttonAddRecipe.DialogResult = DialogResult.OK;
             buttonAddRecipe.Location = new Point(21, 12);
             buttonAddRecipe.Name = "buttonAddRecipe";
             buttonAddRecipe.Size = new Size(112, 34);
             buttonAddRecipe.TabIndex = 8;
             buttonAddRecipe.Text = "Mentés";
             buttonAddRecipe.UseVisualStyleBackColor = true;
+            buttonAddRecipe.Click += buttonAddRecipe_Click_1;
             // 
             // panel4
             // 
@@ -172,7 +174,6 @@
             textBoxSearchSelectedIngredient.Name = "textBoxSearchSelectedIngredient";
             textBoxSearchSelectedIngredient.Size = new Size(190, 31);
             textBoxSearchSelectedIngredient.TabIndex = 16;
-            textBoxSearchSelectedIngredient.Visible = false;
             textBoxSearchSelectedIngredient.TextChanged += textBoxSearchSelectedIngredient_TextChanged;
             // 
             // buttonAddIngredient
@@ -193,6 +194,7 @@
             buttonRemoveIngredient.TabIndex = 13;
             buttonRemoveIngredient.Text = "Eltávolít";
             buttonRemoveIngredient.UseVisualStyleBackColor = true;
+            buttonRemoveIngredient.Click += buttonRemoveIngredient_Click;
             // 
             // textBoxSearchIngredient
             // 

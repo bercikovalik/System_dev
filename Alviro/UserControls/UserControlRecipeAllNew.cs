@@ -8,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Alviro
 {
-    
+
     public partial class UserControlRecipeAllNew : UserControl
     {
         Dnn972Context dbContext = new Dnn972Context();
@@ -22,35 +23,72 @@ namespace Alviro
             InitializeComponent();
 
 
-            loadRecipes();
+            loadRecipesAsync();
 
-            
+
+        }
+        private List<Recipe> loadRecipes()
+        {
+
+            var AllRecipe = from k in dbContext.Recipes
+                            where k.Name.Contains(textBoxSearch.Text)
+                            select k;
+            return AllRecipe.ToList();
+
         }
 
-        private void loadRecipes()
+        private void loadRecipesSync()
         {
-            //var AllRecipes = from k in dbContext.Recipes
-            //                 select k;
-
-            List<Recipe> allRecipes = new List<Recipe>();
-            for (int k = 0; k < 10; k++)
-            {
-                Recipe recipe = new Recipe();
-                recipe.Name = k.ToString();
-                recipe.Lastmodified = DateTime.Now;
-                allRecipes.Add(recipe);
-            }
-
             panelRecipeViewer.Controls.Clear();
+
+            var AllRecipe = from k in dbContext.Recipes
+                            where k.Name.Contains(textBoxSearch.Text)
+                            select k;
+            if(AllRecipe.Count() == 0)
+            {
+                
+                UserControlNoResult userControlNoResult = new UserControlNoResult();
+                userControlNoResult.Dock = DockStyle.Top;
+                panelRecipeViewer.Controls.Add(userControlNoResult);
+                return;
+            }
             int i = 0;
-            foreach (var allRecipe in allRecipes)
+            foreach (var recipe in AllRecipe)
             {
                 string ucName = $"userControlRecipeView{i + 1}";
 
-                var userControlRecipeView = new UserControlRecipeView(allRecipe);
+                var userControlRecipeView = new UserControlRecipeView(recipe);
                 userControlRecipeView.Name = ucName;
                 userControlRecipeView.Top = i * (userControlRecipeView.Height + 10);
                 userControlRecipeView.Left = 0;
+                userControlRecipeView.Dock = DockStyle.Top;
+
+                // Feliratkozás az eseményre
+                userControlRecipeView.ButtonDeleteClicked += UserControlRecipeView_ButtonDeleteClicked;
+                userControlRecipeView.ButtonModifyClicked += UserControlRecipeView_ButtonModifyClicked;
+
+
+                panelRecipeViewer.Controls.Add(userControlRecipeView);
+                i++;
+            }
+        }
+
+        private void populateUi(List<Recipe> data)
+        {
+            
+
+
+            panelRecipeViewer.Controls.Clear();
+            int i = 0;
+            foreach (var recipe in data)
+            {
+                string ucName = $"userControlRecipeView{i + 1}";
+
+                var userControlRecipeView = new UserControlRecipeView(recipe);
+                userControlRecipeView.Name = ucName;
+                userControlRecipeView.Top = i * (userControlRecipeView.Height + 10);
+                userControlRecipeView.Left = 0;
+                userControlRecipeView.Dock = DockStyle.Top;
 
                 // Feliratkozás az eseményre
                 userControlRecipeView.ButtonDeleteClicked += UserControlRecipeView_ButtonDeleteClicked;
@@ -62,18 +100,40 @@ namespace Alviro
 
 
         }
+
+        private async void loadRecipesAsync()
+        {
+            pictureBoxLoading.Visible = true;
+            
+            await Task.Delay(50); // UI refresh
+
+
+            var data = await Task.Run(() => loadRecipes());
+
+            populateUi(data);
+
+            pictureBoxLoading.Visible = false;
+            
+        }
+
         private void UserControlRecipeView_ButtonDeleteClicked(object sender, EventArgs e)
         {
             var clickedUC = sender as UserControlRecipeView;
             if (clickedUC != null)
             {
-                MessageBox.Show($"Törlés kérése: {clickedUC.Name}");
 
-                // Példa: eltávolítás a panelről
                 panelRecipeViewer.Controls.Remove(clickedUC);
 
-                loadRecipes();
             }
+        }
+        private void UserControlRecipeView_ButtonModifyClicked(object sender, EventArgs e)
+        {
+            loadRecipesSync();
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            loadRecipesSync();
         }
     }
 }
