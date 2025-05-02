@@ -12,7 +12,7 @@ namespace Dnn.TegnapraKV.Dnn.TegnapraKV.KisegitoModul.Classes
 
         public IList<RecipeDetail> GetRecipeDetail(int RecipeID)
         {
-            return CBO.FillCollection<RecipeDetail>(DataProvider.Instance().ExecuteReader("Teszt", RecipeID));
+            return CBO.FillCollection<RecipeDetail>(DataProvider.Instance().ExecuteReader("GetRecipeDetails", RecipeID));
         }
 
 
