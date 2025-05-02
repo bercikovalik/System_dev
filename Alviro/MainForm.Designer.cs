@@ -87,7 +87,7 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(258, 656);
+            panelMenu.Size = new Size(258, 867);
             panelMenu.TabIndex = 1;
             // 
             // panelMenuItem3
@@ -226,7 +226,7 @@
             panelLeftInfo.BackColor = Color.FromArgb(29, 55, 46);
             panelLeftInfo.Controls.Add(labelDate);
             panelLeftInfo.Dock = DockStyle.Bottom;
-            panelLeftInfo.Location = new Point(0, 582);
+            panelLeftInfo.Location = new Point(0, 793);
             panelLeftInfo.Name = "panelLeftInfo";
             panelLeftInfo.Size = new Size(258, 74);
             panelLeftInfo.TabIndex = 0;
@@ -267,7 +267,7 @@
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(258, 0);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(938, 656);
+            panelMain.Size = new Size(1554, 867);
             panelMain.TabIndex = 3;
             // 
             // pictureBoxArrowLeft
@@ -288,7 +288,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1196, 656);
+            ClientSize = new Size(1812, 867);
             Controls.Add(panelMain);
             Controls.Add(panelMenu);
             ForeColor = SystemColors.ControlText;

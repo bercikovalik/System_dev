@@ -52,8 +52,10 @@ namespace Alviro
                 DateTime utcTime = RecipeDTO.Lastmodified;
                 DateTime cetTime = TimeZoneInfo.ConvertTimeFromUtc(utcTime, cetZone);
                 labelLastModified.Text = cetTime.ToString("yyyy-MM-dd HH:mm:ss");
+                ButtonModifyClicked?.Invoke(this, EventArgs.Empty);
+
             }
-            
+
 
 
         }

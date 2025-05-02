@@ -25,6 +25,14 @@ namespace Alviro
 
             loadRecipesAsync();
 
+            comboBoxOrder.Items.AddRange(new string[] {
+                "Alapértelmezett",
+                "Név (A-Z)",
+                "Név (Z-A)",
+                "Utolsó módosítás (legújabb elöl)",
+                "Utolsó módosítás (legrégebbi elöl)"
+            });
+
 
         }
         private List<Recipe> loadRecipes()
@@ -44,13 +52,35 @@ namespace Alviro
             var AllRecipe = from k in dbContext.Recipes
                             where k.Name.Contains(textBoxSearch.Text)
                             select k;
-            if(AllRecipe.Count() == 0)
+            if (AllRecipe.Count() == 0)
             {
-                
+
                 UserControlNoResult userControlNoResult = new UserControlNoResult();
                 userControlNoResult.Dock = DockStyle.Top;
                 panelRecipeViewer.Controls.Add(userControlNoResult);
                 return;
+            }
+            // Order based on combobox
+            if (comboBoxOrder.SelectedIndex == 0)
+            {
+                AllRecipe = AllRecipe.OrderBy(x => x.Recipeid);
+            }
+            else if (comboBoxOrder.SelectedIndex == 2)
+            {
+                AllRecipe = AllRecipe.OrderBy(x => x.Name.ToLower());
+
+            }
+            else if (comboBoxOrder.SelectedIndex == 1)
+            {
+                AllRecipe = AllRecipe.OrderByDescending(x => x.Name.ToLower());
+            }
+            else if (comboBoxOrder.SelectedIndex == 3)
+            {
+                AllRecipe = AllRecipe.OrderBy(x => x.Lastmodified);
+            }
+            else if (comboBoxOrder.SelectedIndex == 4)
+            {
+                AllRecipe = AllRecipe.OrderByDescending(x => x.Lastmodified);
             }
             int i = 0;
             foreach (var recipe in AllRecipe)
@@ -75,7 +105,7 @@ namespace Alviro
 
         private void populateUi(List<Recipe> data)
         {
-            
+
 
 
             panelRecipeViewer.Controls.Clear();
@@ -104,16 +134,18 @@ namespace Alviro
         private async void loadRecipesAsync()
         {
             pictureBoxLoading.Visible = true;
-            
+
             await Task.Delay(50); // UI refresh
 
 
             var data = await Task.Run(() => loadRecipes());
 
             populateUi(data);
+            comboBoxOrder.SelectedIndex = 0;
+
 
             pictureBoxLoading.Visible = false;
-            
+
         }
 
         private void UserControlRecipeView_ButtonDeleteClicked(object sender, EventArgs e)
@@ -132,6 +164,24 @@ namespace Alviro
         }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            loadRecipesSync();
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            loadRecipesSync();
+        }
+
+        private void buttonAddNewRecipe_Click(object sender, EventArgs e)
+        {
+            FormNewRecipe formNewRecipe = new FormNewRecipe();
+            formNewRecipe.ShowDialog();
+            loadRecipesSync();
+
+        }
+
+        private void comboBoxOrder_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadRecipesSync();
         }
