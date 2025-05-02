@@ -104,6 +104,7 @@
             // 
             // panel4
             // 
+            panel4.BackColor = Color.FromArgb(86, 99, 111);
             panel4.Controls.Add(label1);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(0, 0);
@@ -113,6 +114,7 @@
             // 
             // panel3
             // 
+            panel3.BackColor = Color.FromArgb(86, 99, 111);
             panel3.Controls.Add(labelLastModified);
             panel3.Dock = DockStyle.Right;
             panel3.Location = new Point(374, 0);
@@ -122,6 +124,7 @@
             // 
             // panel2
             // 
+            panel2.BackColor = Color.FromArgb(86, 99, 111);
             panel2.Controls.Add(buttonDelete);
             panel2.Controls.Add(buttonModify);
             panel2.Dock = DockStyle.Right;
@@ -134,7 +137,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(35, 54, 46);
+            BackColor = Color.White;
             Controls.Add(panel1);
             MinimumSize = new Size(700, 91);
             Name = "UserControlRecipeView";

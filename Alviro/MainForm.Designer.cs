@@ -261,7 +261,7 @@
             // 
             // panelMain
             // 
-            panelMain.BackColor = Color.Silver;
+            panelMain.BackColor = Color.FromArgb(104, 123, 82);
             panelMain.Controls.Add(pictureBoxRightArrow);
             panelMain.Controls.Add(pictureBoxArrowLeft);
             panelMain.Dock = DockStyle.Fill;
