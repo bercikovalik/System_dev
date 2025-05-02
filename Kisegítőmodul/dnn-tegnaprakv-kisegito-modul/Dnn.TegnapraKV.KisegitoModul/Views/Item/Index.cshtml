@@ -76,9 +76,10 @@
 
     <div class="recipe-instructions-section">
         <h3>Elkészítési utasítások</h3>
-        <ol id="instruction-list">
+        <p id="instruction-list">
             <!-- Utasítások ide kerülnek -->
-        </ol>
+
+        </p>
     </div>
 </div>
 
@@ -92,10 +93,24 @@
     console.log("Lekért recept ID:", id); // Tesztelés
 
 
+    $(function () {
+       
 
+        $.getJSON(
+            "/DesktopModules/Dnn.TegnapraKV.KisegitoModul/API/Helper/GetRecipeDetail?RecipeID=" + id,
+            function (data) {
+                console.log("Betöltött recept:", data);
+                var recipe = jQuery.parseJSON(data);
+               
+                $('#recipe-title').text(recipe.Name);
 
-
-
-
+                
+                $('#recipe-description').text(recipe.Description);
+                $('#recipe-image').attr('src', recipe.ImageUrl);
+                $('#instruction-list').text(recipe.Instructions);
+            }
+        );
+       
+    });
 
 </script>

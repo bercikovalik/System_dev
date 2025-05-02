@@ -10,9 +10,9 @@ namespace Dnn.TegnapraKV.Dnn.TegnapraKV.KisegitoModul.Classes
     public class RecipeDetailService
     {
 
-        public IList<RecipeDetail> GetRecipeDetail(int RecipeID)
+        public RecipeDetail GetRecipeDetail(int RecipeID)
         {
-            return CBO.FillCollection<RecipeDetail>(DataProvider.Instance().ExecuteReader("GetRecipeDetails", RecipeID));
+            return CBO.FillObject<RecipeDetail>(DataProvider.Instance().ExecuteReader("GetRecipeDetails", RecipeID));
         }
 
 
