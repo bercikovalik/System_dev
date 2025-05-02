@@ -1,1 +1,83 @@
-﻿<h1>Hello World!</h1>
+﻿<style>
+    .recipe-details-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: #f8f9f5;
+        border-radius: 16px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        font-family: 'Segoe UI', sans-serif;
+        color: #2c2c2c;
+    }
+
+        .recipe-details-container h2 {
+            border-bottom: 2px solid #2c2c2c;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+    .recipe-header {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .recipe-image img {
+        max-width: 400px;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .recipe-ingredients {
+        flex: 1;
+    }
+
+        .recipe-ingredients ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+    .recipe-description-section,
+    .recipe-instructions-section {
+        margin-top: 30px;
+    }
+
+        .recipe-instructions-section ol {
+            padding-left: 20px;
+        }
+</style>
+
+
+
+<div class="recipe-details-container">
+    <h2 id="recipe-title">Recept neve</h2>
+
+    <div class="recipe-header">
+        <div class="recipe-image">
+            <img id="recipe-image" src="" alt="Recept képe" />
+        </div>
+
+        <div class="recipe-ingredients">
+            <h3>Hozzávalók</h3>
+            <ul id="ingredient-list">
+                <!-- Hozzávalók listája ide kerül -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="recipe-description-section">
+        <h3>Leírás</h3>
+        <p id="recipe-description">
+            <!-- Recept leírása ide kerül -->
+        </p>
+    </div>
+
+    <div class="recipe-instructions-section">
+        <h3>Elkészítési utasítások</h3>
+        <ol id="instruction-list">
+            <!-- Utasítások ide kerülnek -->
+        </ol>
+    </div>
+</div>
