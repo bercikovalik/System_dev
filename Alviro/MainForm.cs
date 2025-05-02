@@ -10,6 +10,13 @@ namespace Alviro
             InitializeComponent();
 
             loadTime();
+
+            UserControlCheckConnection userControlCheckConnection = new UserControlCheckConnection();
+            userControlCheckConnection.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(userControlCheckConnection);
+            pictureBoxArrowLeft.BringToFront();
+            pictureBoxRightArrow.BringToFront();
+
         }
 
 

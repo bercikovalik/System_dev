@@ -28,38 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlOverview));
-            pictureBoxRightArrow = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxRightArrow).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBoxRightArrow
-            // 
-            pictureBoxRightArrow.BackColor = Color.Transparent;
-            pictureBoxRightArrow.Cursor = Cursors.Hand;
-            pictureBoxRightArrow.Enabled = false;
-            pictureBoxRightArrow.Image = (Image)resources.GetObject("pictureBoxRightArrow.Image");
-            pictureBoxRightArrow.Location = new Point(3, 5);
-            pictureBoxRightArrow.Name = "pictureBoxRightArrow";
-            pictureBoxRightArrow.Size = new Size(45, 45);
-            pictureBoxRightArrow.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxRightArrow.TabIndex = 2;
-            pictureBoxRightArrow.TabStop = false;
-            pictureBoxRightArrow.Visible = false;
             // 
             // UserControlOverview
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(pictureBoxRightArrow);
+            BackColor = Color.White;
             Name = "UserControlOverview";
             Size = new Size(938, 656);
-            ((System.ComponentModel.ISupportInitialize)pictureBoxRightArrow).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private PictureBox pictureBoxRightArrow;
     }
 }

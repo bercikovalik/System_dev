@@ -40,20 +40,17 @@
             textBoxSearch = new TextBox();
             panelRecipeViewer = new Panel();
             pictureBoxLoading = new PictureBox();
-            pictureBoxRightArrow = new PictureBox();
             panelHeader.SuspendLayout();
             panelTableHead.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             panelRecipeViewer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLoading).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxRightArrow).BeginInit();
             SuspendLayout();
             // 
             // panelHeader
             // 
             panelHeader.BackColor = Color.FromArgb(104, 123, 82);
-            panelHeader.Controls.Add(pictureBoxRightArrow);
             panelHeader.Controls.Add(panelTableHead);
             panelHeader.Controls.Add(label1);
             panelHeader.Controls.Add(textBoxSearch);
@@ -77,7 +74,7 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.FromArgb(104, 123, 80);
+            panel4.BackColor = Color.FromArgb(51, 51, 51);
             panel4.Controls.Add(label2);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(0, 0);
@@ -93,12 +90,13 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(12, 21);
             label2.Name = "label2";
-            label2.Size = new Size(136, 32);
+            label2.Size = new Size(139, 32);
             label2.TabIndex = 0;
-            label2.Text = "ReceptNév";
+            label2.Text = "Recept név";
             // 
             // panel3
             // 
+            panel3.BackColor = Color.FromArgb(51, 51, 51);
             panel3.Controls.Add(labelLastModified);
             panel3.Dock = DockStyle.Right;
             panel3.Location = new Point(385, 0);
@@ -121,6 +119,7 @@
             // 
             // panel2
             // 
+            panel2.BackColor = Color.FromArgb(51, 51, 51);
             panel2.Dock = DockStyle.Right;
             panel2.Location = new Point(668, 0);
             panel2.Name = "panel2";
@@ -140,7 +139,7 @@
             // 
             // textBoxSearch
             // 
-            textBoxSearch.BackColor = Color.FromArgb(224, 224, 224);
+            textBoxSearch.BackColor = Color.White;
             textBoxSearch.BorderStyle = BorderStyle.FixedSingle;
             textBoxSearch.Location = new Point(174, 12);
             textBoxSearch.Name = "textBoxSearch";
@@ -151,6 +150,7 @@
             // panelRecipeViewer
             // 
             panelRecipeViewer.AutoScroll = true;
+            panelRecipeViewer.BackColor = Color.White;
             panelRecipeViewer.Controls.Add(pictureBoxLoading);
             panelRecipeViewer.Dock = DockStyle.Fill;
             panelRecipeViewer.Location = new Point(0, 133);
@@ -162,7 +162,7 @@
             // 
             pictureBoxLoading.Anchor = AnchorStyles.None;
             pictureBoxLoading.Image = (Image)resources.GetObject("pictureBoxLoading.Image");
-            pictureBoxLoading.Location = new Point(405, 177);
+            pictureBoxLoading.Location = new Point(417, 177);
             pictureBoxLoading.MinimumSize = new Size(80, 80);
             pictureBoxLoading.Name = "pictureBoxLoading";
             pictureBoxLoading.Size = new Size(80, 80);
@@ -170,20 +170,6 @@
             pictureBoxLoading.TabIndex = 6;
             pictureBoxLoading.TabStop = false;
             pictureBoxLoading.Visible = false;
-            // 
-            // pictureBoxRightArrow
-            // 
-            pictureBoxRightArrow.BackColor = Color.Transparent;
-            pictureBoxRightArrow.Cursor = Cursors.Hand;
-            pictureBoxRightArrow.Enabled = false;
-            pictureBoxRightArrow.Image = (Image)resources.GetObject("pictureBoxRightArrow.Image");
-            pictureBoxRightArrow.Location = new Point(3, 5);
-            pictureBoxRightArrow.Name = "pictureBoxRightArrow";
-            pictureBoxRightArrow.Size = new Size(45, 45);
-            pictureBoxRightArrow.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxRightArrow.TabIndex = 3;
-            pictureBoxRightArrow.TabStop = false;
-            pictureBoxRightArrow.Visible = false;
             // 
             // UserControlRecipeAllNew
             // 
@@ -202,7 +188,6 @@
             panel3.PerformLayout();
             panelRecipeViewer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxLoading).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxRightArrow).EndInit();
             ResumeLayout(false);
         }
 
@@ -219,6 +204,5 @@
         private Label labelLastModified;
         private Panel panel4;
         private Label label2;
-        private PictureBox pictureBoxRightArrow;
     }
 }
