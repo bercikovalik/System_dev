@@ -37,7 +37,7 @@ namespace Alviro
             Task.Delay(1000).Wait();
 
 
-            UserControlIngredients userControlIngredients = new UserControlIngredients();
+            UserControlIngredientsNew userControlIngredients = new UserControlIngredientsNew();
             userControlIngredients.Dock = DockStyle.Fill;
             panelMain.Controls.Add(userControlIngredients);
 

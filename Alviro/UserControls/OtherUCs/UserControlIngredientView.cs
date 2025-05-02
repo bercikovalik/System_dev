@@ -1,0 +1,86 @@
+﻿using Alviro.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Alviro
+{
+    public partial class UserControlIngredientView : UserControl
+    {
+        Dnn972Context dbContext = new Dnn972Context();
+
+        Ingredient ingredientDTO = new Ingredient();
+
+        //Event for buttonSelect click
+        public event EventHandler ButtonSelectClick;
+
+        //Event for buttonModify click
+        public event EventHandler ButtonModifyClick;
+
+        //Event for checkBoc click
+        public event EventHandler CheckBoxClick;
+
+        public UserControlIngredientView(Ingredient ingredient)
+        {
+            InitializeComponent();
+
+            ingredientDTO = ingredient;
+
+            label1.Text = ingredient.Name;
+
+
+        }
+
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+
+            FormIngredientModify formIngredientModify = new FormIngredientModify(ingredientDTO);
+            formIngredientModify.ShowDialog();
+            if (formIngredientModify.DialogResult == DialogResult.OK)
+            {
+                ButtonModifyClick?.Invoke(this, EventArgs.Empty);
+
+            }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            FormConfrimDialog confirmDialog = new FormConfrimDialog();
+            confirmDialog.Text = "Hozzávaló eltávolítása";
+            confirmDialog.labelText.Text = "Biztosan el szeretnéd távolítani a(z) " + ingredientDTO.Name + " hozzávalót?";
+            confirmDialog.ShowDialog();
+            if (confirmDialog.DialogResult == DialogResult.Yes)
+            {
+                dbContext.Ingredients.Remove(ingredientDTO);
+
+                try
+                {
+                    dbContext.SaveChanges();
+
+                }
+                catch (System.Exception)
+                {
+                    MessageBox.Show("A hozzávalót nem sikerült eltávolítani", "Sikertelen eltávolítás", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                this.Parent.Controls.Remove(this);
+            }
+        }
+
+        private void buttonSelect_Click(object sender, EventArgs e)
+        {
+            ButtonSelectClick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBoxClick?.Invoke(this, EventArgs.Empty);
+        }
+    }
+}
