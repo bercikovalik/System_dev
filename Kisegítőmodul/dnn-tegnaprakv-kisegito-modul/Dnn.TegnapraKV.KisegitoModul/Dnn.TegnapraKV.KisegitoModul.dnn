@@ -1,0 +1,100 @@
+<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="Dnn.TegnapraKV.KisegitoModul" type="Module" version="00.00.01">
+      <friendlyName>Dnn.TegnapraKV.KisegitoModul</friendlyName>
+      <description>Dnn.TegnapraKV.KisegitoModul</description>
+      <iconFile>~/Icons/Sigma/Software_32X32_Standard.png</iconFile>
+      <owner>
+        <name>Tegnapra kellett volna</name>
+        <organization>Tegnapra kellett volna</organization>
+        <url>http://rendfejl10004.northeurope.cloudapp.azure.com/</url>
+        <email>TegnapraKV.SuperUser@gmail.com</email>
+      </owner>
+      <license src="License.txt"></license>
+      <releaseNotes src="ReleaseNotes.txt"></releaseNotes>
+      <dependencies>
+        <dependency type="CoreVersion">09.08.00</dependency>
+      </dependencies>
+      <components>
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules\MVC\Dnn.TegnapraKV.KisegitoModul</basePath>
+            <script type="Install">
+              <path>Providers\DataProviders\SqlDataProvider</path>
+              <name>00.00.01.SqlDataProvider</name>
+              <version>00.00.01</version>
+            </script>
+            <script type="UnInstall">
+              <path>Providers\DataProviders\SqlDataProvider</path>
+              <name>Uninstall.SqlDataProvider</name>
+              <version>00.00.01</version>
+            </script>
+          </scripts>
+        </component>
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/MVC/Dnn.TegnapraKV.KisegitoModul</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+        <component type="Module">
+          <desktopModule>
+            <moduleName>Dnn.TegnapraKV.KisegitoModul</moduleName>
+            <foldername>Dnn.TegnapraKV.KisegitoModul</foldername>
+            <businessControllerClass>Dnn.TegnapraKV.Dnn.TegnapraKV.KisegitoModul.Components.FeatureController</businessControllerClass>
+            <supportedFeatures />
+            <moduleDefinitions>
+              <moduleDefinition>
+                <friendlyName>Dnn.TegnapraKV.KisegitoModul</friendlyName>
+                <defaultCacheTime>0</defaultCacheTime>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey />
+                    <controlSrc>Dnn.TegnapraKV.Dnn.TegnapraKV.KisegitoModul.Controllers/Item/Index.mvc</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>View</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Edit</controlKey>
+                    <controlSrc>Dnn.TegnapraKV.Dnn.TegnapraKV.KisegitoModul.Controllers/Item/Edit.mvc</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle>Edit Content</controlTitle>
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                    <supportsPopUps>True</supportsPopUps>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Settings</controlKey>
+                    <controlSrc>Dnn.TegnapraKV.Dnn.TegnapraKV.KisegitoModul.Controllers/Settings/Settings.mvc</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle>Dnn.TegnapraKV.KisegitoModul Settings</controlTitle>
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                </moduleControls>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+        </component>
+        <component type="Assembly">
+          <assemblies>
+            <assembly>
+              <name>Dnn.TegnapraKV.KisegitoModul.dll</name>
+              <path>bin</path>
+            </assembly>
+          </assemblies>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>
