@@ -21,6 +21,8 @@
 /************************************************************/
 /*****            INGREDIENTS TÁBLA                     *****/
 /************************************************************/
+
+
 IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{objectQualifier}INGREDIENTS')
 BEGIN
     CREATE TABLE {databaseOwner}[{objectQualifier}INGREDIENTS] (
