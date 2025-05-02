@@ -140,7 +140,11 @@
             });
         }
     );
-
+    //Átirányítás a receptleírás oldalra.
+    $('#recipe-suggestions').on('click', '.recipe-card', function () {
+        const id = $(this).data('recipe-id');
+        window.location.href = "http://rendfejl10004.northeurope.cloudapp.azure.com/Recipe?recipeId=" + id;
+    });
 
 
 
