@@ -43,7 +43,7 @@ namespace Alviro
             if (panelMenu.Visible == false)
             {
                 panelMenu.Visible = true;
-                
+
                 pictureBoxArrowLeft.Visible = true;
                 pictureBoxArrowLeft.Enabled = true;
                 pictureBoxRightArrow.Visible = false;
@@ -53,7 +53,7 @@ namespace Alviro
             else
             {
                 panelMenu.Visible = false;
-                
+
                 pictureBoxArrowLeft.Visible = false;
                 pictureBoxArrowLeft.Enabled = false;
                 pictureBoxRightArrow.Visible = true;
@@ -84,6 +84,7 @@ namespace Alviro
             }
             panelMenuItem1.BackColor = Color.FromArgb(104, 123, 82);
             panelMenuItem2.BackColor = Color.Transparent;
+            panelMenuItem3.BackColor = Color.Transparent;
 
 
 
@@ -93,6 +94,22 @@ namespace Alviro
 
 
             panelMain.Controls.Add(userControlAllRecipe);
+            pictureBoxArrowLeft.BringToFront();
+            pictureBoxRightArrow.BringToFront();
+        }
+
+        private void loadOverview()
+        {
+            foreach (Control ctrl in panelMain.Controls.OfType<UserControl>().ToList())
+            {
+                panelMain.Controls.Remove(ctrl); // csak a régi UC-t távolítja el
+            }
+            panelMenuItem3.BackColor = Color.FromArgb(104, 123, 82);
+            panelMenuItem2.BackColor = Color.Transparent;
+            panelMenuItem1.BackColor = Color.Transparent;
+            UserControlOverview userControlOverview = new UserControlOverview();
+            userControlOverview.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(userControlOverview);
             pictureBoxArrowLeft.BringToFront();
             pictureBoxRightArrow.BringToFront();
         }
@@ -130,6 +147,21 @@ namespace Alviro
         private void pictureBoxArrowLeft_Click(object sender, EventArgs e)
         {
             menuCLosing();
+        }
+
+        private void panelMenuItem3_Click(object sender, EventArgs e)
+        {
+            loadOverview();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            loadOverview();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            loadOverview();
         }
     }
 }
