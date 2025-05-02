@@ -31,9 +31,10 @@ namespace Alviro
             }
             panelMenuItem2.BackColor = Color.FromArgb(104, 123, 82);
             panelMenuItem1.BackColor = Color.Transparent;
+            panelMenuItem3.BackColor = Color.Transparent;
 
             //Wait 50 sec so the ui can load
-            Task.Delay(300).Wait();
+            Task.Delay(1000).Wait();
 
 
             UserControlIngredients userControlIngredients = new UserControlIngredients();
@@ -119,6 +120,7 @@ namespace Alviro
             panelMain.Controls.Add(userControlOverview);
             pictureBoxArrowLeft.BringToFront();
             pictureBoxRightArrow.BringToFront();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
