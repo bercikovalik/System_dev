@@ -1,5 +1,7 @@
 ﻿<style>
     #recipe-suggestions {
+
+        /*TESZTELÉSRE*/
         background-color: fuchsia;
     }
 
@@ -13,6 +15,7 @@
 <h1>Recept ajánlások</h1>
 
 <div id="recipe-suggestions" style="display: flex; gap: 20px; margin: 0 auto;justify-content:space-evenly">
+    @*TESZTELÉSRE*@
     <div>RECEPT</div>
     <div>RECEPT</div>
     <div>RECEPT</div>
@@ -38,7 +41,6 @@
 
             if (url) {
 
-                // Pl.: '/blue-bracelet' -> 'blue-bracelet'
                 const cleanUrl = url.split('?')[0];
                 rewriteUrl = cleanUrl.split('/').filter(Boolean).pop();
 
@@ -48,7 +50,7 @@
         }
     });
 
-    console.log("Kosár tartalma:", cartItems);
+    console.log("Kosár tartalma:", cartItems); /*TESZTELÉSRE*/
     let items = [];
 
     for (const x of cartItems) {
@@ -56,7 +58,37 @@
     }
 
     const itemsGET = items.join(',');
+
+    //TESZTELÉSRE
     console.log(itemsGET);
+
+
+    $.getJSON(
+        "/DesktopModules/Dnn.TegnapraKV.HelloWorld/API/Welcome/GetRecipes?RewriteURLs=" + itemsGET,
+        function (result) {
+            var recipes = jQuery.parseJSON(result);
+
+            var container = $('#recipe-suggestions');
+            container.empty(); 
+
+            //TESZTELÉSRE
+            console.log(recipes);
+            ////////////////////
+            $.each(recipes, function (index, recipe) {
+                
+                    var recipeImage = recipe.ImageUrl ? '<img src="' + recipe.ImageUrl + '" alt="' + recipe.RecipeName + '" style="width:200px; aspect-ratio: 1/1;" />' : '<div class="no-image">Nincs kép</div>';
+
+                    container.append(
+                        '<div class="recipe-card" data-recipe-id="' + recipe.RecipeId + '">' +
+                        '<div class="recipe-image" style="background-color: #eee;">' + recipeImage + '</div>' +
+                        '<div class="recipe-name" style="text-align:center; margin-top:10px;">' + recipe.RecipeName + '</div>' +
+                        '</div>'
+                    );
+                
+            });
+        }
+    );
+
 
 
 

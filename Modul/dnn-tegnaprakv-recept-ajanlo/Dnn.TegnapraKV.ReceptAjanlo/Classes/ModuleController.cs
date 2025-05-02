@@ -11,17 +11,20 @@ using DotNetNuke.Common.Utilities;
 using System.Web;
 
 
+
 namespace dnn.tegnaprakv.Dnn.TegnapraKV.ReceptAjanlo.Classes
 {
     public class ModuleController:DnnApiController
     {
-
+        //Irreleváns de itt maradhat
         [AllowAnonymous]
         [HttpGet]
         public HttpResponseMessage HelloWorld()
         {
             return Request.CreateResponse(HttpStatusCode.OK, "Hello World!");
         }
+        /////////////////////////////////////////////////////////////////////
+
 
         [AllowAnonymous]
         [HttpGet]
