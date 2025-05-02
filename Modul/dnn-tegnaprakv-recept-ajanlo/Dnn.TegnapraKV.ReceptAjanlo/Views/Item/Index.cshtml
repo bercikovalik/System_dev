@@ -38,7 +38,6 @@
 
             if (url) {
 
-                // Pl.: '/blue-bracelet' -> 'blue-bracelet'
                 const cleanUrl = url.split('?')[0];
                 rewriteUrl = cleanUrl.split('/').filter(Boolean).pop();
 
@@ -57,6 +56,31 @@
 
     const itemsGET = items.join(',');
     console.log(itemsGET);
+
+
+    $.getJSON(
+        "/DesktopModules/Dnn.TegnapraKV.HelloWorld/API/Welcome/GetRecipes?RewriteURLs=" + itemsGET,
+        function (result) {
+            var recipes = jQuery.parseJSON(result);
+
+            var container = $('#recipe-suggestions');
+            container.empty(); 
+            console.log(recipes);
+            $.each(recipes, function (index, recipe) {
+                
+                    var recipeImage = recipe.ImageUrl ? '<img src="' + recipe.ImageUrl + '" alt="' + recipe.RecipeName + '" style="width:200px; aspect-ratio: 1/1;" />' : '<div class="no-image">Nincs kép</div>';
+
+                    container.append(
+                        '<div class="recipe-card" data-recipe-id="' + recipe.RecipeId + '">' +
+                        '<div class="recipe-image" style="background-color: #eee;">' + recipeImage + '</div>' +
+                        '<div class="recipe-name" style="text-align:center; margin-top:10px;">' + recipe.RecipeName + '</div>' +
+                        '</div>'
+                    );
+                
+            });
+        }
+    );
+
 
 
 
