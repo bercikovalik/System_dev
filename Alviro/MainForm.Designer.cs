@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             pictureBox1 = new PictureBox();
             panelMenu = new Panel();
+            panelMenuItem3 = new Panel();
+            label3 = new Label();
+            pictureBox5 = new PictureBox();
             panelMenuItem2 = new Panel();
             label2 = new Label();
             pictureBox4 = new PictureBox();
@@ -46,6 +49,8 @@
             pictureBoxArrowLeft = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelMenu.SuspendLayout();
+            panelMenuItem3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             panelMenuItem2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panelMenuItem1.SuspendLayout();
@@ -72,6 +77,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(51, 51, 51);
+            panelMenu.Controls.Add(panelMenuItem3);
             panelMenu.Controls.Add(panelMenuItem2);
             panelMenu.Controls.Add(panelMenuItem1);
             panelMenu.Controls.Add(panel2);
@@ -84,13 +90,50 @@
             panelMenu.Size = new Size(258, 656);
             panelMenu.TabIndex = 1;
             // 
+            // panelMenuItem3
+            // 
+            panelMenuItem3.Controls.Add(label3);
+            panelMenuItem3.Controls.Add(pictureBox5);
+            panelMenuItem3.Cursor = Cursors.Hand;
+            panelMenuItem3.Dock = DockStyle.Top;
+            panelMenuItem3.Location = new Point(0, 156);
+            panelMenuItem3.Name = "panelMenuItem3";
+            panelMenuItem3.Size = new Size(258, 54);
+            panelMenuItem3.TabIndex = 8;
+            panelMenuItem3.Click += panelMenuItem3_Click;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.None;
+            label3.AutoSize = true;
+            label3.Cursor = Cursors.Hand;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(82, 10);
+            label3.Name = "label3";
+            label3.Size = new Size(130, 32);
+            label3.TabIndex = 2;
+            label3.Text = "Áttekintés";
+            label3.Click += label3_Click;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Dock = DockStyle.Left;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(0, 0);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(72, 54);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 1;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
+            // 
             // panelMenuItem2
             // 
             panelMenuItem2.Controls.Add(label2);
             panelMenuItem2.Controls.Add(pictureBox4);
             panelMenuItem2.Cursor = Cursors.Hand;
-            panelMenuItem2.Dock = DockStyle.Top;
-            panelMenuItem2.Location = new Point(0, 210);
+            panelMenuItem2.Location = new Point(1, 281);
             panelMenuItem2.Name = "panelMenuItem2";
             panelMenuItem2.Size = new Size(258, 54);
             panelMenuItem2.TabIndex = 7;
@@ -126,8 +169,7 @@
             panelMenuItem1.Controls.Add(label1);
             panelMenuItem1.Controls.Add(pictureBox3);
             panelMenuItem1.Cursor = Cursors.Hand;
-            panelMenuItem1.Dock = DockStyle.Top;
-            panelMenuItem1.Location = new Point(0, 156);
+            panelMenuItem1.Location = new Point(0, 219);
             panelMenuItem1.Name = "panelMenuItem1";
             panelMenuItem1.Size = new Size(258, 54);
             panelMenuItem1.TabIndex = 6;
@@ -195,7 +237,7 @@
             labelDate.AutoSize = true;
             labelDate.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             labelDate.ForeColor = Color.FromArgb(239, 238, 236);
-            labelDate.Location = new Point(65, 37);
+            labelDate.Location = new Point(61, 37);
             labelDate.Name = "labelDate";
             labelDate.Size = new Size(113, 32);
             labelDate.TabIndex = 0;
@@ -208,7 +250,7 @@
             pictureBoxRightArrow.Cursor = Cursors.Hand;
             pictureBoxRightArrow.Enabled = false;
             pictureBoxRightArrow.Image = (Image)resources.GetObject("pictureBoxRightArrow.Image");
-            pictureBoxRightArrow.Location = new Point(3, 5);
+            pictureBoxRightArrow.Location = new Point(4, 5);
             pictureBoxRightArrow.Name = "pictureBoxRightArrow";
             pictureBoxRightArrow.Size = new Size(45, 45);
             pictureBoxRightArrow.SizeMode = PictureBoxSizeMode.Zoom;
@@ -256,6 +298,9 @@
             Text = "Alviro - Receptkezelő";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelMenu.ResumeLayout(false);
+            panelMenuItem3.ResumeLayout(false);
+            panelMenuItem3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             panelMenuItem2.ResumeLayout(false);
             panelMenuItem2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -287,5 +332,8 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBoxArrowLeft;
         private PictureBox pictureBoxRightArrow;
+        private Panel panelMenuItem3;
+        private Label label3;
+        private PictureBox pictureBox5;
     }
 }

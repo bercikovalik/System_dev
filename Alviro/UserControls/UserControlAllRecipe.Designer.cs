@@ -50,7 +50,7 @@
             // 
             listBoxAllRecipe.Anchor = AnchorStyles.None;
             listBoxAllRecipe.FormattingEnabled = true;
-            listBoxAllRecipe.Location = new Point(16, 16);
+            listBoxAllRecipe.Location = new Point(17, 16);
             listBoxAllRecipe.Name = "listBoxAllRecipe";
             listBoxAllRecipe.Size = new Size(221, 529);
             listBoxAllRecipe.TabIndex = 0;

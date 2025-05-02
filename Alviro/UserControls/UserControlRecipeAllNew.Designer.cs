@@ -40,17 +40,20 @@
             textBoxSearch = new TextBox();
             panelRecipeViewer = new Panel();
             pictureBoxLoading = new PictureBox();
+            pictureBoxRightArrow = new PictureBox();
             panelHeader.SuspendLayout();
             panelTableHead.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             panelRecipeViewer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLoading).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxRightArrow).BeginInit();
             SuspendLayout();
             // 
             // panelHeader
             // 
             panelHeader.BackColor = Color.FromArgb(104, 123, 82);
+            panelHeader.Controls.Add(pictureBoxRightArrow);
             panelHeader.Controls.Add(panelTableHead);
             panelHeader.Controls.Add(label1);
             panelHeader.Controls.Add(textBoxSearch);
@@ -66,10 +69,10 @@
             panelTableHead.Controls.Add(panel3);
             panelTableHead.Controls.Add(panel2);
             panelTableHead.Dock = DockStyle.Bottom;
-            panelTableHead.Location = new Point(0, 46);
+            panelTableHead.Location = new Point(0, 56);
             panelTableHead.MinimumSize = new Size(850, 58);
             panelTableHead.Name = "panelTableHead";
-            panelTableHead.Size = new Size(933, 87);
+            panelTableHead.Size = new Size(933, 77);
             panelTableHead.TabIndex = 2;
             // 
             // panel4
@@ -79,7 +82,7 @@
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(385, 87);
+            panel4.Size = new Size(385, 77);
             panel4.TabIndex = 10;
             // 
             // label2
@@ -88,7 +91,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(12, 26);
+            label2.Location = new Point(12, 21);
             label2.Name = "label2";
             label2.Size = new Size(136, 32);
             label2.TabIndex = 0;
@@ -100,7 +103,7 @@
             panel3.Dock = DockStyle.Right;
             panel3.Location = new Point(385, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(283, 87);
+            panel3.Size = new Size(283, 77);
             panel3.TabIndex = 9;
             // 
             // labelLastModified
@@ -109,7 +112,7 @@
             labelLastModified.AutoSize = true;
             labelLastModified.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 238);
             labelLastModified.ForeColor = Color.White;
-            labelLastModified.Location = new Point(0, 28);
+            labelLastModified.Location = new Point(0, 23);
             labelLastModified.MaximumSize = new Size(220, 40);
             labelLastModified.Name = "labelLastModified";
             labelLastModified.Size = new Size(195, 30);
@@ -121,7 +124,7 @@
             panel2.Dock = DockStyle.Right;
             panel2.Location = new Point(668, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(265, 87);
+            panel2.Size = new Size(265, 77);
             panel2.TabIndex = 8;
             // 
             // label1
@@ -129,7 +132,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(5, 8);
+            label1.Location = new Point(67, 11);
             label1.Name = "label1";
             label1.Size = new Size(100, 32);
             label1.TabIndex = 1;
@@ -139,7 +142,7 @@
             // 
             textBoxSearch.BackColor = Color.FromArgb(224, 224, 224);
             textBoxSearch.BorderStyle = BorderStyle.FixedSingle;
-            textBoxSearch.Location = new Point(112, 9);
+            textBoxSearch.Location = new Point(174, 12);
             textBoxSearch.Name = "textBoxSearch";
             textBoxSearch.Size = new Size(255, 31);
             textBoxSearch.TabIndex = 0;
@@ -168,6 +171,20 @@
             pictureBoxLoading.TabStop = false;
             pictureBoxLoading.Visible = false;
             // 
+            // pictureBoxRightArrow
+            // 
+            pictureBoxRightArrow.BackColor = Color.Transparent;
+            pictureBoxRightArrow.Cursor = Cursors.Hand;
+            pictureBoxRightArrow.Enabled = false;
+            pictureBoxRightArrow.Image = (Image)resources.GetObject("pictureBoxRightArrow.Image");
+            pictureBoxRightArrow.Location = new Point(3, 5);
+            pictureBoxRightArrow.Name = "pictureBoxRightArrow";
+            pictureBoxRightArrow.Size = new Size(45, 45);
+            pictureBoxRightArrow.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxRightArrow.TabIndex = 3;
+            pictureBoxRightArrow.TabStop = false;
+            pictureBoxRightArrow.Visible = false;
+            // 
             // UserControlRecipeAllNew
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -185,6 +202,7 @@
             panel3.PerformLayout();
             panelRecipeViewer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxLoading).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxRightArrow).EndInit();
             ResumeLayout(false);
         }
 
@@ -201,5 +219,6 @@
         private Label labelLastModified;
         private Panel panel4;
         private Label label2;
+        private PictureBox pictureBoxRightArrow;
     }
 }
