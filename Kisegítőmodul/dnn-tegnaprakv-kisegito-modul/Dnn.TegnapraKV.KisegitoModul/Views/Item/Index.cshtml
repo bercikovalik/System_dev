@@ -110,7 +110,34 @@
                 $('#instruction-list').text(recipe.Instructions);
             }
         );
-       
+
+
+        $.getJSON(
+            "/DesktopModules/Dnn.TegnapraKV.KisegitoModul/API/Helper/GetRecipeIngredients?RecipeID=" + id,
+            function (data) {
+                console.log("Hozzávalók:", data);
+                var ingredients = jQuery.parseJSON(data);
+              
+                var $list = $("#ingredient-list");
+                $list.empty(); // biztos, ami biztos
+
+                ingredients.forEach(function (item) {
+                    var name = item.IngredientName;
+                    $list.append("<li>" + name + "</li>");
+                });
+
+
+
+
+                console.log("Lefutott.");
+            }
+        );
+
+
     });
+
+
+   
+
 
 </script>

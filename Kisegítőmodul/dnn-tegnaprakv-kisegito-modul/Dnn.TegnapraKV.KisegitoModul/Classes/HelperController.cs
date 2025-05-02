@@ -46,6 +46,23 @@ namespace Dnn.TegnapraKV.Dnn.TegnapraKV.KisegitoModul.Classes
         }
 
 
+        [AllowAnonymous]
+        [HttpGet]
+        public HttpResponseMessage GetRecipeIngredients(int RecipeID)
+        {
+            try
+            {
+                var service = new HozzavalokService();
+                var details = service.GetRecipeIngredients(RecipeID).ToJson();
+
+                return Request.CreateResponse(HttpStatusCode.OK, details);
+            }
+            catch (Exception exc)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, exc);
+            }
+        }
+
 
     }
 }
