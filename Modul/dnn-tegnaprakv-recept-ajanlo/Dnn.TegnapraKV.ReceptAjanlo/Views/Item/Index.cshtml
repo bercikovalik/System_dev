@@ -49,5 +49,15 @@
     });
 
     console.log("Kosár tartalma:", cartItems);
-    
+    let items = [];
+
+    for (const x of cartItems) {
+        items.push(x);
+    }
+
+    const itemsGET = items.join(',');
+    console.log(itemsGET);
+
+
+
 </script>
