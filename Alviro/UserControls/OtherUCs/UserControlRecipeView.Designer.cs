@@ -57,23 +57,30 @@
             // buttonDelete
             // 
             buttonDelete.Anchor = AnchorStyles.None;
-            buttonDelete.Location = new Point(140, 21);
+            buttonDelete.BackColor = Color.FromArgb(255, 128, 128);
+            buttonDelete.FlatStyle = FlatStyle.Flat;
+            buttonDelete.Font = new Font("Segoe UI", 10F);
+            buttonDelete.Location = new Point(145, 19);
             buttonDelete.Name = "buttonDelete";
-            buttonDelete.Size = new Size(112, 34);
+            buttonDelete.Size = new Size(112, 38);
             buttonDelete.TabIndex = 1;
             buttonDelete.Text = "Törlés";
-            buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.UseVisualStyleBackColor = false;
             buttonDelete.Click += buttonDelete_Click;
             // 
             // buttonModify
             // 
             buttonModify.Anchor = AnchorStyles.None;
-            buttonModify.Location = new Point(14, 21);
+            buttonModify.BackColor = Color.FromArgb(104, 123, 82);
+            buttonModify.FlatStyle = FlatStyle.Flat;
+            buttonModify.Font = new Font("Segoe UI", 10F);
+            buttonModify.ForeColor = Color.White;
+            buttonModify.Location = new Point(8, 19);
             buttonModify.Name = "buttonModify";
-            buttonModify.Size = new Size(112, 34);
+            buttonModify.Size = new Size(126, 38);
             buttonModify.TabIndex = 2;
             buttonModify.Text = "Szerkesztés";
-            buttonModify.UseVisualStyleBackColor = true;
+            buttonModify.UseVisualStyleBackColor = false;
             buttonModify.Click += buttonModify_Click;
             // 
             // labelLastModified
@@ -85,9 +92,9 @@
             labelLastModified.Location = new Point(14, 23);
             labelLastModified.MaximumSize = new Size(220, 40);
             labelLastModified.Name = "labelLastModified";
-            labelLastModified.Size = new Size(71, 30);
+            labelLastModified.Size = new Size(178, 30);
             labelLastModified.TabIndex = 3;
-            labelLastModified.Text = "label2";
+            labelLastModified.Text = "2000.00.00 15:30";
             // 
             // panel1
             // 
@@ -137,7 +144,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(224, 224, 224);
             Controls.Add(panel1);
             MinimumSize = new Size(700, 91);
             Name = "UserControlRecipeView";
