@@ -26,6 +26,8 @@ namespace Alviro
         //Event for checkBoc click
         public event EventHandler CheckBoxClick;
 
+        public event EventHandler ButtonCancelModifyClick;
+
         public UserControlIngredientView(Ingredient ingredient)
         {
             InitializeComponent();
@@ -61,6 +63,9 @@ namespace Alviro
             buttonCancelModify.Visible = true;
             buttonCancelModify.Enabled = true;
             buttonSelect.Enabled = false;
+
+            //Focus on the text box
+            textBoxModifyName.Focus();
 
 
         }
@@ -133,6 +138,15 @@ namespace Alviro
             buttonCancelModify.Visible = false;
             buttonCancelModify.Enabled = false;
             buttonSelect.Enabled = true;
+            ButtonCancelModifyClick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void textBoxModifyName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSave_Click(sender, e);
+            }
         }
     }
 }

@@ -81,6 +81,7 @@
             textBoxModifyName.Size = new Size(178, 39);
             textBoxModifyName.TabIndex = 2;
             textBoxModifyName.Visible = false;
+            textBoxModifyName.KeyDown += textBoxModifyName_KeyDown;
             // 
             // label1
             // 
@@ -229,11 +230,11 @@
         private Panel panelControls;
         private Panel panelIngredientName;
         private Label label1;
-        private Button buttonDelete;
-        private Button buttonModify;
-        private Button buttonSelect;
-        private TextBox textBoxModifyName;
-        private Button buttonCancelModify;
-        private Button buttonSave;
+        public TextBox textBoxModifyName;
+        public Button buttonDelete;
+        public Button buttonModify;
+        public Button buttonSelect;
+        public Button buttonCancelModify;
+        public Button buttonSave;
     }
 }

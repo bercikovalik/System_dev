@@ -167,6 +167,7 @@
             buttonAddNewIngredients.TabIndex = 3;
             buttonAddNewIngredients.Text = "Új hozzávaló";
             buttonAddNewIngredients.UseVisualStyleBackColor = false;
+            buttonAddNewIngredients.Click += buttonAddNewIngredients_Click;
             // 
             // buttonRefresh
             // 
@@ -214,19 +215,19 @@
             comboBoxOrder.FlatStyle = FlatStyle.Flat;
             comboBoxOrder.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 238);
             comboBoxOrder.FormattingEnabled = true;
-            comboBoxOrder.Location = new Point(124, 20);
+            comboBoxOrder.Location = new Point(335, 20);
             comboBoxOrder.Name = "comboBoxOrder";
-            comboBoxOrder.Size = new Size(569, 38);
+            comboBoxOrder.Size = new Size(358, 38);
             comboBoxOrder.TabIndex = 5;
             comboBoxOrder.SelectedIndexChanged += comboBoxOrder_SelectedIndexChanged;
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Left;
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(11, 23);
+            label2.Location = new Point(219, 23);
             label2.MaximumSize = new Size(220, 40);
             label2.Name = "label2";
             label2.Size = new Size(110, 30);

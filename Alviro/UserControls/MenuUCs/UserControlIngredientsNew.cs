@@ -23,7 +23,7 @@ namespace Alviro
 
             comboBoxOrder.Items.AddRange(new string[] {
                 "Alapértelmezett",
-                "Név (Z_A)",
+                "Név (Z-A)",
                 "Név (A-Z)"
             });
 
@@ -47,7 +47,7 @@ namespace Alviro
             switch (comboBoxOrder.SelectedIndex)
             {
                 case -1:
-                    MessageBox.Show("Nincs kiválasztott rendezési mód!", "Figyelmeztetés");
+                    
                     break;
                 case 0:
                     ingredients = ingredients.OrderBy(i => i.Ingredientid).ToList();
@@ -178,6 +178,82 @@ namespace Alviro
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
             LoadIngredientsSync();
+
+        }
+
+        private void buttonAddNewIngredients_Click(object sender, EventArgs e)
+        {
+            Ingredient newIngredient = new Ingredient();
+            UserControlIngredientView userControlIngredientView = new UserControlIngredientView(newIngredient);
+            userControlIngredientView.Name = "userControlIngredientViewNewIngredient";
+
+
+
+            userControlIngredientView.Dock = DockStyle.Top;
+            userControlIngredientView.ButtonModifyClick += (s, e) =>
+            {
+                LoadIngredientsAsync();
+            };
+            userControlIngredientView.ButtonSelectClick += (s, e) =>
+            {
+                selectedIngredient = newIngredient;
+                labelTempSelectedIngredient.Text = selectedIngredient.Name;
+            };
+            userControlIngredientView.CheckBoxClick += (s, e) =>
+            {
+                // Handle checkbox click event
+                // You can access the selected ingredient here if needed
+                // For example: MessageBox.Show($"Checkbox clicked for {ingredient.Name}");
+            };
+            userControlIngredientView.ButtonCancelModifyClick += (s, e) =>
+            {
+                LoadIngredientsSync();
+                // Remove the new ingredient from the database if it was not saved
+                try
+                {
+                    dbContext.Ingredients.Remove(newIngredient);
+                    dbContext.SaveChanges();
+                }
+                catch (System.Exception)
+                {
+                    MessageBox.Show("Nem sikerült az új hozzávalót eltávolítani.", "Sikertelen eltávolítás", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+
+            };
+            userControlIngredientView.textBoxModifyName.Text = "Új hozzávaló neve";
+            newIngredient.Name = userControlIngredientView.textBoxModifyName.Text;
+
+            dbContext.Ingredients.Add(newIngredient);
+
+            dbContext.SaveChanges();
+            //try
+            //{
+            //    dbContext.SaveChanges();
+            //}
+            //catch (System.Exception)
+            //{
+            //    MessageBox.Show("Nem sikerült az új hozzávalót hozzáadni.", "Sikertelen hozzáadás", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            userControlIngredientView.textBoxModifyName.Visible = true;
+            userControlIngredientView.textBoxModifyName.Enabled = true;
+            userControlIngredientView.buttonSave.Visible = true;
+            userControlIngredientView.buttonSave.Enabled = true;
+            userControlIngredientView.buttonModify.Visible = false;
+            userControlIngredientView.buttonModify.Enabled = false;
+            userControlIngredientView.buttonDelete.Visible = false;
+            userControlIngredientView.buttonDelete.Enabled = false;
+            userControlIngredientView.buttonCancelModify.Visible = true;
+            userControlIngredientView.buttonCancelModify.Enabled = true;
+            userControlIngredientView.buttonSelect.Enabled = false;
+
+            panelIngredientsTable.Controls.Add(userControlIngredientView);
+
+            //Focus on the new ingredient name textbox
+            userControlIngredientView.textBoxModifyName.Focus();
+
+
 
         }
     }

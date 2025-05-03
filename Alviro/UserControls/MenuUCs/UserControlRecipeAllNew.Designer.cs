@@ -122,6 +122,7 @@
             comboBoxOrder.Name = "comboBoxOrder";
             comboBoxOrder.Size = new Size(271, 38);
             comboBoxOrder.TabIndex = 2;
+            comboBoxOrder.TabStop = false;
             comboBoxOrder.SelectedIndexChanged += comboBoxOrder_SelectedIndexChanged;
             // 
             // buttonAddNewRecipe
