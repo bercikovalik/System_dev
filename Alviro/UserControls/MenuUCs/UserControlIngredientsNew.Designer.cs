@@ -120,7 +120,7 @@
             // panelIngredientsTable
             // 
             panelIngredientsTable.AutoScroll = true;
-            panelIngredientsTable.BackColor = Color.FromArgb(224, 224, 224);
+            panelIngredientsTable.BackColor = Color.White;
             panelIngredientsTable.Controls.Add(pictureBoxLoading);
             panelIngredientsTable.Dock = DockStyle.Fill;
             panelIngredientsTable.Location = new Point(0, 77);
@@ -211,6 +211,7 @@
             // comboBoxOrder
             // 
             comboBoxOrder.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxOrder.BackColor = Color.White;
             comboBoxOrder.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxOrder.FlatStyle = FlatStyle.Flat;
             comboBoxOrder.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 238);
@@ -258,6 +259,7 @@
             // 
             // panelIngredientsProductsViewer
             // 
+            panelIngredientsProductsViewer.BackColor = Color.White;
             panelIngredientsProductsViewer.Controls.Add(labelTempSelectedIngredient);
             panelIngredientsProductsViewer.Dock = DockStyle.Fill;
             panelIngredientsProductsViewer.Location = new Point(901, 52);

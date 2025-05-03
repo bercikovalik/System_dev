@@ -113,6 +113,20 @@ namespace Alviro
                 dbContext.Ingredients.Update(ingredientDTO);
                 dbContext.SaveChanges();
                 ButtonModifyClick?.Invoke(this, EventArgs.Empty);
+                textBoxModifyName.Visible = false;
+                textBoxModifyName.Enabled = false;
+                buttonSave.Visible = false;
+                buttonSave.Enabled = false;
+                buttonModify.Visible = true;
+                buttonModify.Enabled = true;
+                buttonDelete.Visible = true;
+                buttonDelete.Enabled = true;
+                buttonCancelModify.Visible = false;
+                buttonCancelModify.Enabled = false;
+                buttonSelect.Enabled = true;
+                label1.Text = ingredientDTO.Name;
+
+
             }
             catch (System.Exception)
             {
