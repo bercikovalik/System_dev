@@ -43,6 +43,14 @@ namespace Alviro
                                             where k.Name.Contains(textBoxSearch.Text)
                                             select k).ToList();
 
+            if( ingredients.Count == 0)
+            {
+                UserControlNoResult userControlNoResult = new UserControlNoResult();
+                userControlNoResult.Dock = DockStyle.Top;
+                panelIngredientsTable.Controls.Add(userControlNoResult);
+                return;
+            }
+
             //Sort the ingredients based on the selected order
             switch (comboBoxOrder.SelectedIndex)
             {
@@ -60,6 +68,8 @@ namespace Alviro
                     break;
 
             }
+
+
 
 
 
@@ -149,6 +159,7 @@ namespace Alviro
 
         public async Task LoadIngredientsAsync()
         {
+            textBoxSearch.Enabled = false;
             pictureBoxLoading.Visible = true;
 
             await Task.Delay(50); // UI refresh
@@ -160,6 +171,7 @@ namespace Alviro
 
 
             pictureBoxLoading.Visible = false;
+            textBoxSearch.Enabled = true;
 
         }
 

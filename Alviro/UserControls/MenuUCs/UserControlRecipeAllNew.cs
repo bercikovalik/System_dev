@@ -133,6 +133,7 @@ namespace Alviro
 
         private async void loadRecipesAsync()
         {
+            textBoxSearch.Enabled = false;
             pictureBoxLoading.Visible = true;
 
             await Task.Delay(50); // UI refresh
@@ -145,6 +146,7 @@ namespace Alviro
 
 
             pictureBoxLoading.Visible = false;
+            textBoxSearch.Enabled = true;
 
         }
 
