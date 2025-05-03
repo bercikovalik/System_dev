@@ -176,6 +176,12 @@ namespace Alviro
         {
             selectedIngredients.Clear();
 
+            buttonAddNewIngredients.Enabled = false;
+            buttonRefresh.Enabled = false;
+            buttonDeselectAll.Enabled = false;
+            button1.Enabled = false;
+            button2.Enabled = false;
+
             textBoxSearch.Enabled = false;
             pictureBoxLoading.Visible = true;
 
@@ -189,6 +195,12 @@ namespace Alviro
 
             pictureBoxLoading.Visible = false;
             textBoxSearch.Enabled = true;
+
+            buttonAddNewIngredients.Enabled = true;
+            buttonRefresh.Enabled = true;
+            buttonDeselectAll.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
 
         }
 
@@ -216,7 +228,12 @@ namespace Alviro
             UserControlIngredientView userControlIngredientView = new UserControlIngredientView(newIngredient);
             userControlIngredientView.Name = "userControlIngredientViewNewIngredient";
 
+            userControlIngredientView.textBoxModifyName.Text = "Új hozzávaló neve";
+            newIngredient.Name = userControlIngredientView.textBoxModifyName.Text;
 
+            dbContext.Ingredients.Add(newIngredient);
+
+            dbContext.SaveChanges(); 
 
             userControlIngredientView.Dock = DockStyle.Top;
             userControlIngredientView.ButtonModifyClick += (s, e) =>
@@ -255,12 +272,7 @@ namespace Alviro
 
 
             };
-            userControlIngredientView.textBoxModifyName.Text = "Új hozzávaló neve";
-            newIngredient.Name = userControlIngredientView.textBoxModifyName.Text;
-
-            dbContext.Ingredients.Add(newIngredient);
-
-            dbContext.SaveChanges();
+            
             //try
             //{
             //    dbContext.SaveChanges();
