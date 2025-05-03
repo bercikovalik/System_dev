@@ -17,6 +17,8 @@ namespace Alviro
         Dnn972Context dbContext = new Dnn972Context();
 
         Ingredient selectedIngredient = new Ingredient();
+
+        List<Ingredient> selectedIngredients = new List<Ingredient>();
         public UserControlIngredientsNew()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace Alviro
 
         public void LoadIngredientsSync()
         {
+            selectedIngredients.Clear();
             // Clear existing controls
             panelIngredientsTable.Controls.Clear();
             // Fetch all ingredients from the database
@@ -43,7 +46,7 @@ namespace Alviro
                                             where k.Name.Contains(textBoxSearch.Text)
                                             select k).ToList();
 
-            if( ingredients.Count == 0)
+            if (ingredients.Count == 0)
             {
                 UserControlNoResult userControlNoResult = new UserControlNoResult();
                 userControlNoResult.Dock = DockStyle.Top;
@@ -55,7 +58,7 @@ namespace Alviro
             switch (comboBoxOrder.SelectedIndex)
             {
                 case -1:
-                    
+
                     break;
                 case 0:
                     ingredients = ingredients.OrderBy(i => i.Ingredientid).ToList();
@@ -92,11 +95,18 @@ namespace Alviro
                 };
                 ingredientView.CheckBoxClick += (s, e) =>
                 {
-                    // Handle checkbox click event
-                    // You can access the selected ingredient here if needed
-                    // For example: MessageBox.Show($"Checkbox clicked for {ingredient.Name}");
+                    if (ingredientView.checkBox1.Checked)
+                    {
+                        selectedIngredients.Add(ingredient);
+                    }
+                    else
+                    {
+                        selectedIngredients.Remove(ingredient);
+                    }
                 };
             }
+
+
 
         }
 
@@ -147,9 +157,14 @@ namespace Alviro
                 };
                 userControlIngredientView.CheckBoxClick += (s, e) =>
                 {
-                    // Handle checkbox click event
-                    // You can access the selected ingredient here if needed
-                    // For example: MessageBox.Show($"Checkbox clicked for {ingredient.Name}");
+                    if (userControlIngredientView.checkBox1.Checked)
+                    {
+                        selectedIngredients.Add(ingredient);
+                    }
+                    else
+                    {
+                        selectedIngredients.Remove(ingredient);
+                    }
                 };
                 panelIngredientsTable.Controls.Add(userControlIngredientView);
                 i++;
@@ -159,6 +174,8 @@ namespace Alviro
 
         public async Task LoadIngredientsAsync()
         {
+            selectedIngredients.Clear();
+
             textBoxSearch.Enabled = false;
             pictureBoxLoading.Visible = true;
 
@@ -213,9 +230,14 @@ namespace Alviro
             };
             userControlIngredientView.CheckBoxClick += (s, e) =>
             {
-                // Handle checkbox click event
-                // You can access the selected ingredient here if needed
-                // For example: MessageBox.Show($"Checkbox clicked for {ingredient.Name}");
+                if (userControlIngredientView.checkBox1.Checked)
+                {
+                    selectedIngredients.Add(newIngredient);
+                }
+                else
+                {
+                    selectedIngredients.Remove(newIngredient);
+                }
             };
             userControlIngredientView.ButtonCancelModifyClick += (s, e) =>
             {
@@ -230,7 +252,7 @@ namespace Alviro
                 {
                     MessageBox.Show("Nem sikerült az új hozzávalót eltávolítani.", "Sikertelen eltávolítás", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
 
             };
             userControlIngredientView.textBoxModifyName.Text = "Új hozzávaló neve";
@@ -267,6 +289,74 @@ namespace Alviro
 
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (selectedIngredients.Count == 0)
+            {
+                MessageBox.Show("Kérlek válassz ki legalább egy hozzávalót a törléshez", "Nincs kiválasztott hozzávaló", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            FormConfrimDialog confirmDialog = new FormConfrimDialog();
+            string Message = $"Biztosan törölni szeretnéd a kijelölt hozzávalókat?\n{string.Join(", ", selectedIngredients.Select(i => i.Name))}";
+            confirmDialog.labelText.Text = Message;
+            confirmDialog.Text = "Hozzávalók törlése";
+            confirmDialog.ShowDialog();
+            if (confirmDialog.DialogResult == DialogResult.Yes)
+            {
+                foreach (var ingredient in selectedIngredients)
+                {
+                    dbContext.Ingredients.Remove(ingredient);
+                }
+                try
+                {
+                    dbContext.SaveChanges();
+                    LoadIngredientsAsync();
+                }
+                catch (System.Exception)
+                {
+                    MessageBox.Show("Nem sikerült eltávolítani a hozzávalókat, kérlek próbáld újra", "Sikertelen törlés", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Select all ingredients
+            foreach (Control control in panelIngredientsTable.Controls)
+            {
+
+                if (control is UserControlIngredientView ingredientView)
+                {
+                    // Check if the ingredient is already selected
+                    if (selectedIngredients.Contains(ingredientView.ingredientDTO))
+                    {
+                        ingredientView.checkBox1.Checked = false;
+                        selectedIngredients.Remove(ingredientView.ingredientDTO);
+                    }
+                    else
+                    {
+                        ingredientView.checkBox1.Checked = true;
+                        selectedIngredients.Add(ingredientView.ingredientDTO);
+                    }
+
+                }
+            }
+        }
+
+        private void buttonDeselectAll_Click(object sender, EventArgs e)
+        {
+            //Deselect all ingredients
+            foreach (Control control in panelIngredientsTable.Controls)
+            {
+                if (control is UserControlIngredientView ingredientView)
+                {
+                    ingredientView.checkBox1.Checked = false;
+                    selectedIngredients.Remove(ingredientView.ingredientDTO);
+                }
+            }
         }
     }
 }

@@ -142,7 +142,7 @@ namespace Alviro
             var data = await Task.Run(() => loadRecipes());
 
             populateUi(data);
-            comboBoxOrder.SelectedIndex = 0;
+            //comboBoxOrder.SelectedIndex = 0;
 
 
             pictureBoxLoading.Visible = false;

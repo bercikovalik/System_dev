@@ -37,6 +37,8 @@
             panelIngredientsTable = new Panel();
             pictureBoxLoading = new PictureBox();
             panelIngredientsButtons = new Panel();
+            button2 = new Button();
+            button1 = new Button();
             buttonAddNewIngredients = new Button();
             buttonRefresh = new Button();
             panelIngredientsHeader = new Panel();
@@ -47,6 +49,7 @@
             label3 = new Label();
             panelIngredientsProductsViewer = new Panel();
             labelTempSelectedIngredient = new Label();
+            buttonDeselectAll = new Button();
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRightArrow).BeginInit();
             panelIngredientsViewer.SuspendLayout();
@@ -144,6 +147,9 @@
             // panelIngredientsButtons
             // 
             panelIngredientsButtons.BackColor = Color.FromArgb(104, 123, 82);
+            panelIngredientsButtons.Controls.Add(buttonDeselectAll);
+            panelIngredientsButtons.Controls.Add(button2);
+            panelIngredientsButtons.Controls.Add(button1);
             panelIngredientsButtons.Controls.Add(buttonAddNewIngredients);
             panelIngredientsButtons.Controls.Add(buttonRefresh);
             panelIngredientsButtons.Dock = DockStyle.Right;
@@ -151,6 +157,38 @@
             panelIngredientsButtons.Name = "panelIngredientsButtons";
             panelIngredientsButtons.Size = new Size(174, 738);
             panelIngredientsButtons.TabIndex = 12;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Bottom;
+            button2.BackColor = Color.FromArgb(86, 99, 111);
+            button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(86, 99, 111);
+            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(51, 51, 51);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(8, 484);
+            button2.Name = "button2";
+            button2.Size = new Size(158, 67);
+            button2.TabIndex = 5;
+            button2.Text = "Összes kijelölése";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Bottom;
+            button1.BackColor = Color.FromArgb(255, 128, 128);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(8, 639);
+            button1.Name = "button1";
+            button1.Size = new Size(158, 95);
+            button1.TabIndex = 4;
+            button1.Text = "Kijeltölt hozzávalók törlése";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // buttonAddNewIngredients
             // 
@@ -276,6 +314,23 @@
             labelTempSelectedIngredient.TabIndex = 0;
             labelTempSelectedIngredient.Text = "label1";
             // 
+            // buttonDeselectAll
+            // 
+            buttonDeselectAll.Anchor = AnchorStyles.Bottom;
+            buttonDeselectAll.BackColor = Color.FromArgb(86, 99, 111);
+            buttonDeselectAll.FlatAppearance.MouseDownBackColor = Color.FromArgb(86, 99, 111);
+            buttonDeselectAll.FlatAppearance.MouseOverBackColor = Color.FromArgb(51, 51, 51);
+            buttonDeselectAll.FlatStyle = FlatStyle.Flat;
+            buttonDeselectAll.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            buttonDeselectAll.ForeColor = Color.White;
+            buttonDeselectAll.Location = new Point(8, 562);
+            buttonDeselectAll.Name = "buttonDeselectAll";
+            buttonDeselectAll.Size = new Size(158, 67);
+            buttonDeselectAll.TabIndex = 6;
+            buttonDeselectAll.Text = "Összes kijelölés törlése";
+            buttonDeselectAll.UseVisualStyleBackColor = false;
+            buttonDeselectAll.Click += buttonDeselectAll_Click;
+            // 
             // UserControlIngredientsNew
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -322,5 +377,8 @@
         private PictureBox pictureBoxLoading;
         private Label label1;
         private TextBox textBoxSearch;
+        private Button button1;
+        private Button button2;
+        private Button buttonDeselectAll;
     }
 }

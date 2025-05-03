@@ -226,7 +226,6 @@
         private Panel panel;
         private Panel panelCheckbox;
         private Label labelIngredientName;
-        private CheckBox checkBox1;
         private Panel panelControls;
         private Panel panelIngredientName;
         private Label label1;
@@ -236,5 +235,6 @@
         public Button buttonSelect;
         public Button buttonCancelModify;
         public Button buttonSave;
+        public CheckBox checkBox1;
     }
 }

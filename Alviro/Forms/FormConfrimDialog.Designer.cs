@@ -103,6 +103,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximumSize = new Size(700, 700);
             Name = "FormConfrimDialog";
             ShowIcon = false;
             ShowInTaskbar = false;

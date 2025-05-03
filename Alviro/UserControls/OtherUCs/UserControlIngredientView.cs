@@ -15,7 +15,7 @@ namespace Alviro
     {
         Dnn972Context dbContext = new Dnn972Context();
 
-        Ingredient ingredientDTO = new Ingredient();
+        public Ingredient ingredientDTO = new Ingredient();
 
         //Event for buttonSelect click
         public event EventHandler ButtonSelectClick;
