@@ -86,7 +86,7 @@
             panelIngredientsViewer.Dock = DockStyle.Left;
             panelIngredientsViewer.Location = new Point(0, 52);
             panelIngredientsViewer.Name = "panelIngredientsViewer";
-            panelIngredientsViewer.Size = new Size(806, 815);
+            panelIngredientsViewer.Size = new Size(901, 815);
             panelIngredientsViewer.TabIndex = 1;
             // 
             // panelIngredientsTable
@@ -95,7 +95,7 @@
             panelIngredientsTable.Dock = DockStyle.Fill;
             panelIngredientsTable.Location = new Point(0, 77);
             panelIngredientsTable.Name = "panelIngredientsTable";
-            panelIngredientsTable.Size = new Size(632, 738);
+            panelIngredientsTable.Size = new Size(727, 738);
             panelIngredientsTable.TabIndex = 13;
             // 
             // panelIngredientsButtons
@@ -104,7 +104,7 @@
             panelIngredientsButtons.Controls.Add(buttonAddNewIngredients);
             panelIngredientsButtons.Controls.Add(buttonRefresh);
             panelIngredientsButtons.Dock = DockStyle.Right;
-            panelIngredientsButtons.Location = new Point(632, 77);
+            panelIngredientsButtons.Location = new Point(727, 77);
             panelIngredientsButtons.Name = "panelIngredientsButtons";
             panelIngredientsButtons.Size = new Size(174, 738);
             panelIngredientsButtons.TabIndex = 12;
@@ -116,13 +116,13 @@
             buttonAddNewIngredients.FlatAppearance.MouseDownBackColor = Color.FromArgb(86, 99, 111);
             buttonAddNewIngredients.FlatAppearance.MouseOverBackColor = Color.FromArgb(51, 51, 51);
             buttonAddNewIngredients.FlatStyle = FlatStyle.Flat;
-            buttonAddNewIngredients.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            buttonAddNewIngredients.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 238);
             buttonAddNewIngredients.ForeColor = Color.White;
             buttonAddNewIngredients.Location = new Point(8, 77);
             buttonAddNewIngredients.Name = "buttonAddNewIngredients";
             buttonAddNewIngredients.Size = new Size(158, 57);
             buttonAddNewIngredients.TabIndex = 3;
-            buttonAddNewIngredients.Text = "Új recept";
+            buttonAddNewIngredients.Text = "Új hozzávaló";
             buttonAddNewIngredients.UseVisualStyleBackColor = false;
             // 
             // buttonRefresh
@@ -149,7 +149,7 @@
             panelIngredientsHeader.Dock = DockStyle.Top;
             panelIngredientsHeader.Location = new Point(0, 0);
             panelIngredientsHeader.Name = "panelIngredientsHeader";
-            panelIngredientsHeader.Size = new Size(806, 77);
+            panelIngredientsHeader.Size = new Size(901, 77);
             panelIngredientsHeader.TabIndex = 11;
             // 
             // panelSort
@@ -160,7 +160,7 @@
             panelSort.Dock = DockStyle.Fill;
             panelSort.Location = new Point(199, 0);
             panelSort.Name = "panelSort";
-            panelSort.Size = new Size(607, 77);
+            panelSort.Size = new Size(702, 77);
             panelSort.TabIndex = 13;
             // 
             // comboBoxOrder
@@ -172,7 +172,7 @@
             comboBoxOrder.FormattingEnabled = true;
             comboBoxOrder.Location = new Point(124, 20);
             comboBoxOrder.Name = "comboBoxOrder";
-            comboBoxOrder.Size = new Size(474, 38);
+            comboBoxOrder.Size = new Size(569, 38);
             comboBoxOrder.TabIndex = 5;
             // 
             // label2
@@ -214,9 +214,9 @@
             // 
             panelIngredientsProductsViewer.Controls.Add(labelTempSelectedIngredient);
             panelIngredientsProductsViewer.Dock = DockStyle.Fill;
-            panelIngredientsProductsViewer.Location = new Point(806, 52);
+            panelIngredientsProductsViewer.Location = new Point(901, 52);
             panelIngredientsProductsViewer.Name = "panelIngredientsProductsViewer";
-            panelIngredientsProductsViewer.Size = new Size(748, 815);
+            panelIngredientsProductsViewer.Size = new Size(653, 815);
             panelIngredientsProductsViewer.TabIndex = 2;
             // 
             // labelTempSelectedIngredient

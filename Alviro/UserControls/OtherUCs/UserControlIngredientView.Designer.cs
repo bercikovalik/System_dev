@@ -30,8 +30,11 @@
         {
             panel = new Panel();
             panelIngredientName = new Panel();
+            textBoxModifyName = new TextBox();
             label1 = new Label();
             panelControls = new Panel();
+            buttonCancelModify = new Button();
+            buttonSave = new Button();
             buttonSelect = new Button();
             buttonDelete = new Button();
             buttonModify = new Button();
@@ -50,19 +53,34 @@
             panel.Controls.Add(panelIngredientName);
             panel.Controls.Add(panelControls);
             panel.Controls.Add(panelCheckbox);
-            panel.Location = new Point(2, 4);
+            panel.Location = new Point(4, 4);
             panel.Name = "panel";
-            panel.Size = new Size(627, 83);
+            panel.Size = new Size(630, 83);
             panel.TabIndex = 0;
             // 
             // panelIngredientName
             // 
+            panelIngredientName.Controls.Add(textBoxModifyName);
             panelIngredientName.Controls.Add(label1);
             panelIngredientName.Dock = DockStyle.Fill;
             panelIngredientName.Location = new Point(47, 0);
             panelIngredientName.Name = "panelIngredientName";
-            panelIngredientName.Size = new Size(189, 83);
+            panelIngredientName.Size = new Size(192, 83);
             panelIngredientName.TabIndex = 3;
+            // 
+            // textBoxModifyName
+            // 
+            textBoxModifyName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            textBoxModifyName.BackColor = Color.Silver;
+            textBoxModifyName.BorderStyle = BorderStyle.FixedSingle;
+            textBoxModifyName.Enabled = false;
+            textBoxModifyName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            textBoxModifyName.ForeColor = Color.White;
+            textBoxModifyName.Location = new Point(8, 22);
+            textBoxModifyName.Name = "textBoxModifyName";
+            textBoxModifyName.Size = new Size(178, 39);
+            textBoxModifyName.TabIndex = 2;
+            textBoxModifyName.Visible = false;
             // 
             // label1
             // 
@@ -78,14 +96,49 @@
             // 
             // panelControls
             // 
+            panelControls.Controls.Add(buttonCancelModify);
+            panelControls.Controls.Add(buttonSave);
             panelControls.Controls.Add(buttonSelect);
             panelControls.Controls.Add(buttonDelete);
             panelControls.Controls.Add(buttonModify);
             panelControls.Dock = DockStyle.Right;
-            panelControls.Location = new Point(236, 0);
+            panelControls.Location = new Point(239, 0);
             panelControls.Name = "panelControls";
             panelControls.Size = new Size(391, 83);
             panelControls.TabIndex = 2;
+            // 
+            // buttonCancelModify
+            // 
+            buttonCancelModify.Anchor = AnchorStyles.None;
+            buttonCancelModify.BackColor = Color.FromArgb(255, 128, 128);
+            buttonCancelModify.Enabled = false;
+            buttonCancelModify.FlatStyle = FlatStyle.Flat;
+            buttonCancelModify.Font = new Font("Segoe UI", 10F);
+            buttonCancelModify.Location = new Point(274, 22);
+            buttonCancelModify.Name = "buttonCancelModify";
+            buttonCancelModify.Size = new Size(112, 38);
+            buttonCancelModify.TabIndex = 7;
+            buttonCancelModify.Text = "Mégse";
+            buttonCancelModify.UseVisualStyleBackColor = false;
+            buttonCancelModify.Visible = false;
+            buttonCancelModify.Click += buttonCancelModify_Click;
+            // 
+            // buttonSave
+            // 
+            buttonSave.Anchor = AnchorStyles.None;
+            buttonSave.BackColor = Color.FromArgb(104, 123, 82);
+            buttonSave.Enabled = false;
+            buttonSave.FlatStyle = FlatStyle.Flat;
+            buttonSave.Font = new Font("Segoe UI", 10F);
+            buttonSave.ForeColor = Color.White;
+            buttonSave.Location = new Point(142, 22);
+            buttonSave.Name = "buttonSave";
+            buttonSave.Size = new Size(126, 38);
+            buttonSave.TabIndex = 6;
+            buttonSave.Text = "Mentés";
+            buttonSave.UseVisualStyleBackColor = false;
+            buttonSave.Visible = false;
+            buttonSave.Click += buttonSave_Click;
             // 
             // buttonSelect
             // 
@@ -155,9 +208,10 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             Controls.Add(panel);
             Name = "UserControlIngredientView";
-            Size = new Size(632, 90);
+            Size = new Size(638, 90);
             panel.ResumeLayout(false);
             panelIngredientName.ResumeLayout(false);
             panelIngredientName.PerformLayout();
@@ -178,5 +232,8 @@
         private Button buttonDelete;
         private Button buttonModify;
         private Button buttonSelect;
+        private TextBox textBoxModifyName;
+        private Button buttonCancelModify;
+        private Button buttonSave;
     }
 }

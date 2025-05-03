@@ -40,13 +40,29 @@ namespace Alviro
         private void buttonModify_Click(object sender, EventArgs e)
         {
 
-            FormIngredientModify formIngredientModify = new FormIngredientModify(ingredientDTO);
-            formIngredientModify.ShowDialog();
-            if (formIngredientModify.DialogResult == DialogResult.OK)
-            {
-                ButtonModifyClick?.Invoke(this, EventArgs.Empty);
+            //FormIngredientModify formIngredientModify = new FormIngredientModify(ingredientDTO);
+            //formIngredientModify.ShowDialog();
+            //if (formIngredientModify.DialogResult == DialogResult.OK)
+            //{
+            //    ButtonModifyClick?.Invoke(this, EventArgs.Empty);
 
-            }
+            //}
+
+            textBoxModifyName.Text = ingredientDTO.Name;
+            textBoxModifyName.Visible = true;
+            textBoxModifyName.Enabled = true;
+
+            buttonSave.Visible = true;
+            buttonSave.Enabled = true;
+            buttonModify.Visible = false;
+            buttonModify.Enabled = false;
+            buttonDelete.Visible = false;
+            buttonDelete.Enabled = false;
+            buttonCancelModify.Visible = true;
+            buttonCancelModify.Enabled = true;
+            buttonSelect.Enabled = false;
+
+
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -81,6 +97,42 @@ namespace Alviro
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             CheckBoxClick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            //Modify the ingredient
+            ingredientDTO.Name = textBoxModifyName.Text;
+            try
+            {
+                dbContext.Ingredients.Update(ingredientDTO);
+                dbContext.SaveChanges();
+                ButtonModifyClick?.Invoke(this, EventArgs.Empty);
+            }
+            catch (System.Exception)
+            {
+                MessageBox.Show("A hozzávalót nem sikerült szerkeszteni", "Sikertelen módosítás", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+
+        }
+
+        private void buttonCancelModify_Click(object sender, EventArgs e)
+        {
+            textBoxModifyName.Visible = false;
+            textBoxModifyName.Enabled = false;
+
+            buttonSave.Visible = false;
+            buttonSave.Enabled = false;
+            buttonModify.Visible = true;
+            buttonModify.Enabled = true;
+            buttonDelete.Visible = true;
+            buttonDelete.Enabled = true;
+            buttonCancelModify.Visible = false;
+            buttonCancelModify.Enabled = false;
+            buttonSelect.Enabled = true;
         }
     }
 }
