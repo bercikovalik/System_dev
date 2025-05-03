@@ -208,7 +208,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(224, 224, 224);
             Controls.Add(panel);
             Name = "UserControlIngredientView";
             Size = new Size(638, 90);

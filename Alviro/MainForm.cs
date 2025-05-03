@@ -33,8 +33,6 @@ namespace Alviro
             panelMenuItem1.BackColor = Color.Transparent;
             panelMenuItem3.BackColor = Color.Transparent;
 
-            //Wait 50 sec so the ui can load
-            Task.Delay(1000).Wait();
 
 
             UserControlIngredientsNew userControlIngredients = new UserControlIngredientsNew();

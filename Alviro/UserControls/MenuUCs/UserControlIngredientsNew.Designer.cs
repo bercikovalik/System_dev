@@ -30,9 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlIngredientsNew));
             panelHeader = new Panel();
+            label1 = new Label();
+            textBoxSearch = new TextBox();
             pictureBoxRightArrow = new PictureBox();
             panelIngredientsViewer = new Panel();
             panelIngredientsTable = new Panel();
+            pictureBoxLoading = new PictureBox();
             panelIngredientsButtons = new Panel();
             buttonAddNewIngredients = new Button();
             buttonRefresh = new Button();
@@ -47,6 +50,8 @@
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRightArrow).BeginInit();
             panelIngredientsViewer.SuspendLayout();
+            panelIngredientsTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLoading).BeginInit();
             panelIngredientsButtons.SuspendLayout();
             panelIngredientsHeader.SuspendLayout();
             panelSort.SuspendLayout();
@@ -57,12 +62,35 @@
             // panelHeader
             // 
             panelHeader.BackColor = Color.FromArgb(104, 123, 82);
+            panelHeader.Controls.Add(label1);
+            panelHeader.Controls.Add(textBoxSearch);
             panelHeader.Controls.Add(pictureBoxRightArrow);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1554, 52);
             panelHeader.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(57, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(100, 32);
+            label1.TabIndex = 4;
+            label1.Text = "Keresés:";
+            // 
+            // textBoxSearch
+            // 
+            textBoxSearch.BackColor = Color.White;
+            textBoxSearch.BorderStyle = BorderStyle.FixedSingle;
+            textBoxSearch.Location = new Point(164, 12);
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.Size = new Size(255, 31);
+            textBoxSearch.TabIndex = 3;
+            textBoxSearch.TextChanged += textBoxSearch_TextChanged;
             // 
             // pictureBoxRightArrow
             // 
@@ -92,11 +120,26 @@
             // panelIngredientsTable
             // 
             panelIngredientsTable.AutoScroll = true;
+            panelIngredientsTable.BackColor = Color.FromArgb(224, 224, 224);
+            panelIngredientsTable.Controls.Add(pictureBoxLoading);
             panelIngredientsTable.Dock = DockStyle.Fill;
             panelIngredientsTable.Location = new Point(0, 77);
             panelIngredientsTable.Name = "panelIngredientsTable";
             panelIngredientsTable.Size = new Size(727, 738);
             panelIngredientsTable.TabIndex = 13;
+            // 
+            // pictureBoxLoading
+            // 
+            pictureBoxLoading.Anchor = AnchorStyles.None;
+            pictureBoxLoading.Image = (Image)resources.GetObject("pictureBoxLoading.Image");
+            pictureBoxLoading.Location = new Point(323, 331);
+            pictureBoxLoading.MinimumSize = new Size(80, 80);
+            pictureBoxLoading.Name = "pictureBoxLoading";
+            pictureBoxLoading.Size = new Size(80, 80);
+            pictureBoxLoading.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxLoading.TabIndex = 6;
+            pictureBoxLoading.TabStop = false;
+            pictureBoxLoading.Visible = false;
             // 
             // panelIngredientsButtons
             // 
@@ -140,6 +183,7 @@
             buttonRefresh.TabIndex = 2;
             buttonRefresh.Text = "Frissítés";
             buttonRefresh.UseVisualStyleBackColor = false;
+            buttonRefresh.Click += buttonRefresh_Click;
             // 
             // panelIngredientsHeader
             // 
@@ -174,6 +218,7 @@
             comboBoxOrder.Name = "comboBoxOrder";
             comboBoxOrder.Size = new Size(569, 38);
             comboBoxOrder.TabIndex = 5;
+            comboBoxOrder.SelectedIndexChanged += comboBoxOrder_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -238,8 +283,11 @@
             Name = "UserControlIngredientsNew";
             Size = new Size(1554, 867);
             panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRightArrow).EndInit();
             panelIngredientsViewer.ResumeLayout(false);
+            panelIngredientsTable.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLoading).EndInit();
             panelIngredientsButtons.ResumeLayout(false);
             panelIngredientsHeader.ResumeLayout(false);
             panelSort.ResumeLayout(false);
@@ -268,5 +316,8 @@
         private Button buttonAddNewIngredients;
         private Button buttonRefresh;
         private Label labelTempSelectedIngredient;
+        private PictureBox pictureBoxLoading;
+        private Label label1;
+        private TextBox textBoxSearch;
     }
 }
