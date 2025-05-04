@@ -37,6 +37,7 @@
             panelIngredientsTable = new Panel();
             pictureBoxLoading = new PictureBox();
             panelIngredientsButtons = new Panel();
+            buttonDeselectAll = new Button();
             button2 = new Button();
             button1 = new Button();
             buttonAddNewIngredients = new Button();
@@ -47,9 +48,6 @@
             label2 = new Label();
             panelIngredientName = new Panel();
             label3 = new Label();
-            panelIngredientsProductsViewer = new Panel();
-            labelTempSelectedIngredient = new Label();
-            buttonDeselectAll = new Button();
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRightArrow).BeginInit();
             panelIngredientsViewer.SuspendLayout();
@@ -59,7 +57,6 @@
             panelIngredientsHeader.SuspendLayout();
             panelSort.SuspendLayout();
             panelIngredientName.SuspendLayout();
-            panelIngredientsProductsViewer.SuspendLayout();
             SuspendLayout();
             // 
             // panelHeader
@@ -157,6 +154,23 @@
             panelIngredientsButtons.Name = "panelIngredientsButtons";
             panelIngredientsButtons.Size = new Size(174, 738);
             panelIngredientsButtons.TabIndex = 12;
+            // 
+            // buttonDeselectAll
+            // 
+            buttonDeselectAll.Anchor = AnchorStyles.Bottom;
+            buttonDeselectAll.BackColor = Color.FromArgb(86, 99, 111);
+            buttonDeselectAll.FlatAppearance.MouseDownBackColor = Color.FromArgb(86, 99, 111);
+            buttonDeselectAll.FlatAppearance.MouseOverBackColor = Color.FromArgb(51, 51, 51);
+            buttonDeselectAll.FlatStyle = FlatStyle.Flat;
+            buttonDeselectAll.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            buttonDeselectAll.ForeColor = Color.White;
+            buttonDeselectAll.Location = new Point(8, 562);
+            buttonDeselectAll.Name = "buttonDeselectAll";
+            buttonDeselectAll.Size = new Size(158, 67);
+            buttonDeselectAll.TabIndex = 6;
+            buttonDeselectAll.Text = "Összes kijelölés törlése";
+            buttonDeselectAll.UseVisualStyleBackColor = false;
+            buttonDeselectAll.Click += buttonDeselectAll_Click;
             // 
             // button2
             // 
@@ -295,47 +309,10 @@
             label3.TabIndex = 0;
             label3.Text = "Hozzávaló";
             // 
-            // panelIngredientsProductsViewer
-            // 
-            panelIngredientsProductsViewer.BackColor = Color.White;
-            panelIngredientsProductsViewer.Controls.Add(labelTempSelectedIngredient);
-            panelIngredientsProductsViewer.Dock = DockStyle.Fill;
-            panelIngredientsProductsViewer.Location = new Point(901, 52);
-            panelIngredientsProductsViewer.Name = "panelIngredientsProductsViewer";
-            panelIngredientsProductsViewer.Size = new Size(653, 815);
-            panelIngredientsProductsViewer.TabIndex = 2;
-            // 
-            // labelTempSelectedIngredient
-            // 
-            labelTempSelectedIngredient.AutoSize = true;
-            labelTempSelectedIngredient.Location = new Point(141, 102);
-            labelTempSelectedIngredient.Name = "labelTempSelectedIngredient";
-            labelTempSelectedIngredient.Size = new Size(59, 25);
-            labelTempSelectedIngredient.TabIndex = 0;
-            labelTempSelectedIngredient.Text = "label1";
-            // 
-            // buttonDeselectAll
-            // 
-            buttonDeselectAll.Anchor = AnchorStyles.Bottom;
-            buttonDeselectAll.BackColor = Color.FromArgb(86, 99, 111);
-            buttonDeselectAll.FlatAppearance.MouseDownBackColor = Color.FromArgb(86, 99, 111);
-            buttonDeselectAll.FlatAppearance.MouseOverBackColor = Color.FromArgb(51, 51, 51);
-            buttonDeselectAll.FlatStyle = FlatStyle.Flat;
-            buttonDeselectAll.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            buttonDeselectAll.ForeColor = Color.White;
-            buttonDeselectAll.Location = new Point(8, 562);
-            buttonDeselectAll.Name = "buttonDeselectAll";
-            buttonDeselectAll.Size = new Size(158, 67);
-            buttonDeselectAll.TabIndex = 6;
-            buttonDeselectAll.Text = "Összes kijelölés törlése";
-            buttonDeselectAll.UseVisualStyleBackColor = false;
-            buttonDeselectAll.Click += buttonDeselectAll_Click;
-            // 
             // UserControlIngredientsNew
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panelIngredientsProductsViewer);
             Controls.Add(panelIngredientsViewer);
             Controls.Add(panelHeader);
             Name = "UserControlIngredientsNew";
@@ -352,8 +329,6 @@
             panelSort.PerformLayout();
             panelIngredientName.ResumeLayout(false);
             panelIngredientName.PerformLayout();
-            panelIngredientsProductsViewer.ResumeLayout(false);
-            panelIngredientsProductsViewer.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -361,24 +336,25 @@
 
         private Panel panelHeader;
         private Panel panelIngredientsViewer;
-        private Panel panelIngredientsProductsViewer;
         private PictureBox pictureBoxRightArrow;
         private Panel panelIngredientsHeader;
         private Label label3;
         private Panel panelSort;
         private Panel panelIngredientName;
-        private Label label2;
-        private ComboBox comboBoxOrder;
         private Panel panelIngredientsButtons;
         private Panel panelIngredientsTable;
         private Button buttonAddNewIngredients;
         private Button buttonRefresh;
-        private Label labelTempSelectedIngredient;
         private PictureBox pictureBoxLoading;
         private Label label1;
         private TextBox textBoxSearch;
         private Button button1;
         private Button button2;
         private Button buttonDeselectAll;
+        private Button button3;
+        private Button button5;
+        private Button button6;
+        private ComboBox comboBoxOrder;
+        private Label label2;
     }
 }

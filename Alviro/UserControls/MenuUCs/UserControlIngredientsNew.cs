@@ -87,7 +87,7 @@ namespace Alviro
                 ingredientView.ButtonSelectClick += (s, e) =>
                 {
                     selectedIngredient = ingredient;
-                    labelTempSelectedIngredient.Text = selectedIngredient.Name;
+                    ingredientSelected(ingredient);
                 };
                 ingredientView.ButtonModifyClick += (s, e) =>
                 {
@@ -149,7 +149,8 @@ namespace Alviro
                 userControlIngredientView.ButtonSelectClick += (s, e) =>
                 {
                     selectedIngredient = ingredient;
-                    labelTempSelectedIngredient.Text = selectedIngredient.Name;
+                    ingredientSelected(selectedIngredient);
+
                 };
                 userControlIngredientView.ButtonModifyClick += (s, e) =>
                 {
@@ -243,7 +244,8 @@ namespace Alviro
             userControlIngredientView.ButtonSelectClick += (s, e) =>
             {
                 selectedIngredient = newIngredient;
-                labelTempSelectedIngredient.Text = selectedIngredient.Name;
+                ingredientSelected(selectedIngredient);
+
             };
             userControlIngredientView.CheckBoxClick += (s, e) =>
             {
@@ -312,8 +314,17 @@ namespace Alviro
             }
 
             FormConfrimDialog confirmDialog = new FormConfrimDialog();
-            string Message = $"Biztosan törölni szeretnéd a kijelölt hozzávalókat?\n{string.Join(", ", selectedIngredients.Select(i => i.Name))}";
-            confirmDialog.labelText.Text = Message;
+            var ingredientNames = selectedIngredients.Select(i => i.Name).ToList();
+            var formattedList = new List<string>();
+
+            for (int i = 0; i < ingredientNames.Count; i += 3)
+            {
+                var group = ingredientNames.Skip(i).Take(3);
+                formattedList.Add(string.Join(", ", group));
+            }
+
+            string message = $"Biztosan törölni szeretnéd a kijelölt hozzávalókat?\n{string.Join("\n", formattedList)}";
+            confirmDialog.labelText.Text = message;
             confirmDialog.Text = "Hozzávalók törlése";
             confirmDialog.ShowDialog();
             if (confirmDialog.DialogResult == DialogResult.Yes)
@@ -370,5 +381,20 @@ namespace Alviro
                 }
             }
         }
+
+        private void ingredientSelected(Ingredient selectedIngredient)
+        {
+            FormSelectProducts formSelectProducts = new FormSelectProducts(selectedIngredient);
+            formSelectProducts.ShowDialog();
+            if (formSelectProducts.DialogResult == DialogResult.OK)
+            {
+                // Handle the selected ingredient
+                // You can access the selected ingredient from the formSelectProducts object
+                // For example: var selectedIngredient = formSelectProducts.SelectedIngredient;
+            }
+        }
+        
+
+
     }
 }

@@ -73,9 +73,10 @@
             labelText.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
             labelText.Location = new Point(0, 0);
             labelText.Margin = new Padding(12);
+            labelText.MinimumSize = new Size(0, 160);
             labelText.Name = "labelText";
             labelText.Padding = new Padding(18);
-            labelText.Size = new Size(95, 61);
+            labelText.Size = new Size(95, 160);
             labelText.TabIndex = 2;
             labelText.Text = "label1";
             labelText.TextAlign = ContentAlignment.MiddleLeft;

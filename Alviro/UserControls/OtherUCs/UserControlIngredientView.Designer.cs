@@ -197,6 +197,9 @@
             // checkBox1
             // 
             checkBox1.Appearance = Appearance.Button;
+            checkBox1.FlatAppearance.CheckedBackColor = Color.FromArgb(104, 123, 82);
+            checkBox1.FlatAppearance.MouseDownBackColor = Color.FromArgb(86, 99, 111);
+            checkBox1.FlatAppearance.MouseOverBackColor = Color.FromArgb(104, 123, 82);
             checkBox1.FlatStyle = FlatStyle.Flat;
             checkBox1.Location = new Point(6, 22);
             checkBox1.Name = "checkBox1";
