@@ -215,6 +215,7 @@ namespace Alviro
             Ingredientproduct ingredientproductToAdd = new Ingredientproduct();
             ingredientproductToAdd.Ingredientid = SelectedIngredient.Ingredientid;
             ingredientproductToAdd.Productid = product.ProductId;
+            ingredientproductToAdd.RewriteUrl = product.RewriteUrl;
 
 
 
