@@ -28,41 +28,191 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            panel1 = new Panel();
+            panelHeader = new Panel();
+            labelIngredientName = new Label();
+            panelContentHeader = new Panel();
+            panelAside = new Panel();
+            panelLinkToHotcakesAdmin = new Panel();
+            button1 = new Button();
+            panelWebShopLink = new Panel();
+            buttonOpenWebShop = new Button();
+            panelContent = new Panel();
+            panelCheckConnection = new Panel();
+            pictureBoxWebShop = new PictureBox();
+            pictureBoxHotcakes = new PictureBox();
+            panelHeader.SuspendLayout();
+            panelAside.SuspendLayout();
+            panelLinkToHotcakesAdmin.SuspendLayout();
+            panelWebShopLink.SuspendLayout();
+            panelContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWebShop).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxHotcakes).BeginInit();
             SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // panelHeader
             // 
-            flowLayoutPanel1.Dock = DockStyle.Top;
-            flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(938, 42);
-            flowLayoutPanel1.TabIndex = 0;
+            panelHeader.Controls.Add(labelIngredientName);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Location = new Point(0, 0);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Size = new Size(915, 52);
+            panelHeader.TabIndex = 0;
             // 
-            // panel1
+            // labelIngredientName
             // 
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 42);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(938, 106);
-            panel1.TabIndex = 1;
+            labelIngredientName.Anchor = AnchorStyles.None;
+            labelIngredientName.AutoSize = true;
+            labelIngredientName.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            labelIngredientName.ForeColor = Color.White;
+            labelIngredientName.Location = new Point(381, 8);
+            labelIngredientName.Name = "labelIngredientName";
+            labelIngredientName.Size = new Size(153, 38);
+            labelIngredientName.TabIndex = 3;
+            labelIngredientName.Text = "Áttekintés";
+            labelIngredientName.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelContentHeader
+            // 
+            panelContentHeader.BackColor = Color.FromArgb(51, 51, 51);
+            panelContentHeader.Dock = DockStyle.Top;
+            panelContentHeader.Location = new Point(0, 52);
+            panelContentHeader.Name = "panelContentHeader";
+            panelContentHeader.Size = new Size(915, 74);
+            panelContentHeader.TabIndex = 3;
+            // 
+            // panelAside
+            // 
+            panelAside.Controls.Add(panelLinkToHotcakesAdmin);
+            panelAside.Controls.Add(panelWebShopLink);
+            panelAside.Dock = DockStyle.Right;
+            panelAside.Location = new Point(642, 0);
+            panelAside.Name = "panelAside";
+            panelAside.Size = new Size(273, 415);
+            panelAside.TabIndex = 0;
+            // 
+            // panelLinkToHotcakesAdmin
+            // 
+            panelLinkToHotcakesAdmin.Controls.Add(pictureBoxHotcakes);
+            panelLinkToHotcakesAdmin.Controls.Add(button1);
+            panelLinkToHotcakesAdmin.Dock = DockStyle.Top;
+            panelLinkToHotcakesAdmin.Location = new Point(0, 206);
+            panelLinkToHotcakesAdmin.Name = "panelLinkToHotcakesAdmin";
+            panelLinkToHotcakesAdmin.Size = new Size(273, 206);
+            panelLinkToHotcakesAdmin.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Bottom;
+            button1.BackColor = Color.FromArgb(86, 99, 111);
+            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(86, 99, 111);
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(51, 51, 51);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(21, 138);
+            button1.Name = "button1";
+            button1.Size = new Size(237, 57);
+            button1.TabIndex = 5;
+            button1.Text = "Admin felület";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // panelWebShopLink
+            // 
+            panelWebShopLink.Controls.Add(pictureBoxWebShop);
+            panelWebShopLink.Controls.Add(buttonOpenWebShop);
+            panelWebShopLink.Dock = DockStyle.Top;
+            panelWebShopLink.Location = new Point(0, 0);
+            panelWebShopLink.Name = "panelWebShopLink";
+            panelWebShopLink.Size = new Size(273, 206);
+            panelWebShopLink.TabIndex = 0;
+            // 
+            // buttonOpenWebShop
+            // 
+            buttonOpenWebShop.Anchor = AnchorStyles.Bottom;
+            buttonOpenWebShop.BackColor = Color.FromArgb(86, 99, 111);
+            buttonOpenWebShop.FlatAppearance.MouseDownBackColor = Color.FromArgb(86, 99, 111);
+            buttonOpenWebShop.FlatAppearance.MouseOverBackColor = Color.FromArgb(51, 51, 51);
+            buttonOpenWebShop.FlatStyle = FlatStyle.Flat;
+            buttonOpenWebShop.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            buttonOpenWebShop.ForeColor = Color.White;
+            buttonOpenWebShop.Location = new Point(21, 142);
+            buttonOpenWebShop.Name = "buttonOpenWebShop";
+            buttonOpenWebShop.Size = new Size(237, 57);
+            buttonOpenWebShop.TabIndex = 4;
+            buttonOpenWebShop.Text = "WebShop megnyitása";
+            buttonOpenWebShop.UseVisualStyleBackColor = false;
+            buttonOpenWebShop.Click += buttonOpenWebShop_Click;
+            // 
+            // panelContent
+            // 
+            panelContent.Controls.Add(panelCheckConnection);
+            panelContent.Controls.Add(panelAside);
+            panelContent.Dock = DockStyle.Fill;
+            panelContent.Location = new Point(0, 126);
+            panelContent.Name = "panelContent";
+            panelContent.Size = new Size(915, 415);
+            panelContent.TabIndex = 4;
+            // 
+            // panelCheckConnection
+            // 
+            panelCheckConnection.Dock = DockStyle.Fill;
+            panelCheckConnection.Location = new Point(0, 0);
+            panelCheckConnection.Name = "panelCheckConnection";
+            panelCheckConnection.Size = new Size(642, 415);
+            panelCheckConnection.TabIndex = 1;
+            // 
+            // pictureBoxWebShop
+            // 
+            pictureBoxWebShop.Location = new Point(21, 19);
+            pictureBoxWebShop.Name = "pictureBoxWebShop";
+            pictureBoxWebShop.Size = new Size(237, 117);
+            pictureBoxWebShop.TabIndex = 5;
+            pictureBoxWebShop.TabStop = false;
+            // 
+            // pictureBoxHotcakes
+            // 
+            pictureBoxHotcakes.Location = new Point(21, 15);
+            pictureBoxHotcakes.Name = "pictureBoxHotcakes";
+            pictureBoxHotcakes.Size = new Size(237, 117);
+            pictureBoxHotcakes.TabIndex = 6;
+            pictureBoxHotcakes.TabStop = false;
             // 
             // UserControlOverview
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            Controls.Add(panel1);
-            Controls.Add(flowLayoutPanel1);
+            BackColor = Color.FromArgb(104, 123, 82);
+            Controls.Add(panelContent);
+            Controls.Add(panelContentHeader);
+            Controls.Add(panelHeader);
+            MinimumSize = new Size(638, 455);
             Name = "UserControlOverview";
-            Size = new Size(938, 656);
+            Size = new Size(915, 541);
+            panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
+            panelAside.ResumeLayout(false);
+            panelLinkToHotcakesAdmin.ResumeLayout(false);
+            panelWebShopLink.ResumeLayout(false);
+            panelContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWebShop).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxHotcakes).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panel1;
+        private Panel panelHeader;
+        private Panel panelContentHeader;
+        private Label labelIngredientName;
+        private Panel panelAside;
+        private Panel panelContent;
+        private Panel panelCheckConnection;
+        private Panel panelLinkToHotcakesAdmin;
+        private Panel panelWebShopLink;
+        private Button button1;
+        private Button buttonOpenWebShop;
+        private PictureBox pictureBoxHotcakes;
+        private PictureBox pictureBoxWebShop;
     }
 }

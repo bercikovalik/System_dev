@@ -29,7 +29,7 @@ namespace Alviro
         public FormSelectProducts(Ingredient selectedIngredient)
         {
             this.SelectedIngredient = selectedIngredient;
-            //labelIngredientName.Text = SelectedIngredient.Name;
+            labelIngredientName.Text = selectedIngredient.Name;
             //comboBoxSortProducts.Items.AddRange(new string[] {
             //    "Alapértelmezett",
             //    "Név (Z-A)",
@@ -246,7 +246,7 @@ namespace Alviro
         private void textBoxSearchProduct_TextChanged(object sender, EventArgs e)
         {
 
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -307,6 +307,18 @@ namespace Alviro
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+            loadProducts();
+        }
+
+        private void buttonLastPage_Click(object sender, EventArgs e)
+        {
+            SelectedChunkIndex = 10000;
+            loadProducts();
+        }
+
+        private void buttonFirstPage_Click(object sender, EventArgs e)
+        {
+            SelectedChunkIndex = 0;
             loadProducts();
         }
     }

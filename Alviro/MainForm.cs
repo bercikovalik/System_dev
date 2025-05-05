@@ -11,9 +11,7 @@ namespace Alviro
 
             loadTime();
 
-            UserControlCheckConnection userControlCheckConnection = new UserControlCheckConnection();
-            userControlCheckConnection.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(userControlCheckConnection);
+            loadOverview();
             pictureBoxArrowLeft.BringToFront();
             pictureBoxRightArrow.BringToFront();
 

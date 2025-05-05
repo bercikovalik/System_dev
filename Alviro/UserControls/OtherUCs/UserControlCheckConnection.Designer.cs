@@ -46,7 +46,7 @@
             label.AutoSize = true;
             label.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label.ForeColor = Color.White;
-            label.Location = new Point(516, 271);
+            label.Location = new Point(314, 271);
             label.Name = "label";
             label.Size = new Size(316, 32);
             label.TabIndex = 9;
@@ -57,7 +57,7 @@
             // 
             pictureBoxConnecting.Anchor = AnchorStyles.None;
             pictureBoxConnecting.Image = (Image)resources.GetObject("pictureBoxConnecting.Image");
-            pictureBoxConnecting.Location = new Point(609, 170);
+            pictureBoxConnecting.Location = new Point(407, 170);
             pictureBoxConnecting.Name = "pictureBoxConnecting";
             pictureBoxConnecting.Size = new Size(98, 87);
             pictureBoxConnecting.SizeMode = PictureBoxSizeMode.Zoom;
@@ -68,7 +68,7 @@
             // 
             pictureBoxError.Anchor = AnchorStyles.None;
             pictureBoxError.Image = (Image)resources.GetObject("pictureBoxError.Image");
-            pictureBoxError.Location = new Point(609, 170);
+            pictureBoxError.Location = new Point(407, 170);
             pictureBoxError.Name = "pictureBoxError";
             pictureBoxError.Size = new Size(98, 87);
             pictureBoxError.SizeMode = PictureBoxSizeMode.Zoom;
@@ -80,7 +80,7 @@
             // 
             pictureBoxOkay.Anchor = AnchorStyles.None;
             pictureBoxOkay.Image = (Image)resources.GetObject("pictureBoxOkay.Image");
-            pictureBoxOkay.Location = new Point(609, 170);
+            pictureBoxOkay.Location = new Point(407, 170);
             pictureBoxOkay.Name = "pictureBoxOkay";
             pictureBoxOkay.Size = new Size(98, 87);
             pictureBoxOkay.SizeMode = PictureBoxSizeMode.Zoom;
@@ -101,7 +101,7 @@
             buttonCheckConnectionAgain.FlatStyle = FlatStyle.Flat;
             buttonCheckConnectionAgain.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             buttonCheckConnectionAgain.ForeColor = Color.White;
-            buttonCheckConnectionAgain.Location = new Point(592, 425);
+            buttonCheckConnectionAgain.Location = new Point(390, 425);
             buttonCheckConnectionAgain.Name = "buttonCheckConnectionAgain";
             buttonCheckConnectionAgain.Size = new Size(127, 52);
             buttonCheckConnectionAgain.TabIndex = 13;
@@ -116,7 +116,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(478, 315);
+            label2.Location = new Point(276, 315);
             label2.Name = "label2";
             label2.Size = new Size(386, 32);
             label2.TabIndex = 14;
@@ -128,6 +128,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.FromArgb(104, 123, 82);
             Controls.Add(label2);
             Controls.Add(buttonCheckConnectionAgain);
@@ -136,7 +137,7 @@
             Controls.Add(pictureBoxConnecting);
             Controls.Add(label);
             Name = "UserControlCheckConnection";
-            Size = new Size(1314, 546);
+            Size = new Size(910, 546);
             Load += UserControlCheckConnection_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxConnecting).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxError).EndInit();

@@ -32,7 +32,6 @@
             panelHeader = new Panel();
             label1 = new Label();
             textBoxSearch = new TextBox();
-            pictureBoxRightArrow = new PictureBox();
             panelIngredientsViewer = new Panel();
             panelIngredientsTable = new Panel();
             pictureBoxLoading = new PictureBox();
@@ -49,7 +48,6 @@
             panelIngredientName = new Panel();
             label3 = new Label();
             panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxRightArrow).BeginInit();
             panelIngredientsViewer.SuspendLayout();
             panelIngredientsTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLoading).BeginInit();
@@ -64,7 +62,6 @@
             panelHeader.BackColor = Color.FromArgb(104, 123, 82);
             panelHeader.Controls.Add(label1);
             panelHeader.Controls.Add(textBoxSearch);
-            panelHeader.Controls.Add(pictureBoxRightArrow);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
@@ -91,20 +88,6 @@
             textBoxSearch.Size = new Size(255, 31);
             textBoxSearch.TabIndex = 3;
             textBoxSearch.TextChanged += textBoxSearch_TextChanged;
-            // 
-            // pictureBoxRightArrow
-            // 
-            pictureBoxRightArrow.BackColor = Color.Transparent;
-            pictureBoxRightArrow.Cursor = Cursors.Hand;
-            pictureBoxRightArrow.Enabled = false;
-            pictureBoxRightArrow.Image = (Image)resources.GetObject("pictureBoxRightArrow.Image");
-            pictureBoxRightArrow.Location = new Point(4, 5);
-            pictureBoxRightArrow.Name = "pictureBoxRightArrow";
-            pictureBoxRightArrow.Size = new Size(45, 45);
-            pictureBoxRightArrow.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxRightArrow.TabIndex = 2;
-            pictureBoxRightArrow.TabStop = false;
-            pictureBoxRightArrow.Visible = false;
             // 
             // panelIngredientsViewer
             // 
@@ -319,7 +302,6 @@
             Size = new Size(1554, 867);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxRightArrow).EndInit();
             panelIngredientsViewer.ResumeLayout(false);
             panelIngredientsTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxLoading).EndInit();
@@ -336,7 +318,6 @@
 
         private Panel panelHeader;
         private Panel panelIngredientsViewer;
-        private PictureBox pictureBoxRightArrow;
         private Panel panelIngredientsHeader;
         private Label label3;
         private Panel panelSort;
