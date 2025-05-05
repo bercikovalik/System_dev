@@ -83,12 +83,13 @@ namespace Alviro
                 panelIngredientsTable.Controls.Add(ingredientView);
                 ingredientView.Dock = DockStyle.Top; // Optional: Set the docking style
 
-                //Event listener
+                //Kiválasztás után a terméknek nyitunk egy temrékhozzáadó ablakot
                 ingredientView.ButtonSelectClick += (s, e) =>
                 {
                     selectedIngredient = ingredient;
                     ingredientSelected(ingredient);
                 };
+                //Szerkesztés megnyomása után frissítjük a listát
                 ingredientView.ButtonModifyClick += (s, e) =>
                 {
                     LoadIngredientsAsync();
@@ -114,7 +115,7 @@ namespace Alviro
 
         private List<Ingredient> loadIngredients()
         {
-
+            //Hozzávalók betöltése
             try
             {
                 List<Ingredient> ingredients = (from k in dbContext.Ingredients
@@ -135,6 +136,8 @@ namespace Alviro
 
         private void populateUi(List<Ingredient> data)
         {
+            //UI feltöltése 
+
             panelIngredientsTable.Controls.Clear();
             int i = 0;
             foreach (var ingredient in data)
@@ -175,6 +178,7 @@ namespace Alviro
 
         public async Task LoadIngredientsAsync()
         {
+            //Aszinkron módon töltjük be, hogy ne fagyjon le a UI amíg tölt
             selectedIngredients.Clear();
 
             buttonAddNewIngredients.Enabled = false;
@@ -186,7 +190,7 @@ namespace Alviro
             textBoxSearch.Enabled = false;
             pictureBoxLoading.Visible = true;
 
-            await Task.Delay(50); // UI refresh
+            await Task.Delay(50); // Kis idő hogy az egyszerű módosításokat azonnal elvégezze
 
 
             var data = await Task.Run(() => loadIngredients());
@@ -225,6 +229,7 @@ namespace Alviro
 
         private void buttonAddNewIngredients_Click(object sender, EventArgs e)
         {
+            //Új hozzávaló esetén új UC-t adunk hozzá ami azonnal szerkesztő nézetbe vált
             Ingredient newIngredient = new Ingredient();
             UserControlIngredientView userControlIngredientView = new UserControlIngredientView(newIngredient);
             userControlIngredientView.Name = "userControlIngredientViewNewIngredient";
@@ -261,7 +266,7 @@ namespace Alviro
             userControlIngredientView.ButtonCancelModifyClick += (s, e) =>
             {
                 LoadIngredientsSync();
-                // Remove the new ingredient from the database if it was not saved
+                // Eltávolítjuk a hozzávalót ha nem lett elmentve
                 try
                 {
                     dbContext.Ingredients.Remove(newIngredient);
@@ -275,15 +280,8 @@ namespace Alviro
 
             };
             
-            //try
-            //{
-            //    dbContext.SaveChanges();
-            //}
-            //catch (System.Exception)
-            //{
-            //    MessageBox.Show("Nem sikerült az új hozzávalót hozzáadni.", "Sikertelen hozzáadás", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            
+            //A controllokat megfelelően beállítjuk
             userControlIngredientView.textBoxModifyName.Visible = true;
             userControlIngredientView.textBoxModifyName.Enabled = true;
             userControlIngredientView.buttonSave.Visible = true;
@@ -298,7 +296,7 @@ namespace Alviro
 
             panelIngredientsTable.Controls.Add(userControlIngredientView);
 
-            //Focus on the new ingredient name textbox
+            //A szerkesztő textboxra megy a fókusz
             userControlIngredientView.textBoxModifyName.Focus();
 
 

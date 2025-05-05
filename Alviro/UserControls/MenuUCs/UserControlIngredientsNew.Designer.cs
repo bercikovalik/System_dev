@@ -111,10 +111,10 @@
             panelIngredientsViewer.Controls.Add(panelIngredientsTable);
             panelIngredientsViewer.Controls.Add(panelIngredientsButtons);
             panelIngredientsViewer.Controls.Add(panelIngredientsHeader);
-            panelIngredientsViewer.Dock = DockStyle.Left;
+            panelIngredientsViewer.Dock = DockStyle.Fill;
             panelIngredientsViewer.Location = new Point(0, 52);
             panelIngredientsViewer.Name = "panelIngredientsViewer";
-            panelIngredientsViewer.Size = new Size(901, 815);
+            panelIngredientsViewer.Size = new Size(1554, 815);
             panelIngredientsViewer.TabIndex = 1;
             // 
             // panelIngredientsTable
@@ -125,14 +125,14 @@
             panelIngredientsTable.Dock = DockStyle.Fill;
             panelIngredientsTable.Location = new Point(0, 77);
             panelIngredientsTable.Name = "panelIngredientsTable";
-            panelIngredientsTable.Size = new Size(727, 738);
+            panelIngredientsTable.Size = new Size(1380, 738);
             panelIngredientsTable.TabIndex = 13;
             // 
             // pictureBoxLoading
             // 
             pictureBoxLoading.Anchor = AnchorStyles.None;
             pictureBoxLoading.Image = (Image)resources.GetObject("pictureBoxLoading.Image");
-            pictureBoxLoading.Location = new Point(323, 331);
+            pictureBoxLoading.Location = new Point(650, 331);
             pictureBoxLoading.MinimumSize = new Size(80, 80);
             pictureBoxLoading.Name = "pictureBoxLoading";
             pictureBoxLoading.Size = new Size(80, 80);
@@ -150,7 +150,7 @@
             panelIngredientsButtons.Controls.Add(buttonAddNewIngredients);
             panelIngredientsButtons.Controls.Add(buttonRefresh);
             panelIngredientsButtons.Dock = DockStyle.Right;
-            panelIngredientsButtons.Location = new Point(727, 77);
+            panelIngredientsButtons.Location = new Point(1380, 77);
             panelIngredientsButtons.Name = "panelIngredientsButtons";
             panelIngredientsButtons.Size = new Size(174, 738);
             panelIngredientsButtons.TabIndex = 12;
@@ -246,7 +246,7 @@
             panelIngredientsHeader.Dock = DockStyle.Top;
             panelIngredientsHeader.Location = new Point(0, 0);
             panelIngredientsHeader.Name = "panelIngredientsHeader";
-            panelIngredientsHeader.Size = new Size(901, 77);
+            panelIngredientsHeader.Size = new Size(1554, 77);
             panelIngredientsHeader.TabIndex = 11;
             // 
             // panelSort
@@ -257,7 +257,7 @@
             panelSort.Dock = DockStyle.Fill;
             panelSort.Location = new Point(199, 0);
             panelSort.Name = "panelSort";
-            panelSort.Size = new Size(702, 77);
+            panelSort.Size = new Size(1355, 77);
             panelSort.TabIndex = 13;
             // 
             // comboBoxOrder
@@ -268,9 +268,9 @@
             comboBoxOrder.FlatStyle = FlatStyle.Flat;
             comboBoxOrder.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 238);
             comboBoxOrder.FormattingEnabled = true;
-            comboBoxOrder.Location = new Point(335, 20);
+            comboBoxOrder.Location = new Point(821, 20);
             comboBoxOrder.Name = "comboBoxOrder";
-            comboBoxOrder.Size = new Size(358, 38);
+            comboBoxOrder.Size = new Size(525, 38);
             comboBoxOrder.TabIndex = 5;
             comboBoxOrder.SelectedIndexChanged += comboBoxOrder_SelectedIndexChanged;
             // 
@@ -280,7 +280,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(219, 23);
+            label2.Location = new Point(695, 23);
             label2.MaximumSize = new Size(220, 40);
             label2.Name = "label2";
             label2.Size = new Size(110, 30);
