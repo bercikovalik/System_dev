@@ -133,7 +133,7 @@
             panelMenuItem2.Controls.Add(label2);
             panelMenuItem2.Controls.Add(pictureBox4);
             panelMenuItem2.Cursor = Cursors.Hand;
-            panelMenuItem2.Location = new Point(1, 281);
+            panelMenuItem2.Location = new Point(1, 291);
             panelMenuItem2.Name = "panelMenuItem2";
             panelMenuItem2.Size = new Size(258, 54);
             panelMenuItem2.TabIndex = 7;
@@ -169,7 +169,7 @@
             panelMenuItem1.Controls.Add(label1);
             panelMenuItem1.Controls.Add(pictureBox3);
             panelMenuItem1.Cursor = Cursors.Hand;
-            panelMenuItem1.Location = new Point(0, 219);
+            panelMenuItem1.Location = new Point(0, 223);
             panelMenuItem1.Name = "panelMenuItem1";
             panelMenuItem1.Size = new Size(258, 54);
             panelMenuItem1.TabIndex = 6;
@@ -223,7 +223,7 @@
             // 
             // panelLeftInfo
             // 
-            panelLeftInfo.BackColor = Color.FromArgb(29, 55, 46);
+            panelLeftInfo.BackColor = Color.FromArgb(104, 123, 82);
             panelLeftInfo.Controls.Add(labelDate);
             panelLeftInfo.Dock = DockStyle.Bottom;
             panelLeftInfo.Location = new Point(0, 793);

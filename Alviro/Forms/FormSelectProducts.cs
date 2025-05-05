@@ -360,7 +360,19 @@ namespace Alviro
             loadProducts();
         }
 
-        private void buttonLastPage_Click(object sender, EventArgs e)
+
+
+        
+
+        private void textBoxSearchProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loadProducts();
+            }
+        }
+
+        private void buttonLastPage_Click_1(object sender, EventArgs e)
         {
             SelectedChunkIndex = 10000;
 
@@ -368,28 +380,17 @@ namespace Alviro
 
         }
 
-        private void buttonFirstPage_Click(object sender, EventArgs e)
+        private void buttonFirstPage_Click_1(object sender, EventArgs e)
         {
             SelectedChunkIndex = 0;
             loadProducts();
-
         }
 
-        private void buttonSelectAll_Click(object sender, EventArgs e)
+        private void buttonSelectAllProduct_Click(object sender, EventArgs e)
         {
             foreach (UserControlProductXIngredientViewer uc in panelProductsTable.Controls)
             {
                 uc.checkBox1.Checked = true;
-            }
-
-
-        }
-
-        private void textBoxSearchProduct_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                loadProducts();
             }
         }
     }
