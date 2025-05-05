@@ -47,6 +47,7 @@
             label2 = new Label();
             panelIngredientName = new Panel();
             label3 = new Label();
+            buttonSearch = new Button();
             panelHeader.SuspendLayout();
             panelIngredientsViewer.SuspendLayout();
             panelIngredientsTable.SuspendLayout();
@@ -60,6 +61,7 @@
             // panelHeader
             // 
             panelHeader.BackColor = Color.FromArgb(104, 123, 82);
+            panelHeader.Controls.Add(buttonSearch);
             panelHeader.Controls.Add(label1);
             panelHeader.Controls.Add(textBoxSearch);
             panelHeader.Dock = DockStyle.Top;
@@ -292,6 +294,23 @@
             label3.TabIndex = 0;
             label3.Text = "Hozzávaló";
             // 
+            // buttonSearch
+            // 
+            buttonSearch.Anchor = AnchorStyles.Left;
+            buttonSearch.BackColor = Color.FromArgb(86, 99, 111);
+            buttonSearch.FlatAppearance.MouseDownBackColor = Color.FromArgb(86, 99, 111);
+            buttonSearch.FlatAppearance.MouseOverBackColor = Color.FromArgb(51, 51, 51);
+            buttonSearch.FlatStyle = FlatStyle.Flat;
+            buttonSearch.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            buttonSearch.ForeColor = Color.White;
+            buttonSearch.Location = new Point(439, 7);
+            buttonSearch.Name = "buttonSearch";
+            buttonSearch.Size = new Size(111, 39);
+            buttonSearch.TabIndex = 6;
+            buttonSearch.Text = "Keresés";
+            buttonSearch.UseVisualStyleBackColor = false;
+            buttonSearch.Click += buttonSearch_Click;
+            // 
             // UserControlIngredientsNew
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -337,5 +356,6 @@
         private Button button6;
         private ComboBox comboBoxOrder;
         private Label label2;
+        private Button buttonSearch;
     }
 }

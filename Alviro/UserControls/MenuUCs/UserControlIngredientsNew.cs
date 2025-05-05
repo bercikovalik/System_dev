@@ -223,7 +223,7 @@ namespace Alviro
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            LoadIngredientsSync();
+            
 
         }
 
@@ -239,7 +239,7 @@ namespace Alviro
 
             dbContext.Ingredients.Add(newIngredient);
 
-            dbContext.SaveChanges(); 
+            dbContext.SaveChanges();
 
             userControlIngredientView.Dock = DockStyle.Top;
             userControlIngredientView.ButtonModifyClick += (s, e) =>
@@ -279,8 +279,8 @@ namespace Alviro
 
 
             };
-            
-            
+
+
             //A controllokat megfelelően beállítjuk
             userControlIngredientView.textBoxModifyName.Visible = true;
             userControlIngredientView.textBoxModifyName.Enabled = true;
@@ -391,8 +391,10 @@ namespace Alviro
                 // For example: var selectedIngredient = formSelectProducts.SelectedIngredient;
             }
         }
-        
 
-
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            LoadIngredientsSync();
+        }
     }
 }

@@ -35,6 +35,7 @@
             panelIngredientsProductsViewer = new Panel();
             panelProductsTable = new Panel();
             panel3 = new Panel();
+            buttonSelectAll = new Button();
             buttonSave = new Button();
             buttonClose = new Button();
             panelPagination = new Panel();
@@ -49,7 +50,6 @@
             comboBoxSortProducts = new ComboBox();
             label6 = new Label();
             label4 = new Label();
-            buttonSelectAll = new Button();
             panelHeader.SuspendLayout();
             panelIngredientsProductsViewer.SuspendLayout();
             panel3.SuspendLayout();
@@ -66,7 +66,7 @@
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1202, 52);
+            panelHeader.Size = new Size(1407, 52);
             panelHeader.TabIndex = 4;
             // 
             // buttonSearch
@@ -106,6 +106,7 @@
             textBoxSearchProduct.Size = new Size(255, 31);
             textBoxSearchProduct.TabIndex = 3;
             textBoxSearchProduct.TextChanged += textBoxSearchProduct_TextChanged;
+            textBoxSearchProduct.KeyDown += textBoxSearchProduct_KeyDown;
             // 
             // panelIngredientsProductsViewer
             // 
@@ -116,7 +117,7 @@
             panelIngredientsProductsViewer.Dock = DockStyle.Fill;
             panelIngredientsProductsViewer.Location = new Point(0, 52);
             panelIngredientsProductsViewer.Name = "panelIngredientsProductsViewer";
-            panelIngredientsProductsViewer.Size = new Size(1202, 636);
+            panelIngredientsProductsViewer.Size = new Size(1407, 636);
             panelIngredientsProductsViewer.TabIndex = 5;
             // 
             // panelProductsTable
@@ -125,7 +126,7 @@
             panelProductsTable.Dock = DockStyle.Fill;
             panelProductsTable.Location = new Point(0, 77);
             panelProductsTable.Name = "panelProductsTable";
-            panelProductsTable.Size = new Size(881, 559);
+            panelProductsTable.Size = new Size(1086, 559);
             panelProductsTable.TabIndex = 16;
             // 
             // panel3
@@ -138,10 +139,27 @@
             panel3.Controls.Add(comboBoxCategorySelector);
             panel3.Controls.Add(buttonRefreshProducts);
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(881, 77);
+            panel3.Location = new Point(1086, 77);
             panel3.Name = "panel3";
             panel3.Size = new Size(321, 559);
             panel3.TabIndex = 13;
+            // 
+            // buttonSelectAll
+            // 
+            buttonSelectAll.Anchor = AnchorStyles.Bottom;
+            buttonSelectAll.BackColor = Color.FromArgb(86, 99, 111);
+            buttonSelectAll.FlatAppearance.MouseDownBackColor = Color.FromArgb(86, 99, 111);
+            buttonSelectAll.FlatAppearance.MouseOverBackColor = Color.FromArgb(51, 51, 51);
+            buttonSelectAll.FlatStyle = FlatStyle.Flat;
+            buttonSelectAll.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            buttonSelectAll.ForeColor = Color.White;
+            buttonSelectAll.Location = new Point(81, 233);
+            buttonSelectAll.Name = "buttonSelectAll";
+            buttonSelectAll.Size = new Size(158, 87);
+            buttonSelectAll.TabIndex = 12;
+            buttonSelectAll.Text = "Összes kiválasztása";
+            buttonSelectAll.UseVisualStyleBackColor = false;
+            buttonSelectAll.Click += buttonSelectAll_Click;
             // 
             // buttonSave
             // 
@@ -309,7 +327,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1202, 77);
+            panel2.Size = new Size(1407, 77);
             panel2.TabIndex = 1;
             // 
             // comboBoxSortProducts
@@ -321,7 +339,7 @@
             comboBoxSortProducts.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 238);
             comboBoxSortProducts.FormattingEnabled = true;
             comboBoxSortProducts.Items.AddRange(new object[] { "Alapértelmezett", "Név (A-Z)", "Név (Z-A)" });
-            comboBoxSortProducts.Location = new Point(775, 19);
+            comboBoxSortProducts.Location = new Point(980, 19);
             comboBoxSortProducts.Name = "comboBoxSortProducts";
             comboBoxSortProducts.Size = new Size(411, 38);
             comboBoxSortProducts.TabIndex = 7;
@@ -345,35 +363,18 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(659, 22);
+            label4.Location = new Point(864, 22);
             label4.MaximumSize = new Size(220, 40);
             label4.Name = "label4";
             label4.Size = new Size(110, 30);
             label4.TabIndex = 8;
             label4.Text = "Rendezés:";
             // 
-            // buttonSelectAll
-            // 
-            buttonSelectAll.Anchor = AnchorStyles.Bottom;
-            buttonSelectAll.BackColor = Color.FromArgb(86, 99, 111);
-            buttonSelectAll.FlatAppearance.MouseDownBackColor = Color.FromArgb(86, 99, 111);
-            buttonSelectAll.FlatAppearance.MouseOverBackColor = Color.FromArgb(51, 51, 51);
-            buttonSelectAll.FlatStyle = FlatStyle.Flat;
-            buttonSelectAll.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            buttonSelectAll.ForeColor = Color.White;
-            buttonSelectAll.Location = new Point(81, 233);
-            buttonSelectAll.Name = "buttonSelectAll";
-            buttonSelectAll.Size = new Size(158, 87);
-            buttonSelectAll.TabIndex = 12;
-            buttonSelectAll.Text = "Összes kiválasztása";
-            buttonSelectAll.UseVisualStyleBackColor = false;
-            buttonSelectAll.Click += buttonSelectAll_Click;
-            // 
             // FormSelectProducts
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1202, 688);
+            ClientSize = new Size(1407, 688);
             Controls.Add(panelIngredientsProductsViewer);
             Controls.Add(panelHeader);
             Name = "FormSelectProducts";

@@ -53,7 +53,7 @@ namespace Alviro
 
         private void loadProducts()
         {
-            
+
             panelProductsTable.Controls.Clear();
 
             var products = from k in dbContext.HccProductTranslations
@@ -147,7 +147,7 @@ namespace Alviro
 
             }
 
-            
+
 
             // Termék UC-k megjelenítése
             foreach (var product in chunkedLists[SelectedChunkIndex])
@@ -177,7 +177,7 @@ namespace Alviro
                         }
                         // Hozzáadja a kiválasztott termékekhez
                         addedProduct.Add(product);
-                        
+
                         isSaved = false;
                     }
                     else
@@ -206,19 +206,28 @@ namespace Alviro
 
         private void addIngredientProduct(ProductIngredientDTO product)
         {
-            
+            if (removedProducts.Contains(product))
+            {
+                removedProducts.Remove(product);
+
+            }
+
             Ingredientproduct ingredientproductToAdd = new Ingredientproduct();
             ingredientproductToAdd.Ingredientid = SelectedIngredient.Ingredientid;
             ingredientproductToAdd.Productid = product.ProductId;
 
-            
+
 
             dbContext.Ingredientproducts.Add(ingredientproductToAdd);
         }
 
         private void removeIngredientProduct(ProductIngredientDTO product)
         {
-            
+            if (addedProduct.Contains(product))
+            {
+                addedProduct.Remove(product);
+            }
+
             int ingredientId = SelectedIngredient.Ingredientid;
             int productId = product.ProductId;
             //Kikeressük az adott ingredientProductot
@@ -238,7 +247,7 @@ namespace Alviro
                                  CategoryName = k.Name,
                                  CategoryId = k.CategoryId,
                              };
-            
+
             foreach (var category in categories)
             {
                 Category categoryL = new Category();
@@ -275,6 +284,11 @@ namespace Alviro
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (addedProduct.Count == 0 && removedProducts.Count == 0)
+            {
+                this.Close();
+                return;
+            }
             //Mégse gomb megnyomására megerősítő ablak
             FormConfrimDialog formConfrimDialog = new FormConfrimDialog();
             formConfrimDialog.labelText.Text = "Az elvégzett módosítások nem lesznek elmentve, biztosan ki akarsz képni?";
@@ -283,6 +297,7 @@ namespace Alviro
             {
                 this.Close();
             }
+
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -290,7 +305,7 @@ namespace Alviro
             //A hozzáadott termékek tényleges hozzáadása
             foreach (var product in addedProduct)
             {
-                
+
                 addIngredientProduct(product);
             }
 
@@ -300,8 +315,18 @@ namespace Alviro
                 removeIngredientProduct(product);
             }
 
-            dbContext.SaveChanges();
+            try
+            {
+                dbContext.SaveChanges();
+                addedProduct.Clear();
+                removedProducts.Clear();
+            }
+            catch (System.Exception)
+            {
+                MessageBox.Show("Hiba történt a mentés során. Kérlek próbáld újra később.", "Sikertelen mentés", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             isSaved = false;
+
 
 
         }
@@ -352,12 +377,20 @@ namespace Alviro
 
         private void buttonSelectAll_Click(object sender, EventArgs e)
         {
-            foreach(UserControlProductXIngredientViewer uc in panelProductsTable.Controls)
+            foreach (UserControlProductXIngredientViewer uc in panelProductsTable.Controls)
             {
                 uc.checkBox1.Checked = true;
             }
-                
-            
+
+
+        }
+
+        private void textBoxSearchProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loadProducts();
+            }
         }
     }
 }

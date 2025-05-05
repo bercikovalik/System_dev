@@ -68,9 +68,9 @@
             panelBorderMiddle.BackColor = Color.Black;
             panelBorderMiddle.Dock = DockStyle.Left;
             panelBorderMiddle.ForeColor = SystemColors.ControlLightLight;
-            panelBorderMiddle.Location = new Point(495, 0);
+            panelBorderMiddle.Location = new Point(581, 0);
             panelBorderMiddle.Name = "panelBorderMiddle";
-            panelBorderMiddle.Size = new Size(1, 495);
+            panelBorderMiddle.Size = new Size(1, 678);
             panelBorderMiddle.TabIndex = 23;
             // 
             // panel2
@@ -86,24 +86,24 @@
             panel2.Controls.Add(buttonRemoveIngredient);
             panel2.Controls.Add(textBoxSearchIngredient);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(495, 0);
+            panel2.Location = new Point(581, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(618, 495);
+            panel2.Size = new Size(523, 678);
             panel2.TabIndex = 22;
             // 
             // panel6
             // 
             panel6.Controls.Add(buttonAddRecipe);
             panel6.Dock = DockStyle.Bottom;
-            panel6.Location = new Point(0, 437);
+            panel6.Location = new Point(0, 620);
             panel6.Name = "panel6";
-            panel6.Size = new Size(618, 58);
+            panel6.Size = new Size(523, 58);
             panel6.TabIndex = 20;
             // 
             // buttonAddRecipe
             // 
             buttonAddRecipe.DialogResult = DialogResult.OK;
-            buttonAddRecipe.Location = new Point(21, 12);
+            buttonAddRecipe.Location = new Point(7, 12);
             buttonAddRecipe.Name = "buttonAddRecipe";
             buttonAddRecipe.Size = new Size(112, 34);
             buttonAddRecipe.TabIndex = 8;
@@ -118,15 +118,16 @@
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(618, 60);
+            panel4.Size = new Size(523, 60);
             panel4.TabIndex = 19;
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(231, 16);
+            label6.Location = new Point(197, 16);
             label6.Name = "label6";
             label6.Size = new Size(145, 32);
             label6.TabIndex = 11;
@@ -137,7 +138,7 @@
             label8.Anchor = AnchorStyles.Top;
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label8.Location = new Point(399, 64);
+            label8.Location = new Point(351, 64);
             label8.Name = "label8";
             label8.Size = new Size(69, 25);
             label8.TabIndex = 18;
@@ -147,9 +148,9 @@
             // 
             listBoxAllIngredients.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             listBoxAllIngredients.FormattingEnabled = true;
-            listBoxAllIngredients.Location = new Point(350, 135);
+            listBoxAllIngredients.Location = new Point(302, 135);
             listBoxAllIngredients.Name = "listBoxAllIngredients";
-            listBoxAllIngredients.Size = new Size(190, 229);
+            listBoxAllIngredients.Size = new Size(190, 404);
             listBoxAllIngredients.TabIndex = 10;
             // 
             // label7
@@ -157,7 +158,7 @@
             label7.Anchor = AnchorStyles.Top;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label7.Location = new Point(160, 64);
+            label7.Location = new Point(112, 64);
             label7.Name = "label7";
             label7.Size = new Size(113, 25);
             label7.TabIndex = 17;
@@ -167,15 +168,15 @@
             // 
             listBoxSelectedIngredients.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             listBoxSelectedIngredients.FormattingEnabled = true;
-            listBoxSelectedIngredients.Location = new Point(123, 135);
+            listBoxSelectedIngredients.Location = new Point(75, 135);
             listBoxSelectedIngredients.Name = "listBoxSelectedIngredients";
-            listBoxSelectedIngredients.Size = new Size(190, 229);
+            listBoxSelectedIngredients.Size = new Size(190, 404);
             listBoxSelectedIngredients.TabIndex = 11;
             // 
             // textBoxSearchSelectedIngredient
             // 
             textBoxSearchSelectedIngredient.Anchor = AnchorStyles.Top;
-            textBoxSearchSelectedIngredient.Location = new Point(123, 97);
+            textBoxSearchSelectedIngredient.Location = new Point(75, 97);
             textBoxSearchSelectedIngredient.Name = "textBoxSearchSelectedIngredient";
             textBoxSearchSelectedIngredient.Size = new Size(190, 31);
             textBoxSearchSelectedIngredient.TabIndex = 16;
@@ -184,7 +185,7 @@
             // buttonAddIngredient
             // 
             buttonAddIngredient.Anchor = AnchorStyles.Bottom;
-            buttonAddIngredient.Location = new Point(350, 385);
+            buttonAddIngredient.Location = new Point(302, 556);
             buttonAddIngredient.Name = "buttonAddIngredient";
             buttonAddIngredient.Size = new Size(112, 34);
             buttonAddIngredient.TabIndex = 12;
@@ -195,7 +196,7 @@
             // buttonRemoveIngredient
             // 
             buttonRemoveIngredient.Anchor = AnchorStyles.Bottom;
-            buttonRemoveIngredient.Location = new Point(201, 385);
+            buttonRemoveIngredient.Location = new Point(153, 556);
             buttonRemoveIngredient.Name = "buttonRemoveIngredient";
             buttonRemoveIngredient.Size = new Size(112, 34);
             buttonRemoveIngredient.TabIndex = 13;
@@ -206,7 +207,7 @@
             // textBoxSearchIngredient
             // 
             textBoxSearchIngredient.Anchor = AnchorStyles.Top;
-            textBoxSearchIngredient.Location = new Point(350, 97);
+            textBoxSearchIngredient.Location = new Point(302, 97);
             textBoxSearchIngredient.Name = "textBoxSearchIngredient";
             textBoxSearchIngredient.Size = new Size(190, 31);
             textBoxSearchIngredient.TabIndex = 14;
@@ -227,23 +228,23 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(495, 495);
+            panel1.Size = new Size(581, 678);
             panel1.TabIndex = 21;
             // 
             // panel5
             // 
             panel5.Controls.Add(buttonCancel);
             panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(0, 437);
+            panel5.Location = new Point(0, 620);
             panel5.Name = "panel5";
-            panel5.Size = new Size(495, 58);
+            panel5.Size = new Size(581, 58);
             panel5.TabIndex = 12;
             // 
             // buttonCancel
             // 
             buttonCancel.BackColor = Color.FromArgb(255, 192, 192);
             buttonCancel.FlatStyle = FlatStyle.Flat;
-            buttonCancel.Location = new Point(364, 12);
+            buttonCancel.Location = new Point(430, 12);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(112, 34);
             buttonCancel.TabIndex = 9;
@@ -258,15 +259,16 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(495, 60);
+            panel3.Size = new Size(581, 60);
             panel3.TabIndex = 11;
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(156, 16);
+            label5.Location = new Point(199, 16);
             label5.Name = "label5";
             label5.Size = new Size(168, 32);
             label5.TabIndex = 10;
@@ -275,42 +277,42 @@
             // textBoxImageUrl
             // 
             textBoxImageUrl.Anchor = AnchorStyles.Bottom;
-            textBoxImageUrl.Location = new Point(125, 354);
+            textBoxImageUrl.Location = new Point(125, 574);
             textBoxImageUrl.Name = "textBoxImageUrl";
-            textBoxImageUrl.Size = new Size(351, 31);
+            textBoxImageUrl.Size = new Size(450, 31);
             textBoxImageUrl.TabIndex = 3;
             // 
             // textBoxName
             // 
             textBoxName.Anchor = AnchorStyles.Top;
-            textBoxName.Location = new Point(125, 76);
+            textBoxName.Location = new Point(125, 75);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(351, 31);
+            textBoxName.Size = new Size(450, 31);
             textBoxName.TabIndex = 0;
             // 
             // textBoxDescription
             // 
             textBoxDescription.Anchor = AnchorStyles.Top;
-            textBoxDescription.Location = new Point(125, 125);
+            textBoxDescription.Location = new Point(125, 124);
             textBoxDescription.Multiline = true;
             textBoxDescription.Name = "textBoxDescription";
-            textBoxDescription.Size = new Size(351, 106);
+            textBoxDescription.Size = new Size(450, 208);
             textBoxDescription.TabIndex = 1;
             // 
             // textBoxInstructions
             // 
             textBoxInstructions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBoxInstructions.Location = new Point(125, 237);
+            textBoxInstructions.Location = new Point(125, 338);
             textBoxInstructions.Multiline = true;
             textBoxInstructions.Name = "textBoxInstructions";
-            textBoxInstructions.Size = new Size(351, 99);
+            textBoxInstructions.Size = new Size(450, 230);
             textBoxInstructions.TabIndex = 2;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.Location = new Point(72, 79);
+            label1.Location = new Point(72, 78);
             label1.Name = "label1";
             label1.Size = new Size(47, 25);
             label1.TabIndex = 4;
@@ -320,7 +322,7 @@
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
-            label2.Location = new Point(67, 128);
+            label2.Location = new Point(54, 124);
             label2.Name = "label2";
             label2.Size = new Size(60, 25);
             label2.TabIndex = 5;
@@ -330,7 +332,7 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label3.AutoSize = true;
-            label3.Location = new Point(21, 240);
+            label3.Location = new Point(17, 338);
             label3.Name = "label3";
             label3.Size = new Size(102, 25);
             label3.TabIndex = 6;
@@ -340,7 +342,7 @@
             // 
             label4.Anchor = AnchorStyles.Bottom;
             label4.AutoSize = true;
-            label4.Location = new Point(17, 357);
+            label4.Location = new Point(17, 577);
             label4.Name = "label4";
             label4.Size = new Size(102, 25);
             label4.TabIndex = 7;
@@ -350,7 +352,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1113, 495);
+            ClientSize = new Size(1104, 678);
             Controls.Add(panelBorderMiddle);
             Controls.Add(panel2);
             Controls.Add(panel1);
