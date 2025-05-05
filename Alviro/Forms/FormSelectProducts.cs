@@ -25,7 +25,10 @@ namespace Alviro
 
         List<ProductIngredientDTO> removedProducts = new List<ProductIngredientDTO>();
 
-        List<ProductIngredientDTO> currentChunkedLists = new List<ProductIngredientDTO>();
+        //List<ProductIngredientDTO> currentChunkedLists = new List<ProductIngredientDTO>();
+        List<Category> categoriesList = new List<Category>();
+
+
 
         bool isSaved = true;
         public FormSelectProducts(Ingredient selectedIngredient)
@@ -41,6 +44,7 @@ namespace Alviro
 
             loadCategories();
             loadProducts();
+            comboBoxCategorySelector.SelectedItem = categoriesList.FirstOrDefault(c => c.CategoryName == "Minden termék");
 
             labelPage.Text = (SelectedChunkIndex + 1).ToString();
 
@@ -143,7 +147,7 @@ namespace Alviro
 
             }
 
-            currentChunkedLists = chunkedLists[SelectedChunkIndex];
+            
 
             // Termék UC-k megjelenítése
             foreach (var product in chunkedLists[SelectedChunkIndex])
@@ -202,15 +206,19 @@ namespace Alviro
 
         private void addIngredientProduct(ProductIngredientDTO product)
         {
+            
             Ingredientproduct ingredientproductToAdd = new Ingredientproduct();
             ingredientproductToAdd.Ingredientid = SelectedIngredient.Ingredientid;
             ingredientproductToAdd.Productid = product.ProductId;
+
+            
+
             dbContext.Ingredientproducts.Add(ingredientproductToAdd);
         }
 
         private void removeIngredientProduct(ProductIngredientDTO product)
         {
-            removedProducts.Add(product);
+            
             int ingredientId = SelectedIngredient.Ingredientid;
             int productId = product.ProductId;
             //Kikeressük az adott ingredientProductot
@@ -230,7 +238,7 @@ namespace Alviro
                                  CategoryName = k.Name,
                                  CategoryId = k.CategoryId,
                              };
-            List<Category> categoriesList = new List<Category>();
+            
             foreach (var category in categories)
             {
                 Category categoryL = new Category();
@@ -282,6 +290,7 @@ namespace Alviro
             //A hozzáadott termékek tényleges hozzáadása
             foreach (var product in addedProduct)
             {
+                
                 addIngredientProduct(product);
             }
 
