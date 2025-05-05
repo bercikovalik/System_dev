@@ -49,7 +49,7 @@ namespace Alviro
 
         private void loadProducts()
         {
-
+            
             panelProductsTable.Controls.Clear();
 
             var products = from k in dbContext.HccProductTranslations
@@ -166,13 +166,27 @@ namespace Alviro
                 {
                     if (e)
                     {
+                        //Ha a termék még nincs benne az addedProductban akkor hozzáadjuk
+                        if (addedProduct.Contains(product))
+                        {
+                            return;
+                        }
                         // Hozzáadja a kiválasztott termékekhez
                         addedProduct.Add(product);
+                        
                         isSaved = false;
                     }
                     else
                     {
+                        //Ha a termék még nincs benne az removedProducts akkor hozzáadjuk
+                        if (removedProducts.Contains(product))
+                        {
+                            return;
+                        }
+
                         // Hozzáadja az eltávolított termékekhez
+
+
                         removedProducts.Add(product);
                         isSaved = false;
 
@@ -331,7 +345,7 @@ namespace Alviro
         {
             foreach(UserControlProductXIngredientViewer uc in panelProductsTable.Controls)
             {
-
+                uc.checkBox1.Checked = true;
             }
                 
             
