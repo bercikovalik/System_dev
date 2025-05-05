@@ -15,7 +15,7 @@ namespace Alviro
 {
     public partial class FormSelectProducts : Form
     {
-        Dnn972Context dbContext = new Dnn972Context();
+        public Dnn972Context dbContext = new Dnn972Context();
 
         Ingredient SelectedIngredient = new Ingredient();
 
@@ -38,7 +38,7 @@ namespace Alviro
             //    "Alapértelmezett",
             //    "Név (Z-A)",
             //    "Név (A-Z)"
-            //});
+            //});e
             InitializeComponent();
 
 
@@ -51,7 +51,7 @@ namespace Alviro
 
         }
 
-        private void loadProducts()
+        public void loadProducts()
         {
 
             panelProductsTable.Controls.Clear();
@@ -204,7 +204,7 @@ namespace Alviro
 
         }
 
-        private void addIngredientProduct(ProductIngredientDTO product)
+        public void addIngredientProduct(ProductIngredientDTO product)
         {
             if (removedProducts.Contains(product))
             {
@@ -221,7 +221,7 @@ namespace Alviro
             dbContext.Ingredientproducts.Add(ingredientproductToAdd);
         }
 
-        private void removeIngredientProduct(ProductIngredientDTO product)
+        public void removeIngredientProduct(ProductIngredientDTO product)
         {
             if (addedProduct.Contains(product))
             {
@@ -238,7 +238,7 @@ namespace Alviro
             dbContext.Ingredientproducts.Remove(ingredientProductToRemove);
         }
 
-        private void loadCategories()
+        public void loadCategories()
         {
             //Kategóriák betöltése a comboboxba
             var categories = from k in dbContext.HccCategoryTranslations
@@ -259,7 +259,7 @@ namespace Alviro
             comboBoxCategorySelector.DisplayMember = "CategoryName";
         }
 
-        private void buttonPreviousChunk_Click(object sender, EventArgs e)
+        public void buttonPreviousChunk_Click(object sender, EventArgs e)
         {
             //Visszalép az előző oldalra
             SelectedChunkIndex--;
@@ -267,7 +267,7 @@ namespace Alviro
 
         }
 
-        private void buttonNextChunk_Click(object sender, EventArgs e)
+        public void buttonNextChunk_Click(object sender, EventArgs e)
         {
             //Következő oldalra lép
             SelectedChunkIndex++;
@@ -276,13 +276,13 @@ namespace Alviro
 
         }
 
-        private void textBoxSearchProduct_TextChanged(object sender, EventArgs e)
+        public void textBoxSearchProduct_TextChanged(object sender, EventArgs e)
         {
 
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             if (addedProduct.Count == 0 && removedProducts.Count == 0)
             {
@@ -300,7 +300,7 @@ namespace Alviro
 
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        public void buttonSave_Click(object sender, EventArgs e)
         {
             //A hozzáadott termékek tényleges hozzáadása
             foreach (var product in addedProduct)
@@ -342,7 +342,7 @@ namespace Alviro
             loadProducts();
         }
 
-        private void comboBoxCategorySelector_SelectedIndexChanged(object sender, EventArgs e)
+        public void comboBoxCategorySelector_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadProducts();
         }
