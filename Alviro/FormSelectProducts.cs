@@ -41,6 +41,8 @@ namespace Alviro
             loadCategories();
             loadProducts();
 
+            comboBoxCategorySelector.SelectedItem = "Minden termék";
+
 
         }
 
@@ -58,12 +60,9 @@ namespace Alviro
                                RewriteUrl = k.Product.RewriteUrl,
                                ProductBvin = k.Product.Bvin,
                                CategoryIds = (from c in dbContext.HccProductXcategories
-                                             where c.ProductId == k.Product.Bvin
-                                             select c.CategoryId).ToList(),
-                               //CategoryName = (from c in dbContext.HccCategoryTranslations
-                               //                where c.CategoryId == (from c2 in dbContext.HccProductXcategories
-                               //                                       where c2.ProductId == k.Product.Bvin
-                               //                                       select c2.CategoryId).FirstOrDefault()
+                                              where c.ProductId == k.Product.Bvin
+                                              select c.CategoryId).ToList(),
+
                            };
             if (products.Count() == 0)
             {
@@ -72,23 +71,17 @@ namespace Alviro
                 panelProductsTable.Controls.Add(userControlNoResult);
                 return;
             }
-            
-            
-                Category selectedCategory = comboBoxCategorySelector.SelectedValue as Category;
-                Guid selectedCategoryId = selectedCategory.CategoryId;
 
 
+            Category selectedCategory = comboBoxCategorySelector.SelectedValue as Category;
+            Guid selectedCategoryId = selectedCategory.CategoryId;
 
-                var productsInCategory = products
+            var productsInCategory = products
                                         .AsEnumerable()
                                         .Where(p => p.CategoryIds.Contains(selectedCategoryId)).ToList();
-                
-                
 
-            
-            
             List<ProductIngredientDTO> productIngredientDTOs = new List<ProductIngredientDTO>();
-            
+
             foreach (var product in productsInCategory)
             {
                 ProductIngredientDTO productIngredientDTO = new ProductIngredientDTO();
@@ -245,6 +238,7 @@ namespace Alviro
             //Következő oldalra lép
             SelectedChunkIndex++;
             labelPage.Text = (SelectedChunkIndex + 1).ToString();
+
             loadProducts();
 
         }
@@ -252,7 +246,7 @@ namespace Alviro
         private void textBoxSearchProduct_TextChanged(object sender, EventArgs e)
         {
 
-            loadProducts();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -305,10 +299,15 @@ namespace Alviro
 
         private class Category()
         {
-            public  string CategoryName { get; set; }
+            public string CategoryName { get; set; }
             public Guid CategoryId { get; set; }
 
 
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            loadProducts();
         }
     }
 }

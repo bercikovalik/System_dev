@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panelHeader = new Panel();
+            buttonSearch = new Button();
             label1 = new Label();
             textBoxSearchProduct = new TextBox();
             panelIngredientsProductsViewer = new Panel();
@@ -60,6 +61,7 @@
             // panelHeader
             // 
             panelHeader.BackColor = Color.FromArgb(104, 123, 82);
+            panelHeader.Controls.Add(buttonSearch);
             panelHeader.Controls.Add(label1);
             panelHeader.Controls.Add(textBoxSearchProduct);
             panelHeader.Dock = DockStyle.Top;
@@ -67,6 +69,23 @@
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1063, 52);
             panelHeader.TabIndex = 4;
+            // 
+            // buttonSearch
+            // 
+            buttonSearch.Anchor = AnchorStyles.Left;
+            buttonSearch.BackColor = Color.FromArgb(86, 99, 111);
+            buttonSearch.FlatAppearance.MouseDownBackColor = Color.FromArgb(86, 99, 111);
+            buttonSearch.FlatAppearance.MouseOverBackColor = Color.FromArgb(51, 51, 51);
+            buttonSearch.FlatStyle = FlatStyle.Flat;
+            buttonSearch.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            buttonSearch.ForeColor = Color.White;
+            buttonSearch.Location = new Point(409, 7);
+            buttonSearch.Name = "buttonSearch";
+            buttonSearch.Size = new Size(111, 39);
+            buttonSearch.TabIndex = 5;
+            buttonSearch.Text = "Keresés";
+            buttonSearch.UseVisualStyleBackColor = false;
+            buttonSearch.Click += buttonSearch_Click;
             // 
             // label1
             // 
@@ -382,5 +401,6 @@
         private Label labelPage;
         private Button buttonSave;
         private Button buttonClose;
+        private Button buttonSearch;
     }
 }
