@@ -34,9 +34,6 @@
             textBoxSearchProduct = new TextBox();
             panelIngredientsProductsViewer = new Panel();
             panelProductsTable = new Panel();
-            panel4 = new Panel();
-            label5 = new Label();
-            label6 = new Label();
             panel3 = new Panel();
             buttonSave = new Button();
             buttonClose = new Button();
@@ -50,11 +47,11 @@
             buttonRefreshProducts = new Button();
             panel2 = new Panel();
             comboBoxSortProducts = new ComboBox();
+            label6 = new Label();
             label4 = new Label();
-            labelIngredientName = new Label();
+            buttonSelectAll = new Button();
             panelHeader.SuspendLayout();
             panelIngredientsProductsViewer.SuspendLayout();
-            panel4.SuspendLayout();
             panel3.SuspendLayout();
             panelPagination.SuspendLayout();
             panel2.SuspendLayout();
@@ -114,7 +111,6 @@
             // 
             panelIngredientsProductsViewer.BackColor = Color.White;
             panelIngredientsProductsViewer.Controls.Add(panelProductsTable);
-            panelIngredientsProductsViewer.Controls.Add(panel4);
             panelIngredientsProductsViewer.Controls.Add(panel3);
             panelIngredientsProductsViewer.Controls.Add(panel2);
             panelIngredientsProductsViewer.Dock = DockStyle.Fill;
@@ -127,50 +123,15 @@
             // 
             panelProductsTable.AutoScroll = true;
             panelProductsTable.Dock = DockStyle.Fill;
-            panelProductsTable.Location = new Point(0, 154);
+            panelProductsTable.Location = new Point(0, 77);
             panelProductsTable.Name = "panelProductsTable";
-            panelProductsTable.Size = new Size(881, 482);
+            panelProductsTable.Size = new Size(881, 559);
             panelProductsTable.TabIndex = 16;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(51, 51, 51);
-            panel4.Controls.Add(label5);
-            panel4.Controls.Add(label6);
-            panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 77);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(881, 77);
-            panel4.TabIndex = 15;
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.Right;
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(2654, -27);
-            label5.Name = "label5";
-            label5.Size = new Size(132, 32);
-            label5.TabIndex = 2;
-            label5.Text = "Hozzávaló";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.Left;
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(6, 20);
-            label6.Name = "label6";
-            label6.Size = new Size(375, 32);
-            label6.TabIndex = 1;
-            label6.Text = "Hozzávalóhoz rendelt termékek";
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(104, 123, 82);
+            panel3.Controls.Add(buttonSelectAll);
             panel3.Controls.Add(buttonSave);
             panel3.Controls.Add(buttonClose);
             panel3.Controls.Add(panelPagination);
@@ -343,8 +304,8 @@
             // 
             panel2.BackColor = Color.FromArgb(51, 51, 51);
             panel2.Controls.Add(comboBoxSortProducts);
+            panel2.Controls.Add(label6);
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(labelIngredientName);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -366,6 +327,18 @@
             comboBoxSortProducts.TabIndex = 7;
             comboBoxSortProducts.SelectedIndexChanged += comboBoxSortProducts_SelectedIndexChanged;
             // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Left;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(12, 25);
+            label6.Name = "label6";
+            label6.Size = new Size(375, 32);
+            label6.TabIndex = 1;
+            label6.Text = "Hozzávalóhoz rendelt termékek";
+            // 
             // label4
             // 
             label4.Anchor = AnchorStyles.Right;
@@ -379,18 +352,22 @@
             label4.TabIndex = 8;
             label4.Text = "Rendezés:";
             // 
-            // labelIngredientName
+            // buttonSelectAll
             // 
-            labelIngredientName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            labelIngredientName.AutoSize = true;
-            labelIngredientName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            labelIngredientName.ForeColor = Color.White;
-            labelIngredientName.Location = new Point(12, 22);
-            labelIngredientName.Name = "labelIngredientName";
-            labelIngredientName.Size = new Size(132, 32);
-            labelIngredientName.TabIndex = 2;
-            labelIngredientName.Text = "Hozzávaló";
-            labelIngredientName.TextAlign = ContentAlignment.MiddleCenter;
+            buttonSelectAll.Anchor = AnchorStyles.Bottom;
+            buttonSelectAll.BackColor = Color.FromArgb(86, 99, 111);
+            buttonSelectAll.FlatAppearance.MouseDownBackColor = Color.FromArgb(86, 99, 111);
+            buttonSelectAll.FlatAppearance.MouseOverBackColor = Color.FromArgb(51, 51, 51);
+            buttonSelectAll.FlatStyle = FlatStyle.Flat;
+            buttonSelectAll.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            buttonSelectAll.ForeColor = Color.White;
+            buttonSelectAll.Location = new Point(81, 233);
+            buttonSelectAll.Name = "buttonSelectAll";
+            buttonSelectAll.Size = new Size(158, 87);
+            buttonSelectAll.TabIndex = 12;
+            buttonSelectAll.Text = "Összes kiválasztása";
+            buttonSelectAll.UseVisualStyleBackColor = false;
+            buttonSelectAll.Click += buttonSelectAll_Click;
             // 
             // FormSelectProducts
             // 
@@ -406,8 +383,6 @@
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelIngredientsProductsViewer.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             panel3.ResumeLayout(false);
             panelPagination.ResumeLayout(false);
             panelPagination.PerformLayout();
@@ -428,10 +403,7 @@
         private Panel panel2;
         private ComboBox comboBoxSortProducts;
         private Label label4;
-        private Label labelIngredientName;
         private Panel panelProductsTable;
-        private Panel panel4;
-        private Label label5;
         private Label label6;
         private Panel panelPagination;
         private Button buttonPreviousChunk;
@@ -442,5 +414,6 @@
         private Button buttonSearch;
         private Button buttonFirstPage;
         private Button buttonLastPage;
+        private Button buttonSelectAll;
     }
 }

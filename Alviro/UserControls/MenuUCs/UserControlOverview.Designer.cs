@@ -28,25 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlOverview));
             panelHeader = new Panel();
             labelIngredientName = new Label();
             panelContentHeader = new Panel();
             panelAside = new Panel();
             panelLinkToHotcakesAdmin = new Panel();
+            pictureBoxHotcakes = new PictureBox();
             button1 = new Button();
             panelWebShopLink = new Panel();
+            pictureBoxWebShop = new PictureBox();
             buttonOpenWebShop = new Button();
             panelContent = new Panel();
             panelCheckConnection = new Panel();
-            pictureBoxWebShop = new PictureBox();
-            pictureBoxHotcakes = new PictureBox();
             panelHeader.SuspendLayout();
             panelAside.SuspendLayout();
             panelLinkToHotcakesAdmin.SuspendLayout();
-            panelWebShopLink.SuspendLayout();
-            panelContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxWebShop).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxHotcakes).BeginInit();
+            panelWebShopLink.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWebShop).BeginInit();
+            panelContent.SuspendLayout();
             SuspendLayout();
             // 
             // panelHeader
@@ -100,6 +101,16 @@
             panelLinkToHotcakesAdmin.Size = new Size(273, 206);
             panelLinkToHotcakesAdmin.TabIndex = 1;
             // 
+            // pictureBoxHotcakes
+            // 
+            pictureBoxHotcakes.Image = (Image)resources.GetObject("pictureBoxHotcakes.Image");
+            pictureBoxHotcakes.Location = new Point(21, 15);
+            pictureBoxHotcakes.Name = "pictureBoxHotcakes";
+            pictureBoxHotcakes.Size = new Size(237, 117);
+            pictureBoxHotcakes.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxHotcakes.TabIndex = 6;
+            pictureBoxHotcakes.TabStop = false;
+            // 
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom;
@@ -126,6 +137,16 @@
             panelWebShopLink.Name = "panelWebShopLink";
             panelWebShopLink.Size = new Size(273, 206);
             panelWebShopLink.TabIndex = 0;
+            // 
+            // pictureBoxWebShop
+            // 
+            pictureBoxWebShop.Image = (Image)resources.GetObject("pictureBoxWebShop.Image");
+            pictureBoxWebShop.Location = new Point(21, 19);
+            pictureBoxWebShop.Name = "pictureBoxWebShop";
+            pictureBoxWebShop.Size = new Size(237, 117);
+            pictureBoxWebShop.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxWebShop.TabIndex = 5;
+            pictureBoxWebShop.TabStop = false;
             // 
             // buttonOpenWebShop
             // 
@@ -162,22 +183,6 @@
             panelCheckConnection.Size = new Size(642, 415);
             panelCheckConnection.TabIndex = 1;
             // 
-            // pictureBoxWebShop
-            // 
-            pictureBoxWebShop.Location = new Point(21, 19);
-            pictureBoxWebShop.Name = "pictureBoxWebShop";
-            pictureBoxWebShop.Size = new Size(237, 117);
-            pictureBoxWebShop.TabIndex = 5;
-            pictureBoxWebShop.TabStop = false;
-            // 
-            // pictureBoxHotcakes
-            // 
-            pictureBoxHotcakes.Location = new Point(21, 15);
-            pictureBoxHotcakes.Name = "pictureBoxHotcakes";
-            pictureBoxHotcakes.Size = new Size(237, 117);
-            pictureBoxHotcakes.TabIndex = 6;
-            pictureBoxHotcakes.TabStop = false;
-            // 
             // UserControlOverview
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -193,10 +198,10 @@
             panelHeader.PerformLayout();
             panelAside.ResumeLayout(false);
             panelLinkToHotcakesAdmin.ResumeLayout(false);
-            panelWebShopLink.ResumeLayout(false);
-            panelContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBoxWebShop).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxHotcakes).EndInit();
+            panelWebShopLink.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWebShop).EndInit();
+            panelContent.ResumeLayout(false);
             ResumeLayout(false);
         }
 

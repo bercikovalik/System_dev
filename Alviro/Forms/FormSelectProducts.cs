@@ -25,11 +25,12 @@ namespace Alviro
 
         List<ProductIngredientDTO> removedProducts = new List<ProductIngredientDTO>();
 
+        List<ProductIngredientDTO> currentChunkedLists = new List<ProductIngredientDTO>();
+
         bool isSaved = true;
         public FormSelectProducts(Ingredient selectedIngredient)
         {
             this.SelectedIngredient = selectedIngredient;
-            labelIngredientName.Text = selectedIngredient.Name;
             //comboBoxSortProducts.Items.AddRange(new string[] {
             //    "Alapértelmezett",
             //    "Név (Z-A)",
@@ -41,7 +42,7 @@ namespace Alviro
             loadCategories();
             loadProducts();
 
-            comboBoxCategorySelector.SelectedItem = "Minden termék";
+            labelPage.Text = (SelectedChunkIndex + 1).ToString();
 
 
         }
@@ -113,15 +114,17 @@ namespace Alviro
                 chunkedLists.Add(chunk);
             }
 
-            int selectedChunkIndex = SelectedChunkIndex;
-            if (selectedChunkIndex >= chunkedLists.Count)
+
+            if (SelectedChunkIndex >= chunkedLists.Count)
             {
-                selectedChunkIndex = chunkedLists.Count - 1;
+                //Ha a kiválasztott oldal nagyobb mint a termékek száma, akkor visszaállítja az utolsó oldalra
+                SelectedChunkIndex = chunkedLists.Count - 1;
             }
-            if (selectedChunkIndex < 0)
+            if (SelectedChunkIndex < 0)
             {
-                selectedChunkIndex = 0;
+                SelectedChunkIndex = 0;
             }
+            labelPage.Text = (SelectedChunkIndex + 1).ToString();
 
             switch (comboBoxSortProducts.SelectedIndex)
             {
@@ -131,18 +134,19 @@ namespace Alviro
                 case 0:
                     break;
                 case 1:
-                    chunkedLists[selectedChunkIndex] = chunkedLists[selectedChunkIndex].OrderByDescending(i => (i.ProductName ?? "").ToLower()).ToList();
+                    chunkedLists[SelectedChunkIndex] = chunkedLists[SelectedChunkIndex].OrderByDescending(i => (i.ProductName ?? "").ToLower()).ToList();
                     break;
                 case 2:
-                    chunkedLists[selectedChunkIndex] = chunkedLists[selectedChunkIndex].OrderBy(i => (i.ProductName ?? "").ToLower()).ToList();
+                    chunkedLists[SelectedChunkIndex] = chunkedLists[SelectedChunkIndex].OrderBy(i => (i.ProductName ?? "").ToLower()).ToList();
 
                     break;
 
             }
 
+            currentChunkedLists = chunkedLists[SelectedChunkIndex];
 
             // Termék UC-k megjelenítése
-            foreach (var product in chunkedLists[selectedChunkIndex])
+            foreach (var product in chunkedLists[SelectedChunkIndex])
             {
                 UserControlProductXIngredientViewer productXIngredientViewer = new UserControlProductXIngredientViewer(SelectedIngredient, product);
                 productXIngredientViewer.Dock = DockStyle.Top;
@@ -228,7 +232,6 @@ namespace Alviro
         {
             //Visszalép az előző oldalra
             SelectedChunkIndex--;
-            labelPage.Text = (SelectedChunkIndex + 1).ToString();
             loadProducts();
 
         }
@@ -237,7 +240,6 @@ namespace Alviro
         {
             //Következő oldalra lép
             SelectedChunkIndex++;
-            labelPage.Text = (SelectedChunkIndex + 1).ToString();
 
             loadProducts();
 
@@ -313,13 +315,26 @@ namespace Alviro
         private void buttonLastPage_Click(object sender, EventArgs e)
         {
             SelectedChunkIndex = 10000;
+
             loadProducts();
+
         }
 
         private void buttonFirstPage_Click(object sender, EventArgs e)
         {
             SelectedChunkIndex = 0;
             loadProducts();
+
+        }
+
+        private void buttonSelectAll_Click(object sender, EventArgs e)
+        {
+            foreach(UserControlProductXIngredientViewer uc in panelProductsTable.Controls)
+            {
+
+            }
+                
+            
         }
     }
 }
