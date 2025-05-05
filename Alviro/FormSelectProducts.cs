@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,10 +24,17 @@ namespace Alviro
         List<ProductIngredientDTO> addedProduct = new List<ProductIngredientDTO>();
 
         List<ProductIngredientDTO> removedProducts = new List<ProductIngredientDTO>();
+
+        bool isSaved = true;
         public FormSelectProducts(Ingredient selectedIngredient)
         {
             this.SelectedIngredient = selectedIngredient;
             //labelIngredientName.Text = SelectedIngredient.Name;
+            //comboBoxSortProducts.Items.AddRange(new string[] {
+            //    "Alapértelmezett",
+            //    "Név (Z-A)",
+            //    "Név (A-Z)"
+            //});
             InitializeComponent();
 
 
@@ -49,20 +57,39 @@ namespace Alviro
                                ProductId = k.Product.Id,
                                RewriteUrl = k.Product.RewriteUrl,
                                ProductBvin = k.Product.Bvin,
-                               CategoryId = (from c in dbContext.HccProductXcategories
+                               CategoryIds = (from c in dbContext.HccProductXcategories
                                              where c.ProductId == k.Product.Bvin
-                                             select c.CategoryId).FirstOrDefault(),
+                                             select c.CategoryId).ToList(),
                                //CategoryName = (from c in dbContext.HccCategoryTranslations
                                //                where c.CategoryId == (from c2 in dbContext.HccProductXcategories
                                //                                       where c2.ProductId == k.Product.Bvin
                                //                                       select c2.CategoryId).FirstOrDefault()
                            };
+            if (products.Count() == 0)
+            {
+                UserControlNoResult userControlNoResult = new UserControlNoResult();
+                userControlNoResult.Dock = DockStyle.Top;
+                panelProductsTable.Controls.Add(userControlNoResult);
+                return;
+            }
+            
+            
+                Category selectedCategory = comboBoxCategorySelector.SelectedValue as Category;
+                Guid selectedCategoryId = selectedCategory.CategoryId;
 
+
+
+                var productsInCategory = products
+                                        .AsEnumerable()
+                                        .Where(p => p.CategoryIds.Contains(selectedCategoryId)).ToList();
+                
+                
 
             
-
-            List < ProductIngredientDTO > productIngredientDTOs = new List<ProductIngredientDTO>();
-            foreach (var product in products)
+            
+            List<ProductIngredientDTO> productIngredientDTOs = new List<ProductIngredientDTO>();
+            
+            foreach (var product in productsInCategory)
             {
                 ProductIngredientDTO productIngredientDTO = new ProductIngredientDTO();
                 productIngredientDTO.ProductName = product.ProductName;
@@ -71,12 +98,14 @@ namespace Alviro
                 productIngredientDTO.ProductId = (int)product.ProductId;
                 productIngredientDTO.RewriteUrl = product.RewriteUrl;
                 productIngredientDTO.ProductBvin = product.ProductBvin;
-                productIngredientDTO.CategoryId = product.CategoryId;
+                productIngredientDTO.CategoryIds = product.CategoryIds;
 
                 productIngredientDTOs.Add(productIngredientDTO);
 
 
             }
+
+
             List<List<ProductIngredientDTO>> chunkedLists = new List<List<ProductIngredientDTO>>();
 
             //Túl sok termék, ezért oldalas megjelenítés szükséges
@@ -101,6 +130,24 @@ namespace Alviro
                 selectedChunkIndex = 0;
             }
 
+            switch (comboBoxSortProducts.SelectedIndex)
+            {
+                case -1:
+
+                    break;
+                case 0:
+                    break;
+                case 1:
+                    chunkedLists[selectedChunkIndex] = chunkedLists[selectedChunkIndex].OrderByDescending(i => (i.ProductName ?? "").ToLower()).ToList();
+                    break;
+                case 2:
+                    chunkedLists[selectedChunkIndex] = chunkedLists[selectedChunkIndex].OrderBy(i => (i.ProductName ?? "").ToLower()).ToList();
+
+                    break;
+
+            }
+
+
             // Termék UC-k megjelenítése
             foreach (var product in chunkedLists[selectedChunkIndex])
             {
@@ -117,18 +164,20 @@ namespace Alviro
                 }
 
 
-                    //Figyeli a checkbox checked eseményt
-                    productXIngredientViewer.CheckBoxCheckedChanged += (s, e) =>
-                    {
+                //Figyeli a checkbox checked eseményt
+                productXIngredientViewer.CheckBoxCheckedChanged += (s, e) =>
+                {
                     if (e)
                     {
                         // Hozzáadja a kiválasztott termékekhez
                         addedProduct.Add(product);
+                        isSaved = false;
                     }
                     else
                     {
                         // Hozzáadja az eltávolított termékekhez
                         removedProducts.Add(product);
+                        isSaved = false;
 
                     }
                 };
@@ -170,7 +219,15 @@ namespace Alviro
                                  CategoryName = k.Name,
                                  CategoryId = k.CategoryId,
                              };
-            comboBoxCategorySelector.DataSource = categories.ToList();
+            List<Category> categoriesList = new List<Category>();
+            foreach (var category in categories)
+            {
+                Category categoryL = new Category();
+                categoryL.CategoryId = category.CategoryId;
+                categoryL.CategoryName = category.CategoryName;
+                categoriesList.Add(categoryL);
+            }
+            comboBoxCategorySelector.DataSource = categoriesList.ToList();
             comboBoxCategorySelector.DisplayMember = "CategoryName";
         }
 
@@ -194,7 +251,7 @@ namespace Alviro
 
         private void textBoxSearchProduct_TextChanged(object sender, EventArgs e)
         {
-            
+
             loadProducts();
         }
 
@@ -213,18 +270,45 @@ namespace Alviro
         private void buttonSave_Click(object sender, EventArgs e)
         {
             //A hozzáadott termékek tényleges hozzáadása
-            foreach(var product in addedProduct)
+            foreach (var product in addedProduct)
             {
                 addIngredientProduct(product);
             }
 
             //Az eltávolított termékek tényleges eltávolítása
-            foreach(var product in removedProducts)
+            foreach (var product in removedProducts)
             {
                 removeIngredientProduct(product);
             }
 
             dbContext.SaveChanges();
+            isSaved = false;
+
+
+        }
+
+        private void buttonRefreshProducts_Click(object sender, EventArgs e)
+        {
+            loadProducts();
+
+        }
+
+        private void comboBoxSortProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadProducts();
+        }
+
+        private void comboBoxCategorySelector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadProducts();
+        }
+
+        private class Category()
+        {
+            public  string CategoryName { get; set; }
+            public Guid CategoryId { get; set; }
+
+
         }
     }
 }

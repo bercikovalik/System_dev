@@ -263,6 +263,7 @@
             comboBoxCategorySelector.Name = "comboBoxCategorySelector";
             comboBoxCategorySelector.Size = new Size(221, 38);
             comboBoxCategorySelector.TabIndex = 8;
+            comboBoxCategorySelector.SelectedIndexChanged += comboBoxCategorySelector_SelectedIndexChanged;
             // 
             // buttonRefreshProducts
             // 
@@ -279,6 +280,7 @@
             buttonRefreshProducts.TabIndex = 2;
             buttonRefreshProducts.Text = "Frissítés";
             buttonRefreshProducts.UseVisualStyleBackColor = false;
+            buttonRefreshProducts.Click += buttonRefreshProducts_Click;
             // 
             // panel2
             // 
@@ -300,10 +302,12 @@
             comboBoxSortProducts.FlatStyle = FlatStyle.Flat;
             comboBoxSortProducts.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 238);
             comboBoxSortProducts.FormattingEnabled = true;
+            comboBoxSortProducts.Items.AddRange(new object[] { "Alapértelmezett", "Név (A-Z)", "Név (Z-A)" });
             comboBoxSortProducts.Location = new Point(636, 19);
             comboBoxSortProducts.Name = "comboBoxSortProducts";
             comboBoxSortProducts.Size = new Size(411, 38);
             comboBoxSortProducts.TabIndex = 7;
+            comboBoxSortProducts.SelectedIndexChanged += comboBoxSortProducts_SelectedIndexChanged;
             // 
             // label4
             // 

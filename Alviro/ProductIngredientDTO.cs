@@ -13,7 +13,7 @@ namespace Alviro
             public int ProductId { get; set; }
             public string RewriteUrl { get; set; }
             public Guid ProductBvin { get; set; }
-            public Guid CategoryId { get; set; }
+            public List<Guid> CategoryIds { get; set; }
             //public string CategoryName { get; set; }
 
         
