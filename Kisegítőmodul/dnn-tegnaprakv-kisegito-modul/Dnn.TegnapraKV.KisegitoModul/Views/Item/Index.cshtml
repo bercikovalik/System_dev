@@ -101,13 +101,13 @@
             function (data) {
                 console.log("Betöltött recept:", data);
                 var recipe = jQuery.parseJSON(data);
-               
+              
+
                 $('#recipe-title').text(recipe.Name);
 
-                
-                $('#recipe-description').text(recipe.Description);
+                $('#recipe-description').html(recipe.Description.replace(/\\n/g, "<br>"));
                 $('#recipe-image').attr('src', recipe.ImageUrl);
-                $('#instruction-list').text(recipe.Instructions);
+                $('#instruction-list').html(recipe.Instructions.replace(/\\n/g, "<br>"));
             }
         );
 
