@@ -56,6 +56,8 @@ namespace Alviro
 
             panelProductsTable.Controls.Clear();
 
+            
+
             var products = from k in dbContext.HccProductTranslations
                            where k.ProductName.Contains(textBoxSearchProduct.Text)
                            select new

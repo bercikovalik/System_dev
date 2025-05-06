@@ -42,9 +42,13 @@ namespace Alviro
             // Clear existing controls
             panelIngredientsTable.Controls.Clear();
             // Fetch all ingredients from the database
+            
             List<Ingredient> ingredients = (from k in dbContext.Ingredients
                                             where k.Name.Contains(textBoxSearch.Text)
                                             select k).ToList();
+            
+
+            
 
             if (ingredients.Count == 0)
             {
@@ -239,7 +243,15 @@ namespace Alviro
 
             dbContext.Ingredients.Add(newIngredient);
 
-            dbContext.SaveChanges();
+            try
+            {
+                dbContext.SaveChanges();
+
+            }
+            catch (System.Exception)
+            {
+                MessageBox.Show("A hozzávalót nem sikerült hozzáadni", "Sikertelen hozzáadás", MessageBoxButtons.OK, MessageBoxIcon.Error );
+            }
 
             userControlIngredientView.Dock = DockStyle.Top;
             userControlIngredientView.ButtonModifyClick += (s, e) =>

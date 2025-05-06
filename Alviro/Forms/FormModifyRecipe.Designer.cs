@@ -113,7 +113,7 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.FromArgb(35, 54, 46);
+            panel4.BackColor = Color.FromArgb(104, 123, 82);
             panel4.Controls.Add(label6);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
@@ -254,7 +254,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(35, 54, 46);
+            panel3.BackColor = Color.FromArgb(104, 123, 82);
             panel3.Controls.Add(label5);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);

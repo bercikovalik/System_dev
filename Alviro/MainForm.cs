@@ -67,7 +67,15 @@ namespace Alviro
 
         private void loadTime()
         {
-            labelDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            try
+            {
+                labelDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+
+            }
+            catch (Exception)
+            {
+                
+            }
         }
 
 
