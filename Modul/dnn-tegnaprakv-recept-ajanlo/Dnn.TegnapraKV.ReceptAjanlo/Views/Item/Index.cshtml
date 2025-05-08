@@ -126,6 +126,20 @@
             //TESZTELÉSRE
             console.log(recipes);
             ////////////////////
+            const modulCim = document.querySelector(".modulcim");
+
+            if (recipes.length > 0) {
+                if (modulCim) {
+                    modulCim.textContent = "Ajánlott receptjeink a kosarad alapján!";
+                    modulCim.style.display = 'inline-block';
+                }
+            } else {
+                if (modulCim) {
+                    modulCim.style.display = 'none';
+                }
+            }
+
+
             $.each(recipes, function (index, recipe) {
                 
                     var recipeImage = recipe.ImageUrl ? '<img src="' + recipe.ImageUrl + '" alt="' + recipe.RecipeName + '" style="width:200px; aspect-ratio: 1/1;" />' : '<div class="no-image">Nincs kép</div>';
