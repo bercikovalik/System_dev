@@ -72,23 +72,23 @@
             // 
             // textBoxDescription
             // 
-            textBoxDescription.Location = new Point(125, 137);
+            textBoxDescription.Location = new Point(125, 123);
             textBoxDescription.Multiline = true;
             textBoxDescription.Name = "textBoxDescription";
-            textBoxDescription.Size = new Size(351, 106);
+            textBoxDescription.Size = new Size(351, 205);
             textBoxDescription.TabIndex = 1;
             // 
             // textBoxInstructions
             // 
-            textBoxInstructions.Location = new Point(125, 249);
+            textBoxInstructions.Location = new Point(125, 348);
             textBoxInstructions.Multiline = true;
             textBoxInstructions.Name = "textBoxInstructions";
-            textBoxInstructions.Size = new Size(351, 99);
+            textBoxInstructions.Size = new Size(351, 192);
             textBoxInstructions.TabIndex = 2;
             // 
             // textBoxImageUrl
             // 
-            textBoxImageUrl.Location = new Point(125, 378);
+            textBoxImageUrl.Location = new Point(125, 559);
             textBoxImageUrl.Name = "textBoxImageUrl";
             textBoxImageUrl.Size = new Size(351, 31);
             textBoxImageUrl.TabIndex = 3;
@@ -105,7 +105,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(67, 140);
+            label2.Location = new Point(51, 125);
             label2.Name = "label2";
             label2.Size = new Size(60, 25);
             label2.TabIndex = 5;
@@ -114,7 +114,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(21, 252);
+            label3.Location = new Point(23, 348);
             label3.Name = "label3";
             label3.Size = new Size(102, 25);
             label3.TabIndex = 6;
@@ -123,7 +123,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(17, 381);
+            label4.Location = new Point(17, 562);
             label4.Name = "label4";
             label4.Size = new Size(102, 25);
             label4.TabIndex = 7;
@@ -153,25 +153,28 @@
             // 
             // listBoxAllIngredients
             // 
+            listBoxAllIngredients.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             listBoxAllIngredients.FormattingEnabled = true;
-            listBoxAllIngredients.Location = new Point(327, 135);
+            listBoxAllIngredients.Location = new Point(358, 135);
             listBoxAllIngredients.Name = "listBoxAllIngredients";
-            listBoxAllIngredients.Size = new Size(190, 254);
+            listBoxAllIngredients.Size = new Size(190, 404);
             listBoxAllIngredients.TabIndex = 10;
             listBoxAllIngredients.Click += listBoxAllIngredients_Click;
             // 
             // listBoxSelectedIngredients
             // 
+            listBoxSelectedIngredients.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             listBoxSelectedIngredients.FormattingEnabled = true;
-            listBoxSelectedIngredients.Location = new Point(100, 135);
+            listBoxSelectedIngredients.Location = new Point(131, 135);
             listBoxSelectedIngredients.Name = "listBoxSelectedIngredients";
-            listBoxSelectedIngredients.Size = new Size(190, 254);
+            listBoxSelectedIngredients.Size = new Size(190, 404);
             listBoxSelectedIngredients.TabIndex = 11;
             listBoxSelectedIngredients.Click += listBoxSelectedIngredients_Click;
             // 
             // buttonAddIngredient
             // 
-            buttonAddIngredient.Location = new Point(327, 400);
+            buttonAddIngredient.Anchor = AnchorStyles.Bottom;
+            buttonAddIngredient.Location = new Point(358, 568);
             buttonAddIngredient.Name = "buttonAddIngredient";
             buttonAddIngredient.Size = new Size(112, 34);
             buttonAddIngredient.TabIndex = 12;
@@ -181,7 +184,8 @@
             // 
             // buttonRemoveIngredient
             // 
-            buttonRemoveIngredient.Location = new Point(178, 400);
+            buttonRemoveIngredient.Anchor = AnchorStyles.Bottom;
+            buttonRemoveIngredient.Location = new Point(209, 568);
             buttonRemoveIngredient.Name = "buttonRemoveIngredient";
             buttonRemoveIngredient.Size = new Size(112, 34);
             buttonRemoveIngredient.TabIndex = 13;
@@ -191,7 +195,8 @@
             // 
             // textBoxSearchIngredient
             // 
-            textBoxSearchIngredient.Location = new Point(327, 97);
+            textBoxSearchIngredient.Anchor = AnchorStyles.Top;
+            textBoxSearchIngredient.Location = new Point(358, 97);
             textBoxSearchIngredient.Name = "textBoxSearchIngredient";
             textBoxSearchIngredient.Size = new Size(190, 31);
             textBoxSearchIngredient.TabIndex = 14;
@@ -212,21 +217,21 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(495, 510);
+            panel1.Size = new Size(495, 666);
             panel1.TabIndex = 15;
             // 
             // panel5
             // 
             panel5.Controls.Add(buttonCancel);
             panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(0, 452);
+            panel5.Location = new Point(0, 608);
             panel5.Name = "panel5";
             panel5.Size = new Size(495, 58);
             panel5.TabIndex = 12;
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(35, 54, 46);
+            panel3.BackColor = Color.FromArgb(104, 123, 82);
             panel3.Controls.Add(label5);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
@@ -250,7 +255,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(231, 16);
+            label6.Location = new Point(263, 16);
             label6.Name = "label6";
             label6.Size = new Size(145, 32);
             label6.TabIndex = 11;
@@ -258,17 +263,20 @@
             // 
             // textBoxSearchSelectedIngredient
             // 
-            textBoxSearchSelectedIngredient.Location = new Point(100, 97);
+            textBoxSearchSelectedIngredient.Anchor = AnchorStyles.Top;
+            textBoxSearchSelectedIngredient.Location = new Point(131, 97);
             textBoxSearchSelectedIngredient.Name = "textBoxSearchSelectedIngredient";
             textBoxSearchSelectedIngredient.Size = new Size(190, 31);
             textBoxSearchSelectedIngredient.TabIndex = 16;
+            textBoxSearchSelectedIngredient.Visible = false;
             textBoxSearchSelectedIngredient.TextChanged += textBoxSearchSelectedIngredient_TextChanged;
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.Top;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label7.Location = new Point(137, 64);
+            label7.Location = new Point(168, 64);
             label7.Name = "label7";
             label7.Size = new Size(113, 25);
             label7.TabIndex = 17;
@@ -276,9 +284,10 @@
             // 
             // label8
             // 
+            label8.Anchor = AnchorStyles.Top;
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label8.Location = new Point(376, 64);
+            label8.Location = new Point(407, 64);
             label8.Name = "label8";
             label8.Size = new Size(69, 25);
             label8.TabIndex = 18;
@@ -299,26 +308,26 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(495, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(573, 510);
+            panel2.Size = new Size(671, 666);
             panel2.TabIndex = 19;
             // 
             // panel6
             // 
             panel6.Controls.Add(buttonAddRecipe);
             panel6.Dock = DockStyle.Bottom;
-            panel6.Location = new Point(0, 452);
+            panel6.Location = new Point(0, 608);
             panel6.Name = "panel6";
-            panel6.Size = new Size(573, 58);
+            panel6.Size = new Size(671, 58);
             panel6.TabIndex = 20;
             // 
             // panel4
             // 
-            panel4.BackColor = Color.FromArgb(35, 54, 46);
+            panel4.BackColor = Color.FromArgb(104, 123, 82);
             panel4.Controls.Add(label6);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(573, 60);
+            panel4.Size = new Size(671, 60);
             panel4.TabIndex = 19;
             // 
             // panelBorderMiddle
@@ -328,14 +337,14 @@
             panelBorderMiddle.ForeColor = SystemColors.ControlLightLight;
             panelBorderMiddle.Location = new Point(495, 0);
             panelBorderMiddle.Name = "panelBorderMiddle";
-            panelBorderMiddle.Size = new Size(1, 510);
+            panelBorderMiddle.Size = new Size(1, 666);
             panelBorderMiddle.TabIndex = 20;
             // 
             // FormNewRecipe
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1068, 510);
+            ClientSize = new Size(1166, 666);
             Controls.Add(panelBorderMiddle);
             Controls.Add(panel2);
             Controls.Add(panel1);

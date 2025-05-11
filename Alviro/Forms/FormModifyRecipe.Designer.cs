@@ -180,6 +180,7 @@
             textBoxSearchSelectedIngredient.Name = "textBoxSearchSelectedIngredient";
             textBoxSearchSelectedIngredient.Size = new Size(190, 31);
             textBoxSearchSelectedIngredient.TabIndex = 16;
+            textBoxSearchSelectedIngredient.Visible = false;
             textBoxSearchSelectedIngredient.TextChanged += textBoxSearchSelectedIngredient_TextChanged;
             // 
             // buttonAddIngredient
