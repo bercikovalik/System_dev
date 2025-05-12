@@ -21,9 +21,9 @@ namespace Alviro
 
         int SelectedChunkIndex = 0;
 
-        List<ProductIngredientDTO> addedProduct = new List<ProductIngredientDTO>();
+        public List<ProductIngredientDTO> addedProduct = new List<ProductIngredientDTO>();
 
-        List<ProductIngredientDTO> removedProducts = new List<ProductIngredientDTO>();
+        public List<ProductIngredientDTO> removedProducts = new List<ProductIngredientDTO>();
 
         //List<ProductIngredientDTO> currentChunkedLists = new List<ProductIngredientDTO>();
         List<Category> categoriesList = new List<Category>();

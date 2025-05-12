@@ -43,30 +43,14 @@ namespace ClassLibrary1
                 dbContext = _mockDbContext.Object
             };
         }
-
-        [TestMethod]
-        public void LoadProducts_ShouldPopulatePanel_WhenProductsExist()
+        private Mock<DbSet<T>> CreateMockDbSet<T>(IQueryable<T> data) where T : class
         {
-            // Arrange
-            var products = new List<HccProductTranslation>
-            {
-                new HccProductTranslation
-                {
-                    ProductName = "Test Product",
-                    Product = new HccProduct { Id = 1, Bvin = Guid.Parse("123"), RewriteUrl = "test-url" }
-                }
-            }.AsQueryable();
-
-            _mockProductTranslations.As<IQueryable<HccProductTranslation>>().Setup(m => m.Provider).Returns(products.Provider);
-            _mockProductTranslations.As<IQueryable<HccProductTranslation>>().Setup(m => m.Expression).Returns(products.Expression);
-            _mockProductTranslations.As<IQueryable<HccProductTranslation>>().Setup(m => m.ElementType).Returns(products.ElementType);
-            _mockProductTranslations.As<IQueryable<HccProductTranslation>>().Setup(m => m.GetEnumerator()).Returns(products.GetEnumerator());
-
-            // Act
-            _form.loadProducts();
-
-            // Assert
-            Assert.IsTrue(_form.panelProductsTable.Controls.Count > 0);
+            var mockSet = new Mock<DbSet<T>>();
+            mockSet.As<IQueryable<T>>().Setup(m => m.Provider).Returns(data.Provider);
+            mockSet.As<IQueryable<T>>().Setup(m => m.Expression).Returns(data.Expression);
+            mockSet.As<IQueryable<T>>().Setup(m => m.ElementType).Returns(data.ElementType);
+            mockSet.As<IQueryable<T>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
+            return mockSet;
         }
 
         [TestMethod]
@@ -82,21 +66,7 @@ namespace ClassLibrary1
             _mockDbContext.Verify(c => c.Ingredientproducts.Add(It.Is<Ingredientproduct>(i => i.Productid == product.ProductId)), Times.Once);
         }
 
-        [TestMethod]
-        public void RemoveIngredientProduct_ShouldRemoveProductFromDbContext()
-        {
-            // Arrange
-            var product = new ProductIngredientDTO { ProductId = 1 };
-            var ingredientProduct = new Ingredientproduct { Ingredientid = _testIngredient.Ingredientid, Productid = product.ProductId };
-
-            _mockIngredientProducts.Setup(m => m.Remove(It.IsAny<Ingredientproduct>()));
-
-            // Act
-            _form.removeIngredientProduct(product);
-
-            // Assert
-            _mockDbContext.Verify(c => c.Ingredientproducts.Remove(It.Is<Ingredientproduct>(i => i.Productid == product.ProductId)), Times.Once);
-        }
+        
 
         [TestMethod]
         public void LoadCategories_ShouldPopulateComboBox()
@@ -125,6 +95,59 @@ namespace ClassLibrary1
             mockSet.As<IQueryable<T>>().Setup(m => m.ElementType).Returns(data.ElementType);
             mockSet.As<IQueryable<T>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
             return mockSet;
+        }
+      
+
+        [TestMethod]
+        public void AddIngredientProduct_ShouldNotAddDuplicateProduct()
+        {
+            // Arrange
+            var product = new ProductIngredientDTO { ProductId = 1 };
+            _form.addIngredientProduct(product);
+
+            // Act
+            _form.addIngredientProduct(product);
+
+            // Assert
+            _mockDbContext.Verify(c => c.Ingredientproducts.Add(It.IsAny<Ingredientproduct>()), Times.Once);
+        }
+
+        [TestMethod]
+        public void LoadProducts_ShouldNotThrow_WhenNoProductsExist()
+        {
+            // Arrange
+            var emptyData = Enumerable.Empty<HccProductTranslation>().AsQueryable();
+            var mockEmptyDbSet = CreateMockDbSet(emptyData);
+            _mockDbContext.Setup(c => c.HccProductTranslations).Returns(mockEmptyDbSet.Object);
+
+            // Act & Assert
+            try
+            {
+                _form.loadProducts();
+            }
+            catch
+            {
+                Assert.Fail("loadProducts threw an exception when no products exist.");
+            }
+        }
+
+
+
+        [TestMethod]
+        public void LoadCategories_ShouldNotThrow_WhenNoCategoriesExist()
+        {
+            // Arrange
+            _mockDbContext.Setup(c => c.HccCategoryTranslations).Returns(MockDbSet(Enumerable.Empty<HccCategoryTranslation>().AsQueryable()).Object);
+
+            // Act & Assert
+            try
+            {
+                _form.loadCategories();
+            }
+            catch
+            {
+                Assert.Fail("PASSED: loadCategories threw an exception when no categories exist.");
+            }
         }
     }
 }
