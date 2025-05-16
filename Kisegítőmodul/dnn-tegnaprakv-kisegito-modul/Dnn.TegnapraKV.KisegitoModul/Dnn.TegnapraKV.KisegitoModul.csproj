@@ -14,14 +14,14 @@
     <RootNamespace>Dnn.TegnapraKV.Dnn.TegnapraKV.KisegitoModul</RootNamespace>
     <AssemblyName>Dnn.TegnapraKV.KisegitoModul</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
-    <UseGlobalApplicationHostFile />
     <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -119,6 +119,8 @@
     <Compile Include="Classes\HelperController.cs" />
     <Compile Include="Classes\HozzavalokService.cs" />
     <Compile Include="Classes\Ingredients.cs" />
+    <Compile Include="Classes\Products.cs" />
+    <Compile Include="Classes\ProductService.cs" />
     <Compile Include="Classes\RecipeDetail.cs" />
     <Compile Include="Classes\RecipeDetailService.cs" />
     <Compile Include="Classes\RouteMapperForDetails.cs" />
@@ -194,10 +196,10 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
-          <DevelopmentServerPort>60323</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>
           </DevelopmentServerVPath>
-          <IISUrl>http://localhost:60323/</IISUrl>
+          <IISUrl>http://dnndev.me/desktopmodules/mvc/Dnn.TegnapraKV.KisegitoModul</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

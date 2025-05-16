@@ -64,5 +64,23 @@ namespace Dnn.TegnapraKV.Dnn.TegnapraKV.KisegitoModul.Classes
         }
 
 
+
+        [AllowAnonymous]
+        [HttpGet]
+        public HttpResponseMessage GetProducts(int RecipeID, string rewriteURLs)
+        {
+            try
+            {
+                var service = new ProductService();
+                var details = service.GetProducts(RecipeID,rewriteURLs).ToJson();
+
+                return Request.CreateResponse(HttpStatusCode.OK, details);
+            }
+            catch (Exception exc)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, exc);
+            }
+        }
+
     }
 }
