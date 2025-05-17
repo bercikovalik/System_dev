@@ -132,7 +132,7 @@
     </div>
 
     <div>
-        <h3>A kosaradból hiányzik még:</h3>
+        <h3 class="hianyzik">A kosaradból hiányzik még:</h3>
         <div class="product-suggestions"></div>
     </div>
 </div>
@@ -195,8 +195,31 @@
 
 
                 console.log(ingredients);
+
+
+
+                const hianyzik = document.querySelector(".hianyzik");
+
+                if (ingredients.length > 0) {
+                    if (hianyzik) {
+                        hianyzik.textContent = "A kosaradból még hiányzik:";
+                        hianyzik.style.display = 'inline-block';
+                    }
+                } else {
+                    if (hianyzik) {
+                        hianyzik.style.display = 'none';
+                    }
+                }
+
+
+
+
                 var container = $(".product-suggestions");
                 container.empty(); // biztos, ami biztos
+
+
+
+
 
                 ingredients.forEach(function (item) {
                    
