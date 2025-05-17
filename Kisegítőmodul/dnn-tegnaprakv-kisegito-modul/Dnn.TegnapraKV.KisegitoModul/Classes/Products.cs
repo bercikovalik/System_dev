@@ -9,12 +9,12 @@ namespace Dnn.TegnapraKV.Dnn.TegnapraKV.KisegitoModul.Classes
     {
         public int IngredientId { get; set; }
         public string IngredientName { get; set; }
-        public int ProductId { get; set; }
+        public int RecommendedProductId { get; set; }
         public string ProductName { get; set; }
         public string ImageFileSmall { get; set; }
         public string RewriteUrl { get; set; }
-        
-        
+        public  Guid PRODUCTID { get; set; }
+
 
 
 
