@@ -11,7 +11,7 @@ namespace Dnn.TegnapraKV.Dnn.TegnapraKV.KisegitoModul.Classes
     {
         public IList<Products> GetProducts(int RecipeID,string rewriteURLs)
         {
-            return CBO.FillCollection<Products>(DataProvider.Instance().ExecuteReader("GetIngredientsByRecipeId", RecipeID));
+            return CBO.FillCollection<Products>(DataProvider.Instance().ExecuteReader("GetMissingIngredientProductSuggestions", RecipeID,rewriteURLs));
         }
 
 
