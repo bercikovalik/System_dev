@@ -161,7 +161,7 @@ namespace Alviro
                 };
                 userControlIngredientView.ButtonModifyClick += (s, e) =>
                 {
-                    LoadIngredientsAsync();
+                    //LoadIngredientsAsync();
                 };
                 userControlIngredientView.CheckBoxClick += (s, e) =>
                 {
@@ -235,6 +235,9 @@ namespace Alviro
         {
             //Új hozzávaló esetén új UC-t adunk hozzá ami azonnal szerkesztő nézetbe vált
             Ingredient newIngredient = new Ingredient();
+            newIngredient.Name = "Új hozzávaló neve";
+
+
             UserControlIngredientView userControlIngredientView = new UserControlIngredientView(newIngredient);
             userControlIngredientView.Name = "userControlIngredientViewNewIngredient";
 

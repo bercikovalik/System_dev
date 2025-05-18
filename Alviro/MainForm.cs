@@ -27,6 +27,8 @@ namespace Alviro
             {
                 panelMain.Controls.Remove(ctrl); // csak a régi UC-t távolítja el
             }
+            panelMenuItemTypes.BackColor = Color.Transparent;
+
             panelMenuItem2.BackColor = Color.FromArgb(104, 123, 82);
             panelMenuItem1.BackColor = Color.Transparent;
             panelMenuItem3.BackColor = Color.Transparent;
@@ -74,7 +76,7 @@ namespace Alviro
             }
             catch (Exception)
             {
-                
+
             }
         }
 
@@ -94,6 +96,8 @@ namespace Alviro
             {
                 panelMain.Controls.Remove(ctrl); // csak a régi UC-t távolítja el
             }
+            panelMenuItemTypes.BackColor = Color.Transparent;
+
             panelMenuItem1.BackColor = Color.FromArgb(104, 123, 82);
             panelMenuItem2.BackColor = Color.Transparent;
             panelMenuItem3.BackColor = Color.Transparent;
@@ -116,6 +120,7 @@ namespace Alviro
             {
                 panelMain.Controls.Remove(ctrl); // csak a régi UC-t távolítja el
             }
+            panelMenuItemTypes.BackColor = Color.Transparent;
             panelMenuItem3.BackColor = Color.FromArgb(104, 123, 82);
             panelMenuItem2.BackColor = Color.Transparent;
             panelMenuItem1.BackColor = Color.Transparent;
@@ -124,7 +129,7 @@ namespace Alviro
             panelMain.Controls.Add(userControlOverview);
             pictureBoxArrowLeft.BringToFront();
             pictureBoxRightArrow.BringToFront();
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -175,6 +180,37 @@ namespace Alviro
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             loadOverview();
+        }
+
+        //private void loadTypes()
+        //{
+        //    foreach (Control ctrl in panelMain.Controls.OfType<UserControl>().ToList())
+        //    {
+        //        panelMain.Controls.Remove(ctrl); // csak a régi UC-t távolítja el
+        //    }
+        //    panelMenuItemTypes.BackColor = Color.FromArgb(104, 123, 82);
+        //    panelMenuItem1.BackColor = Color.Transparent;
+        //    panelMenuItem2.BackColor = Color.Transparent;
+        //    panelMenuItem3.BackColor = Color.Transparent;
+        //    UserControlTypes userControlTypes = new UserControlTypes();
+        //    userControlTypes.Dock = DockStyle.Fill;
+        //    panelMain.Controls.Add(userControlTypes);
+        //    pictureBoxArrowLeft.BringToFront();
+        //    pictureBoxRightArrow.BringToFront();
+        //}
+        private void panelMenuItemTypes_Click(object sender, EventArgs e)
+        {
+            //loadTypes();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            //loadTypes();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            //loadTypes();
         }
     }
 }

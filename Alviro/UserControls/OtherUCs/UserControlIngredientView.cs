@@ -110,6 +110,13 @@ namespace Alviro
             ingredientDTO.Name = textBoxModifyName.Text;
             try
             {
+                //Check if the ingredient already exists
+                var existingIngredient = dbContext.Ingredients.FirstOrDefault(i => i.Name == ingredientDTO.Name);
+                if (existingIngredient != null)
+                {
+                    MessageBox.Show("Ez a hozzávaló már létezik! Kérlek adj meg egy másik nevet.", "Hozzávaló már létezik", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 dbContext.Ingredients.Update(ingredientDTO);
                 dbContext.SaveChanges();
                 ButtonModifyClick?.Invoke(this, EventArgs.Empty);
