@@ -17,7 +17,7 @@ using AllowAnonymousAttribute = System.Web.Http.AllowAnonymousAttribute;
 
 namespace Dnn.TegnapraKV.Dnn.TegnapraKV.RandomRecept.Classes
 {
-    public class ModuleController : DnnApiController
+    public class RandomController : DnnApiController
     {
         [AllowAnonymous]
         [HttpGet]

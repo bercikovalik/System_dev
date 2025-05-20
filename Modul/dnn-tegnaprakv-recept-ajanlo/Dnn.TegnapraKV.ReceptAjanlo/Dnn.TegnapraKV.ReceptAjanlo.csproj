@@ -116,6 +116,7 @@
       <DependentUpon>Settings.resx</DependentUpon>
     </Compile>
     <Compile Include="Classes\ModuleController.cs" />
+    <Compile Include="Classes\RandomRecipeService.cs" />
     <Compile Include="Classes\Recipe.cs" />
     <Compile Include="Classes\RecipeService.cs" />
     <Compile Include="Classes\RouteMapper.cs" />

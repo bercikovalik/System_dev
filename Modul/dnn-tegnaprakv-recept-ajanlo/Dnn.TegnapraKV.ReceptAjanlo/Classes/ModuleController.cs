@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using DotNetNuke.Services.Connections;
 using DotNetNuke.Common.Utilities;
 using System.Web;
+using dnn.tegnaprakvDnn.TegnapraKV.ReceptAjanlo.Classes;
 
 
 
@@ -43,6 +44,23 @@ namespace dnn.tegnaprakv.Dnn.TegnapraKV.ReceptAjanlo.Classes
             }
         }
 
+
+        [AllowAnonymous]
+        [HttpGet]
+        public HttpResponseMessage GetRandomRecipe()
+        {
+            try
+            {
+                var service = new RandomRecipeService();
+                var tasks = service.GetRandomRecipes().ToJson();
+
+                return Request.CreateResponse(HttpStatusCode.OK, tasks);
+            }
+            catch (Exception exc)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, exc);
+            }
+        }
 
     }
 }
