@@ -1,0 +1,124 @@
+﻿<style>
+    #recipe-suggestions {
+        display: flex;
+        gap: 20px;
+        margin: 0 auto;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    .recipe-card {
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 16px;
+        max-width: 200px;
+        width: 100%;
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+        text-align: center;
+    }
+
+        .recipe-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+
+    .recipe-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    .recipe-name {
+        margin-top: 12px;
+        font-weight: bold;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .no-image {
+        width: 100%;
+        height: 200px;
+        background-color: #ddd;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+    }
+
+    .modulcim {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 600;
+        color: white;
+        border-bottom: 3px solid #1d372e;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+</style>
+
+
+
+
+<h1 class="modulcim">Recept ajánlások</h1>
+
+<div id="recipe-suggestions" style="display: flex; gap: 20px; margin: 0 auto;justify-content:space-evenly">
+    @*TESZTELÉSRE*@
+    <div>RECEPT</div>
+    <div>RECEPT</div>
+    <div>RECEPT</div>
+    <div>RECEPT</div>
+    <div>RECEPT</div>
+</div>
+
+<script type="text/javascript">
+
+
+    const itemsGET = null;
+   
+    $.getJSON(
+        "/DesktopModules/Dnn.TegnapraKV.HelloWorld/API/Random/GetRandomRecipe",
+        function (result) {
+            var recipes = jQuery.parseJSON(result);
+
+            var container = $('#recipe-suggestions');
+            container.empty();
+
+            //TESZTELÉSRE
+            console.log(recipes);
+            ////////////////////
+            const modulCim = document.querySelector(".modulcim");
+
+            
+            modulCim.textContent = "Egy kis ízelítő a receptjeinkből!";
+            modulCim.style.display = 'inline-block';
+             
+
+            $.each(recipes, function (index, recipe) {
+
+                    var recipeImage = recipe.ImageUrl ? '<img src="' + recipe.ImageUrl + '" alt="' + recipe.RecipeName + '" style="width:200px; aspect-ratio: 1/1;" />' : '<div class="no-image">Nincs kép</div>';
+
+                    container.append(
+                        '<div class="recipe-card" data-recipe-id="' + recipe.RecipeID + '">' +
+                        '<div class="recipe-image" style="background-color: #eee;">' + recipeImage + '</div>' +
+                        '<div class="recipe-name" style="text-align:center; margin-top:10px;">' + recipe.RecipeName + '</div>' +
+                        '</div>'
+                    );
+
+            });
+        }
+    );
+    //Átirányítás a receptleírás oldalra.
+    $('#recipe-suggestions').on('click', '.recipe-card', function () {
+        const id = $(this).data('recipe-id');
+        window.location.href = "http://rendfejl10004.northeurope.cloudapp.azure.com/Recipe?recipeId=" + id+"&items="+itemsGET;
+    });
+
+
+
+</script>
