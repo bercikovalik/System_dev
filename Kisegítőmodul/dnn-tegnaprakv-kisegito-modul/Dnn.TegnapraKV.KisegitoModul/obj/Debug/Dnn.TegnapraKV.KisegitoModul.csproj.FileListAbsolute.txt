@@ -1,0 +1,10 @@
+C:\Users\Bálint\Source\Repos\System_dev\Kisegítőmodul\dnn-tegnaprakv-kisegito-modul\Dnn.TegnapraKV.KisegitoModul\obj\Debug\Dnn.TegnapraKV.KisegitoModul.csproj.AssemblyReference.cache
+C:\Users\Bálint\Source\Repos\System_dev\Kisegítőmodul\dnn-tegnaprakv-kisegito-modul\Dnn.TegnapraKV.KisegitoModul\obj\Debug\Dnn.TegnapraKV.Dnn.TegnapraKV.KisegitoModul.App_LocalResources.Settings.resources
+C:\Users\Bálint\Source\Repos\System_dev\Kisegítőmodul\dnn-tegnaprakv-kisegito-modul\Dnn.TegnapraKV.KisegitoModul\obj\Debug\Dnn.TegnapraKV.KisegitoModul.csproj.GenerateResource.cache
+C:\Users\Bálint\Source\Repos\System_dev\Kisegítőmodul\dnn-tegnaprakv-kisegito-modul\Dnn.TegnapraKV.KisegitoModul\obj\Debug\Dnn.TegnapraKV.KisegitoModul.csproj.CoreCompileInputs.cache
+C:\Users\Bálint\Source\Repos\System_dev\bin\Dnn.TegnapraKV.KisegitoModul.dll.config
+C:\Users\Bálint\Source\Repos\System_dev\bin\Dnn.TegnapraKV.KisegitoModul.dll
+C:\Users\Bálint\Source\Repos\System_dev\bin\Dnn.TegnapraKV.KisegitoModul.pdb
+C:\Users\Bálint\Source\Repos\System_dev\Kisegítőmodul\dnn-tegnaprakv-kisegito-modul\Dnn.TegnapraKV.KisegitoModul\obj\Debug\Dnn.Tegn.64487DD6.Up2Date
+C:\Users\Bálint\Source\Repos\System_dev\Kisegítőmodul\dnn-tegnaprakv-kisegito-modul\Dnn.TegnapraKV.KisegitoModul\obj\Debug\Dnn.TegnapraKV.KisegitoModul.dll
+C:\Users\Bálint\Source\Repos\System_dev\Kisegítőmodul\dnn-tegnaprakv-kisegito-modul\Dnn.TegnapraKV.KisegitoModul\obj\Debug\Dnn.TegnapraKV.KisegitoModul.pdb

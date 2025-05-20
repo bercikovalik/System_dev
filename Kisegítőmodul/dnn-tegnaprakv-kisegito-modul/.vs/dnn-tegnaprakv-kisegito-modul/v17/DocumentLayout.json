@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|c:\\users\\b\u00E1lint\\source\\repos\\system_dev\\kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\dnn.tegnaprakv.kisegitomodul\\views\\item\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|solutionrelative:dnn.tegnaprakv.kisegitomodul\\views\\item\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\dnn.tegnaprakv.kisegitomodul\\classes\\recipedetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|solutionrelative:dnn.tegnaprakv.kisegitomodul\\classes\\recipedetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\dnn.tegnaprakv.kisegitomodul\\classes\\hozzavalokservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|solutionrelative:dnn.tegnaprakv.kisegitomodul\\classes\\hozzavalokservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\dnn.tegnaprakv.kisegitomodul\\classes\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|solutionrelative:dnn.tegnaprakv.kisegitomodul\\classes\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\dnn.tegnaprakv.kisegitomodul\\classes\\recipedetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|solutionrelative:dnn.tegnaprakv.kisegitomodul\\classes\\recipedetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\dnn.tegnaprakv.kisegitomodul\\classes\\ingredients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|solutionrelative:dnn.tegnaprakv.kisegitomodul\\classes\\ingredients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\dnn.tegnaprakv.kisegitomodul\\classes\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|solutionrelative:dnn.tegnaprakv.kisegitomodul\\classes\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\dnn.tegnaprakv.kisegitomodul\\classes\\helpercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4130D773-4930-4C21-9BCF-0C5244F585D0}|Dnn.TegnapraKV.KisegitoModul\\Dnn.TegnapraKV.KisegitoModul.csproj|solutionrelative:dnn.tegnaprakv.kisegitomodul\\classes\\helpercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HozzavalokService.cs",
+              "DocumentMoniker": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\HozzavalokService.cs",
+              "RelativeDocumentMoniker": "Dnn.TegnapraKV.KisegitoModul\\Classes\\HozzavalokService.cs",
+              "ToolTip": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\HozzavalokService.cs",
+              "RelativeToolTip": "Dnn.TegnapraKV.KisegitoModul\\Classes\\HozzavalokService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T20:14:50.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RecipeDetail.cs",
+              "DocumentMoniker": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\RecipeDetail.cs",
+              "RelativeDocumentMoniker": "Dnn.TegnapraKV.KisegitoModul\\Classes\\RecipeDetail.cs",
+              "ToolTip": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\RecipeDetail.cs",
+              "RelativeToolTip": "Dnn.TegnapraKV.KisegitoModul\\Classes\\RecipeDetail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T20:08:13.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Ingredients.cs",
+              "DocumentMoniker": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\Ingredients.cs",
+              "RelativeDocumentMoniker": "Dnn.TegnapraKV.KisegitoModul\\Classes\\Ingredients.cs",
+              "ToolTip": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\Ingredients.cs",
+              "RelativeToolTip": "Dnn.TegnapraKV.KisegitoModul\\Classes\\Ingredients.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T20:08:06.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\Products.cs",
+              "RelativeDocumentMoniker": "Dnn.TegnapraKV.KisegitoModul\\Classes\\Products.cs",
+              "ToolTip": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\Products.cs",
+              "RelativeToolTip": "Dnn.TegnapraKV.KisegitoModul\\Classes\\Products.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T20:07:54.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Views\\Item\\Index.cshtml",
+              "RelativeDocumentMoniker": "Dnn.TegnapraKV.KisegitoModul\\Views\\Item\\Index.cshtml",
+              "ToolTip": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Views\\Item\\Index.cshtml",
+              "RelativeToolTip": "Dnn.TegnapraKV.KisegitoModul\\Views\\Item\\Index.cshtml",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAABIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-06T10:34:07.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RecipeDetailService.cs",
+              "DocumentMoniker": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\RecipeDetailService.cs",
+              "RelativeDocumentMoniker": "Dnn.TegnapraKV.KisegitoModul\\Classes\\RecipeDetailService.cs",
+              "ToolTip": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\RecipeDetailService.cs",
+              "RelativeToolTip": "Dnn.TegnapraKV.KisegitoModul\\Classes\\RecipeDetailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T20:14:57.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\ProductService.cs",
+              "RelativeDocumentMoniker": "Dnn.TegnapraKV.KisegitoModul\\Classes\\ProductService.cs",
+              "ToolTip": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\ProductService.cs",
+              "RelativeToolTip": "Dnn.TegnapraKV.KisegitoModul\\Classes\\ProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T20:07:53.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HelperController.cs",
+              "DocumentMoniker": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\HelperController.cs",
+              "RelativeDocumentMoniker": "Dnn.TegnapraKV.KisegitoModul\\Classes\\HelperController.cs",
+              "ToolTip": "C:\\Users\\B\u00E1lint\\source\\repos\\System_dev\\Kiseg\u00EDt\u0151modul\\dnn-tegnaprakv-kisegito-modul\\Dnn.TegnapraKV.KisegitoModul\\Classes\\HelperController.cs",
+              "RelativeToolTip": "Dnn.TegnapraKV.KisegitoModul\\Classes\\HelperController.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAgwEUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T20:01:52.292Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

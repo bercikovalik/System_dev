@@ -1,0 +1,10 @@
+C:\Users\Bálint\source\repos\System_dev\bin\Dnn.TegnapraKV.ReceptAjanlo.dll.config
+C:\Users\Bálint\source\repos\System_dev\bin\Dnn.TegnapraKV.ReceptAjanlo.dll
+C:\Users\Bálint\source\repos\System_dev\bin\Dnn.TegnapraKV.ReceptAjanlo.pdb
+C:\Users\Bálint\source\repos\System_dev\Modul\dnn-tegnaprakv-recept-ajanlo\Dnn.TegnapraKV.ReceptAjanlo\obj\Debug\Dnn.TegnapraKV.ReceptAjanlo.csproj.AssemblyReference.cache
+C:\Users\Bálint\source\repos\System_dev\Modul\dnn-tegnaprakv-recept-ajanlo\Dnn.TegnapraKV.ReceptAjanlo\obj\Debug\dnn.tegnaprakvDnn.TegnapraKV.ReceptAjanlo.App_LocalResources.Settings.resources
+C:\Users\Bálint\source\repos\System_dev\Modul\dnn-tegnaprakv-recept-ajanlo\Dnn.TegnapraKV.ReceptAjanlo\obj\Debug\Dnn.TegnapraKV.ReceptAjanlo.csproj.GenerateResource.cache
+C:\Users\Bálint\source\repos\System_dev\Modul\dnn-tegnaprakv-recept-ajanlo\Dnn.TegnapraKV.ReceptAjanlo\obj\Debug\Dnn.TegnapraKV.ReceptAjanlo.csproj.CoreCompileInputs.cache
+C:\Users\Bálint\source\repos\System_dev\Modul\dnn-tegnaprakv-recept-ajanlo\Dnn.TegnapraKV.ReceptAjanlo\obj\Debug\Dnn.Tegn.89F9742A.Up2Date
+C:\Users\Bálint\source\repos\System_dev\Modul\dnn-tegnaprakv-recept-ajanlo\Dnn.TegnapraKV.ReceptAjanlo\obj\Debug\Dnn.TegnapraKV.ReceptAjanlo.dll
+C:\Users\Bálint\source\repos\System_dev\Modul\dnn-tegnaprakv-recept-ajanlo\Dnn.TegnapraKV.ReceptAjanlo\obj\Debug\Dnn.TegnapraKV.ReceptAjanlo.pdb
