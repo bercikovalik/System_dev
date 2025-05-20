@@ -27,7 +27,7 @@ namespace Alviro
             {
                 panelMain.Controls.Remove(ctrl); // csak a régi UC-t távolítja el
             }
-            panelMenuItemTypes.BackColor = Color.Transparent;
+            //panelMenuItemTypes.BackColor = Color.Transparent;
 
             panelMenuItem2.BackColor = Color.FromArgb(104, 123, 82);
             panelMenuItem1.BackColor = Color.Transparent;
@@ -96,7 +96,7 @@ namespace Alviro
             {
                 panelMain.Controls.Remove(ctrl); // csak a régi UC-t távolítja el
             }
-            panelMenuItemTypes.BackColor = Color.Transparent;
+            //panelMenuItemTypes.BackColor = Color.Transparent;
 
             panelMenuItem1.BackColor = Color.FromArgb(104, 123, 82);
             panelMenuItem2.BackColor = Color.Transparent;
@@ -120,7 +120,7 @@ namespace Alviro
             {
                 panelMain.Controls.Remove(ctrl); // csak a régi UC-t távolítja el
             }
-            panelMenuItemTypes.BackColor = Color.Transparent;
+            //panelMenuItemTypes.BackColor = Color.Transparent;
             panelMenuItem3.BackColor = Color.FromArgb(104, 123, 82);
             panelMenuItem2.BackColor = Color.Transparent;
             panelMenuItem1.BackColor = Color.Transparent;
